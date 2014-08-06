@@ -1,0 +1,14 @@
+Package: glycanr
+Title: Tools for analysing N-Glycan data
+Version: 0.1
+Authors@R: "Ivo Ugrina <ivo@iugrina.com> [aut, cre]"
+Description: What the package does (paragraph)
+Depends:
+    R (>= 3.1.0)
+Imports:
+    plyr,
+    ggplot2,
+    tidyr (>= 0.1),
+    dplyr (>= 0.2)
+License: GPL3
+LazyData: true
