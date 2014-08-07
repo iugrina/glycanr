@@ -9,6 +9,7 @@ Imports:
     plyr,
     ggplot2,
     tidyr (>= 0.1),
-    dplyr (>= 0.2)
+    dplyr (>= 0.2),
+    coin
 License: GPL3
 LazyData: true

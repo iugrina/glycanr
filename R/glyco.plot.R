@@ -92,7 +92,6 @@ glyco.plot <- function(data, collapse = TRUE, violin = FALSE, group = NULL, all 
     } else {
         if (2 == length(levels(data[[group]]))) {
             wilcox.test.multinumeric <- function(Y, x, ...) {
-                library(coin)
                 apply(Y, 2, function(column) {
                   tmp <- coin::wilcox_test(column ~ x)
                   coin::pvalue(tmp)
