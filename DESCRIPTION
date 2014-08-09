@@ -2,7 +2,7 @@ Package: glycanr
 Title: Tools for analysing N-Glycan data
 Version: 0.1
 Authors@R: "Ivo Ugrina <ivo@iugrina.com> [aut, cre]"
-Description: What the package does (paragraph)
+Description: Useful utilities in glycan data analysis
 Depends:
     R (>= 3.1.0)
 Imports:
@@ -11,5 +11,5 @@ Imports:
     tidyr (>= 0.1),
     dplyr (>= 0.2),
     coin
-License: GPL3
+License: MIT
 LazyData: true
