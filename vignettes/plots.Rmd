@@ -1,3 +1,8 @@
+<!-- 
+%\VignetteEngine{knitr::knitr}
+%\VignetteIndexEntry{Vignette title}
+-->
+
 # Plotting glycans with glycanr package
 
 ## Prerequisits
@@ -39,6 +44,7 @@ library(glycanr)
 First we need to create a *data.frame* to simulate our glycan data.
 
 ```{r}
+set.seed(123)
 n <- 200
 X <- data.frame(ID=1:n, GP1=runif(n), GP2=rexp(n, 0.3), GP3=rgamma(n, 2), cc=factor(sample(1:2, n, replace=TRUE)))
 ```
