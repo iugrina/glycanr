@@ -66,7 +66,7 @@ glyco.plot <- function(data, collapse = TRUE, violin = FALSE, group = NULL, all 
     
     cols <- c(group, gps)
     
-    newdata <- reshape2::melt(data[, cols], id = c(group))
+    newdata <- tidyr::gather_(data[,cols], "variable", "value", gps)
     if (TRUE == log.transform) {
         newdata$value <- log(newdata$value)
     }
