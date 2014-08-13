@@ -6,7 +6,7 @@
 #' @author Ivo Ugrina
 #' @export
 #' @param data data frame which holds columns representing Glycans.
-#'   Those column names must start with 'GP' letters.
+#'   These column names must start with 'GP'.
 #' @param collapse should Glycans be presented in one facet (default)
 #'   or with more facets (one per Glycan).
 #' @param violin should Glycans be presented in a boxplot (default)
