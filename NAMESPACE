@@ -2,4 +2,5 @@
 
 export(glyco.outliers)
 export(glyco.plot)
+export(igg.uplc.derived.traits)
 importFrom(dplyr,"%>%")
