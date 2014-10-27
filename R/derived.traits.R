@@ -61,7 +61,7 @@ igg.uplc.derived.traits <- function(data) {
         IGP53 + IGP54))
     data$IGP59 = with(data, (IGP41 + IGP43 + IGP45)/IGP55) * 100
     data$IGP60 = with(data, (IGP47 + IGP48 + IGP49 + IGP50)/IGP56) * 100
-    data$IGP61 = with(data, (IGP53 + GP15)/IGP57) * 100
+    data$IGP61 = with(data, (IGP53 + IGP54)/IGP57) * 100
     data$IGP62 = with(data, (IGP41 + IGP43 + IGP47 + IGP48 + IGP53))
     data$IGP63 = with(data, (IGP41 + IGP43)/IGP55) * 100
     data$IGP64 = with(data, (IGP47 + IGP48)/IGP56) * 100
