@@ -82,3 +82,44 @@ igg.uplc.derived.traits <- function(data) {
     return(data)
 }
 
+#' Derived traits for Glycan peaks in PLASMA for HPLC
+#'
+#' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
+#'
+#' @author Ivo Ugrina; Lucija Klarić
+#' @export plasma.hplc.derived.traits
+#' @param data data frame which holds columns representing Glycans.
+#'   These column names should start with 'GP'.
+#' @return Returns a data.frame with derived traits
+#' @references
+#' Lu et al. 
+#' "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
+#'  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
+#' \link{http://dx.doi.org/10.1021/pr2004067}
+plasma.hplc.derived.traits <- function(d) {
+	d = d[, c(1:(grep("GP1$", names(d))-1), grep("GP\\d+$|DG\\d+$|sial",names(d)))]
+	
+	# sialylation of biantennary glycans 
+	d$`BAMS`= with(d, (GP7 + GP8)/(DG5 + DG6 + DG7), digits = 4)*100
+	d$`BADS`= with(d, (GP9 + GP10 + GP11)/(DG5 + DG6 + DG7), digits = 4)*100
+	
+	# branching
+	d$`BA`= with(d, (DG1 + DG2 + DG3 + DG4 + DG5 + DG6 + DG7), digits = 2)
+	d$`TRIA`= with(d, (DG8 + DG9 + DG10), digits = 2)
+	d$`TA`= with(d, (DG11 + DG12 + DG13), digits = 2)
+	
+	# fucosylation
+	d$`C-FUC`= with(d, DG6/(DG5 + DG6), digits = 4)*100
+	d$`A-FUC`= with(d, DG7/(DG5 + DG7), digits = 4)*100
+	
+	d$`A2`= with(d, (GP1+DG1)/2, digits = 4)
+	
+	# galactosylation
+	d$`G0`= with(d, (DG1 + DG2), digits = 2)
+	d$`G1`= with(d, (DG3 + DG4), digits = 2)
+	d$`G2`= with(d, (DG5 + DG6 + DG7), digits = 2)
+	d$`G3`= with(d, (GP12 + GP13 + GP14), digits = 2)
+	d$`G4`= with(d, (GP15 + GP16), digits = 2)
+	
+	return(d)
+}
