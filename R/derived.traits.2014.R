@@ -5,7 +5,7 @@
 #'
 #' @author Ivo Ugrina; Frano Vučković
 #' @export igg.uplc.derived.traits.2014
-#' @param data data frame which holds columns representing Glycans.
+#' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
 #' @references
@@ -91,7 +91,7 @@ igg.uplc.derived.traits.2014 <- function(data) {
 #'
 #' @author Ivo Ugrina
 #' @export igg.lcms.derived.traits.2014
-#' @param data data frame in in long format.
+#' @param data data frame that holds columns representing Glycans.
 #' @return Returns a data.frame with derived traits
 #' @references
 #' Jennifer E. Huffman et al. 

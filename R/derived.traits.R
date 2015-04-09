@@ -4,7 +4,7 @@
 #'
 #' @author Ivo Ugrina
 #' @export igg.uplc.derived.traits
-#' @param data data frame which holds columns representing Glycans.
+#' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
 igg.uplc.derived.traits <- function(data, method="2014") {
@@ -24,7 +24,7 @@ igg.uplc.derived.traits <- function(data, method="2014") {
 #'
 #' @author Ivo Ugrina
 #' @export plasma.hplc.derived.traits
-#' @param data data frame which holds columns representing Glycans.
+#' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
 plasma.hplc.derived.traits <- function(d, method="2011") {
@@ -44,7 +44,7 @@ plasma.hplc.derived.traits <- function(d, method="2011") {
 #'
 #' @author Ivo Ugrina
 #' @export igg.lcms.derived.traits
-#' @param data data frame in in long format.
+#' @param data data frame that holds columns representing Glycans.
 #' @return Returns a data.frame with derived traits
 igg.lcms.derived.traits <- function(data, method="2014") {
     x <- NULL
