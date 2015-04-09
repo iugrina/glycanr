@@ -2,124 +2,76 @@
 #'
 #' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
 #'
-#' @author Ivo Ugrina; Frano Vučković
+#' @author Ivo Ugrina
 #' @export igg.uplc.derived.traits
 #' @param data data frame which holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
-#' @references
-#' Jennifer E. Huffman et al. 
-#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
-igg.uplc.derived.traits <- function(data) {
-    
-    # derived glycans
-    data$IGP24 = with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP8 + GP9 + 
-        GP14)) * 100
-    data$IGP25 = with(data, (GP19 + GP24)/(GP19 + GP24 + GP10 + GP11 + GP15)) * 100
-    data$IGP26 = with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP4 + GP8 + 
-        GP9 + GP14)) * 100
-    data$IGP27 = with(data, (GP19 + GP24)/(GP19 + GP24 + GP6 + GP10 + GP11 + GP15)) * 
-        100
-    data$IGP28 = with(data, GP16/(GP16 + GP8 + GP9)) * 100
-    data$IGP29 = with(data, GP18/(GP18 + GP14 + GP23)) * 100
-    data$IGP30 = with(data, GP23/(GP23 + GP14 + GP18)) * 100
-    data$IGP31 = with(data, GP19/(GP19 + GP15 + GP24)) * 100
-    data$IGP32 = with(data, GP24/(GP24 + GP15 + GP19)) * 100
-    data$IGP33 = with(data, (GP16 + GP18 + GP19)/(GP23 + GP24))
-    data$IGP34 = with(data, (GP16 + GP18)/GP23)
-    data$IGP35 = with(data, GP19/GP24)
-    data$IGP36 = with(data, (GP19 + GP24)/(GP16 + GP18 + GP23))
-    data$IGP37 = with(data, GP19/(GP16 + GP18))
-    data$IGP38 = with(data, GP19/(GP16 + GP18 + GP19)) * 100
-    data$IGP39 = with(data, GP24/GP23)
-    data$IGP40 = with(data, GP24/(GP23 + GP24)) * 100
-    
-    # neutral glycans
-    GPn = with(data, GP1 + GP2 + GP4 + GP6 + GP7 + GP8 + GP9 + GP10 + GP11 + GP12 + 
-        GP13 + GP14 + GP15)
-    data$IGP41 = with(data, GP1/GPn) * 100
-    data$IGP42 = with(data, GP2/GPn) * 100
-    data$IGP43 = with(data, GP4/GPn) * 100
-    data$IGP44 = with(data, GP5/GPn) * 100
-    data$IGP45 = with(data, GP6/GPn) * 100
-    data$IGP46 = with(data, GP7/GPn) * 100
-    data$IGP47 = with(data, GP8/GPn) * 100
-    data$IGP48 = with(data, GP9/GPn) * 100
-    data$IGP49 = with(data, GP10/GPn) * 100
-    data$IGP50 = with(data, GP11/GPn) * 100
-    data$IGP51 = with(data, GP12/GPn) * 100
-    data$IGP52 = with(data, GP13/GPn) * 100
-    data$IGP53 = with(data, GP14/GPn) * 100
-    data$IGP54 = with(data, GP15/GPn) * 100
-    
-    # neutral derived glycans
-    data$IGP55 = with(data, (IGP41 + IGP42 + IGP43 + IGP45))
-    data$IGP56 = with(data, (IGP46 + IGP47 + IGP48 + IGP49 + IGP50))
-    data$IGP57 = with(data, (IGP51 + IGP52 + IGP53 + IGP54))
-    data$IGP58 = with(data, (IGP41 + IGP43 + IGP45 + IGP47 + IGP48 + IGP49 + IGP50 + 
-        IGP53 + IGP54))
-    data$IGP59 = with(data, (IGP41 + IGP43 + IGP45)/IGP55) * 100
-    data$IGP60 = with(data, (IGP47 + IGP48 + IGP49 + IGP50)/IGP56) * 100
-    data$IGP61 = with(data, (IGP53 + IGP54)/IGP57) * 100
-    data$IGP62 = with(data, (IGP41 + IGP43 + IGP47 + IGP48 + IGP53))
-    data$IGP63 = with(data, (IGP41 + IGP43)/IGP55) * 100
-    data$IGP64 = with(data, (IGP47 + IGP48)/IGP56) * 100
-    data$IGP65 = with(data, IGP53/IGP57) * 100
-    data$IGP66 = with(data, (IGP45 + IGP49 + IGP50 + IGP54))
-    data$IGP67 = with(data, IGP45/IGP55) * 100
-    data$IGP68 = with(data, (IGP49 + IGP50)/IGP56) * 100
-    data$IGP69 = with(data, IGP54/IGP57) * 100
-    data$IGP70 = with(data, IGP66/IGP62) * 100
-    data$IGP71 = with(data, IGP66/IGP58) * 100
-    data$IGP72 = with(data, IGP62/(IGP52 + IGP66))
-    data$IGP73 = with(data, IGP52/(IGP62 + IGP66)) * 1000
-    data$IGP74 = with(data, IGP54/IGP53)
-    data$IGP75 = with(data, IGP54/(IGP53 + IGP54)) * 100
-    data$IGP76 = with(data, IGP53/(IGP52 + IGP54))
-    data$IGP77 = with(data, IGP52/(IGP53 + IGP54)) * 1000
-    
-    return(data)
+igg.uplc.derived.traits <- function(data, method="2014") {
+    x <- NULL
+
+    if(method == "2014"){
+       x <- igg.uplc.derived.traits.2014(data)
+    }
+
+    x
 }
+
 
 #' Derived traits for Glycan peaks in PLASMA for HPLC
 #'
 #' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
-#' @author Ivo Ugrina; Lucija Klarić
+#' @author Ivo Ugrina
 #' @export plasma.hplc.derived.traits
 #' @param data data frame which holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
-#' @references
-#' Lu et al. 
-#' "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
-#'  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-#' \link{http://dx.doi.org/10.1021/pr2004067}
-plasma.hplc.derived.traits <- function(d) {
-	d = d[, c(1:(grep("GP1$", names(d))-1), grep("GP\\d+$|DG\\d+$|sial",names(d)))]
-	
-	# sialylation of biantennary glycans 
-	d$`BAMS`= with(d, (GP7 + GP8)/(DG5 + DG6 + DG7))*100
-	d$`BADS`= with(d, (GP9 + GP10 + GP11)/(DG5 + DG6 + DG7))*100
-	
-	# branching
-	d$`BA`= with(d, (DG1 + DG2 + DG3 + DG4 + DG5 + DG6 + DG7))
-	d$`TRIA`= with(d, (DG8 + DG9 + DG10))
-	d$`TA`= with(d, (DG11 + DG12 + DG13))
-	
-	# fucosylation
-	d$`C-FUC`= with(d, DG6/(DG5 + DG6))*100
-	d$`A-FUC`= with(d, DG7/(DG5 + DG7))*100
-	
-	d$`A2`= with(d, (GP1+DG1)/2)
-	
-	# galactosylation
-	d$`G0`= with(d, (DG1 + DG2))
-	d$`G1`= with(d, (DG3 + DG4))
-	d$`G2`= with(d, (DG5 + DG6 + DG7))
-	d$`G3`= with(d, (GP12 + GP13 + GP14))
-	d$`G4`= with(d, (GP15 + GP16))
-	
-	return(d)
+plasma.hplc.derived.traits <- function(d, method="2011") {
+    x <- NULL
+
+    if(method == "2011"){
+       x <- plasma.hplc.derived.traits.2011(data)
+    }
+
+    x
+}
+
+
+#' Derived traits for Glycan peaks in IgG for LCMS
+#'
+#' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
+#'
+#' @author Ivo Ugrina
+#' @export igg.lcms.derived.traits
+#' @param data data frame in in long format.
+#' @return Returns a data.frame with derived traits
+igg.lcms.derived.traits <- function(data, method="2014") {
+    x <- NULL
+ 
+    if(method == "2014"){
+       x <- igg.lcms.derived.traits.2014(data)
+    }
+
+    x
+}
+
+#' Translate names between computer readable and human readable
+#' for derived traits of IgG with LCMS
+#'
+#' Translates names between computer readable and human readable
+#' for derived traits of IgG with LCMS
+#'
+#' @author Ivo Ugrina
+#' @export ildt.translate
+#' @param orignames vector; type string
+#' @return Returns a character vector with original and translated names
+ildt.translate <- function(orignames, method="2014") {
+    x <- NULL
+  
+    if(method == "2014"){
+       x <- ildt.translate.2014(orignames)
+    }
+
+    x
 }
