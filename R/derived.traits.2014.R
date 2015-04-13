@@ -129,6 +129,54 @@ igg.lcms.derived.traits.2014 <- function(data) {
     ildt.eh(data$LC_IGP44 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G1NS1+IgG1_G2S1+IgG1_G2NS1)))
     ildt.eh(data$LC_IGP45 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FS1+IgG1_G1FNS1+IgG1_G2FS1+IgG1_G2FNS1)))
 
+    # neutral
+    ildt.eh(IgG1.neutral <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G0+IgG1_G1+IgG1_G2+IgG1_G0N+IgG1_G1N+IgG1_G2N,
+                                 mes="Not all neutral glycans where found in the data frame")
+
+    ildt.eh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral)
+    ildt.eh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral)
+    ildt.eh(data$LC_IGP48 <- with(data, IgG1_G2F/IgG1.neutral)
+    ildt.eh(data$LC_IGP49 <- with(data, IgG1_G0FN/IgG1.neutral)
+    ildt.eh(data$LC_IGP50 <- with(data, IgG1_G1FN/IgG1.neutral)
+    ildt.eh(data$LC_IGP51 <- with(data, IgG1_G2FN/IgG1.neutral)
+    ildt.eh(data$LC_IGP52 <- with(data, IgG1_G0/IgG1.neutral)
+    ildt.eh(data$LC_IGP53 <- with(data, IgG1_G1/IgG1.neutral)
+    ildt.eh(data$LC_IGP54 <- with(data, IgG1_G2/IgG1.neutral)
+    ildt.eh(data$LC_IGP55 <- with(data, IgG1_G0N/IgG1.neutral)
+    ildt.eh(data$LC_IGP56 <- with(data, IgG1_G1N/IgG1.neutral)
+    ildt.eh(data$LC_IGP57 <- with(data, IgG1_G2N/IgG1.neutral)
+
+    # neutral - derived traits
+    ildt.eh(data$LC_IGP58 <- with(data, (LC_IGP52+LC_IGP46+LC_IGP49+LC_IGP55))
+    ildt.eh(data$LC_IGP59 <- with(data, (LC_IGP53+LC_IGP47+LC_IGP50+LC_IGP56))
+    ildt.eh(data$LC_IGP60 <- with(data, (LC_IGP54+LC_IGP48+LC_IGP51+LC_IGP57))
+    ildt.eh(data$LC_IGP61 <- with(data, (LC_IGP46+LC_IGP49+LC_IGP47+LC_IGP50+LC_IGP48+LC_IGP51))
+    ildt.eh(data$LC_IGP62 <- with(data, (LC_IGP46+LC_IGP49)/LC_IGP52*100)
+    ildt.eh(data$LC_IGP63 <- with(data, (LC_IGP47+LC_IGP50)/LC_IGP53*100)
+    ildt.eh(data$LC_IGP64 <- with(data, (LC_IGP48+LC_IGP51)/LC_IGP54*100)
+    ildt.eh(data$LC_IGP65 <- with(data, (LC_IGP46+LC_IGP47+LC_IGP48))
+    ildt.eh(data$LC_IGP66 <- with(data, LC_IGP46/LC_IGP52*100)
+    ildt.eh(data$LC_IGP67 <- with(data, LC_IGP47/LC_IGP53*100)
+    ildt.eh(data$LC_IGP68 <- with(data, LC_IGP48/LC_IGP54*100)
+    ildt.eh(data$LC_IGP69 <- with(data, (LC_IGP49+LC_IGP50+LC_IGP51))
+    ildt.eh(data$LC_IGP70 <- with(data, LC_IGP49/LC_IGP52*100)
+    ildt.eh(data$LC_IGP71 <- with(data, LC_IGP50/LC_IGP53*100)
+    ildt.eh(data$LC_IGP72 <- with(data, LC_IGP51/LC_IGP54*100)
+    ildt.eh(data$LC_IGP73 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57+LC_IGP49+LC_IGP50+LC_IGP51))
+    ildt.eh(data$LC_IGP74 <- with(data, (LC_IGP55+LC_IGP49)/LC_IGP52*100)
+    ildt.eh(data$LC_IGP75 <- with(data, (LC_IGP56+LC_IGP50)/LC_IGP53*100)
+    ildt.eh(data$LC_IGP76 <- with(data, (LC_IGP57+LC_IGP51)/LC_IGP54*100)
+    ildt.eh(data$LC_IGP77 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57))
+    ildt.eh(data$LC_IGP78 <- with(data, LC_IGP55/LC_IGP52*100)
+    ildt.eh(data$LC_IGP79 <- with(data, LC_IGP56/LC_IGP53*100)
+    ildt.eh(data$LC_IGP80 <- with(data, LC_IGP57/LC_IGP54*100)
+    ildt.eh(data$LC_IGP81 <- with(data, LC_IGP65/LC_IGP77)
+    ildt.eh(data$LC_IGP82 <- with(data, LC_IGP69/LC_IGP65)
+    ildt.eh(data$LC_IGP83 <- with(data, LC_IGP69/LC_IGP61*100)
+    ildt.eh(data$LC_IGP84 <- with(data, LC_IGP69/LC_IGP73*100)
+    ildt.eh(data$LC_IGP85 <- with(data, LC_IGP65/LC_IGP73)
+    ildt.eh(data$LC_IGP86 <- with(data, LC_IGP77/LC_IGP61*1000)
+
     # =======================================
     # IgG2 derived traits
     # =======================================
@@ -159,6 +207,54 @@ igg.lcms.derived.traits.2014 <- function(data) {
     ildt.eh(data$LC_IGP130 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G1NS1+IgG2_G2S1+IgG2_G2NS1)))
     ildt.eh(data$LC_IGP131 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FS1+IgG2_G1FNS1+IgG2_G2FS1+IgG2_G2FNS1)))
 
+    # neutral
+    ildt.eh(IgG2.neutral <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G0+IgG2_G1+IgG2_G2+IgG2_G0N+IgG2_G1N+IgG2_G2N,
+                                 mes="Not all neutral glycans where found in the data frame")
+
+    ildt.eh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral)
+    ildt.eh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral)
+    ildt.eh(data$LC_IGP134 <- with(data, IgG2_G2F/IgG2.neutral)
+    ildt.eh(data$LC_IGP135 <- with(data, IgG2_G0FN/IgG2.neutral)
+    ildt.eh(data$LC_IGP136 <- with(data, IgG2_G1FN/IgG2.neutral)
+    ildt.eh(data$LC_IGP137 <- with(data, IgG2_G2FN/IgG2.neutral)
+    ildt.eh(data$LC_IGP138 <- with(data, IgG2_G0/IgG2.neutral)
+    ildt.eh(data$LC_IGP139 <- with(data, IgG2_G1/IgG2.neutral)
+    ildt.eh(data$LC_IGP140 <- with(data, IgG2_G2/IgG2.neutral)
+    ildt.eh(data$LC_IGP141 <- with(data, IgG2_G0N/IgG2.neutral)
+    ildt.eh(data$LC_IGP142 <- with(data, IgG2_G1N/IgG2.neutral)
+    ildt.eh(data$LC_IGP143 <- with(data, IgG2_G2N/IgG2.neutral)
+
+    # neutral - derived traits
+    ildt.eh(data$LC_IGP144 <- with(data, (LC_IGP138+LC_IGP132+LC_IGP135+LC_IGP141))
+    ildt.eh(data$LC_IGP145 <- with(data, (LC_IGP139+LC_IGP133+LC_IGP136+LC_IGP142))
+    ildt.eh(data$LC_IGP146 <- with(data, (LC_IGP140+LC_IGP134+LC_IGP137+LC_IGP143))
+    ildt.eh(data$LC_IGP147 <- with(data, (LC_IGP132+LC_IGP135+LC_IGP133+LC_IGP136+LC_IGP134+LC_IGP137))
+    ildt.eh(data$LC_IGP148 <- with(data, (LC_IGP132+LC_IGP135)/LC_IGP138*100)
+    ildt.eh(data$LC_IGP149 <- with(data, (LC_IGP133+LC_IGP136)/LC_IGP139*100)
+    ildt.eh(data$LC_IGP150 <- with(data, (LC_IGP134+LC_IGP137)/LC_IGP140*100)
+    ildt.eh(data$LC_IGP151 <- with(data, (LC_IGP132+LC_IGP133+LC_IGP134))
+    ildt.eh(data$LC_IGP152 <- with(data, LC_IGP132/LC_IGP138*100)
+    ildt.eh(data$LC_IGP153 <- with(data, LC_IGP133/LC_IGP139*100)
+    ildt.eh(data$LC_IGP154 <- with(data, LC_IGP134/LC_IGP140*100)
+    ildt.eh(data$LC_IGP155 <- with(data, (LC_IGP135+LC_IGP136+LC_IGP137))
+    ildt.eh(data$LC_IGP156 <- with(data, LC_IGP135/LC_IGP138*100)
+    ildt.eh(data$LC_IGP157 <- with(data, LC_IGP136/LC_IGP139*100)
+    ildt.eh(data$LC_IGP158 <- with(data, LC_IGP137/LC_IGP140*100)
+    ildt.eh(data$LC_IGP159 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143+LC_IGP135+LC_IGP136+LC_IGP137))
+    ildt.eh(data$LC_IGP160 <- with(data, (LC_IGP141+LC_IGP135)/LC_IGP138*100)
+    ildt.eh(data$LC_IGP161 <- with(data, (LC_IGP142+LC_IGP136)/LC_IGP139*100)
+    ildt.eh(data$LC_IGP162 <- with(data, (LC_IGP143+LC_IGP137)/LC_IGP140*100)
+    ildt.eh(data$LC_IGP163 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143))
+    ildt.eh(data$LC_IGP164 <- with(data, LC_IGP141/LC_IGP138*100)
+    ildt.eh(data$LC_IGP165 <- with(data, LC_IGP142/LC_IGP139*100)
+    ildt.eh(data$LC_IGP166 <- with(data, LC_IGP143/LC_IGP140*100)
+    ildt.eh(data$LC_IGP167 <- with(data, LC_IGP151/LC_IGP163)
+    ildt.eh(data$LC_IGP168 <- with(data, LC_IGP155/LC_IGP151)
+    ildt.eh(data$LC_IGP169 <- with(data, LC_IGP155/LC_IGP147*100)
+    ildt.eh(data$LC_IGP170 <- with(data, LC_IGP155/LC_IGP159*100)
+    ildt.eh(data$LC_IGP171 <- with(data, LC_IGP151/LC_IGP159)
+    ildt.eh(data$LC_IGP172 <- with(data, LC_IGP163/LC_IGP147*1000)
+
     # =======================================
     # IgG4 derived traits
     # =======================================
@@ -177,6 +273,22 @@ igg.lcms.derived.traits.2014 <- function(data) {
     ildt.eh(data$LC_IGP194 <- with(data, IgG4_G2FNS1/(IgG4_G2FN+IgG4_G2FNS1)*100))
     ildt.eh(data$LC_IGP195 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G2FS1)))
     ildt.eh(data$LC_IGP196 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G1FNS1+IgG4_G2FS1+IgG4_G2FNS1)))
+  
+    # neutral
+    ildt.eh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN+IgG4_G0+IgG4_G1+IgG4_G2+IgG4_G0N+IgG4_G1N+IgG4_G2N,
+                                 mes="Not all neutral glycans where found in the data frame")
+
+    ildt.eh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral)
+    ildt.eh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral)
+    ildt.eh(data$LC_IGP199 <- with(data, IgG4_G2F/IgG4.neutral)
+    ildt.eh(data$LC_IGP200 <- with(data, IgG4_G0FN/IgG4.neutral)
+    ildt.eh(data$LC_IGP201 <- with(data, IgG4_G1FN/IgG4.neutral)
+    ildt.eh(data$LC_IGP202 <- with(data, IgG4_G2FN/IgG4.neutral)
+
+    # neutral - derived traits
+    ildt.eh(data$LC_IGP203 <- with(data, IgG4_G0F + IgG4_G0FN)
+    ildt.eh(data$LC_IGP204 <- with(data, IgG4_G1F + IgG4_G1FN)
+    ildt.eh(data$LC_IGP205 <- with(data, IgG4_G2F + IgG4_G2FN)
 
     return(data)
 }
