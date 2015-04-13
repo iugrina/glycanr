@@ -1,11 +1,15 @@
 # igg.lcms.derived.traits error handling
 # Useful if some glycans are missing
-ildt.eh <- function(expr){
+ildt.eh <- function(expr, mess=NULL){
     tryCatch(
              expr
              , error = function(e) {
                  if(grepl("object '[^ ]*' not found", e$message)){
-                     warning("not all derived traits could be calculated!")
+                     if(is.null(mess)){
+                         warning("not all derived traits could be calculated!")
+                     } else {
+                         warning(mess)
+                     }
                  } else {
                      stop(e)
                  }
