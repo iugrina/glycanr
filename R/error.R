@@ -1,6 +1,6 @@
-# igg.lcms.derived.traits error handling
+# derived traits error handling
 # Useful if some glycans are missing
-ildt.eh <- function(expr, mess=NULL){
+dteh <- function(expr, mess=NULL){
     tryCatch(
              expr
              , error = function(e) {

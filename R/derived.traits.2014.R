@@ -15,70 +15,65 @@
 igg.uplc.derived.traits.2014 <- function(data) {
     
     # derived glycans
-    data$IGP24 = with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP8 + GP9 + 
-        GP14)) * 100
-    data$IGP25 = with(data, (GP19 + GP24)/(GP19 + GP24 + GP10 + GP11 + GP15)) * 100
-    data$IGP26 = with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP4 + GP8 + 
-        GP9 + GP14)) * 100
-    data$IGP27 = with(data, (GP19 + GP24)/(GP19 + GP24 + GP6 + GP10 + GP11 + GP15)) * 
-        100
-    data$IGP28 = with(data, GP16/(GP16 + GP8 + GP9)) * 100
-    data$IGP29 = with(data, GP18/(GP18 + GP14 + GP23)) * 100
-    data$IGP30 = with(data, GP23/(GP23 + GP14 + GP18)) * 100
-    data$IGP31 = with(data, GP19/(GP19 + GP15 + GP24)) * 100
-    data$IGP32 = with(data, GP24/(GP24 + GP15 + GP19)) * 100
-    data$IGP33 = with(data, (GP16 + GP18 + GP19)/(GP23 + GP24))
-    data$IGP34 = with(data, (GP16 + GP18)/GP23)
-    data$IGP35 = with(data, GP19/GP24)
-    data$IGP36 = with(data, (GP19 + GP24)/(GP16 + GP18 + GP23))
-    data$IGP37 = with(data, GP19/(GP16 + GP18))
-    data$IGP38 = with(data, GP19/(GP16 + GP18 + GP19)) * 100
-    data$IGP39 = with(data, GP24/GP23)
-    data$IGP40 = with(data, GP24/(GP23 + GP24)) * 100
+    dteh(data$IGP24 <- with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP8 + GP9 + GP14)) * 100)
+    dteh(data$IGP25 <- with(data, (GP19 + GP24)/(GP19 + GP24 + GP10 + GP11 + GP15)) * 100)
+    dteh(data$IGP26 <- with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP4 + GP8 + GP9 + GP14)) * 100)
+    dteh(data$IGP27 <- with(data, (GP19 + GP24)/(GP19 + GP24 + GP6 + GP10 + GP11 + GP15)) * 100)
+    dteh(data$IGP28 <- with(data, GP16/(GP16 + GP8 + GP9)) * 100)
+    dteh(data$IGP29 <- with(data, GP18/(GP18 + GP14 + GP23)) * 100)
+    dteh(data$IGP30 <- with(data, GP23/(GP23 + GP14 + GP18)) * 100)
+    dteh(data$IGP31 <- with(data, GP19/(GP19 + GP15 + GP24)) * 100)
+    dteh(data$IGP32 <- with(data, GP24/(GP24 + GP15 + GP19)) * 100)
+    dteh(data$IGP33 <- with(data, (GP16 + GP18 + GP19)/(GP23 + GP24)))
+    dteh(data$IGP34 <- with(data, (GP16 + GP18)/GP23))
+    dteh(data$IGP35 <- with(data, GP19/GP24))
+    dteh(data$IGP36 <- with(data, (GP19 + GP24)/(GP16 + GP18 + GP23)))
+    dteh(data$IGP37 <- with(data, GP19/(GP16 + GP18)))
+    dteh(data$IGP38 <- with(data, GP19/(GP16 + GP18 + GP19)) * 100)
+    dteh(data$IGP39 <- with(data, GP24/GP23))
+    dteh(data$IGP40 <- with(data, GP24/(GP23 + GP24)) * 100)
     
     # neutral glycans
-    GPn = with(data, GP1 + GP2 + GP4 + GP6 + GP7 + GP8 + GP9 + GP10 + GP11 + GP12 + 
-        GP13 + GP14 + GP15)
-    data$IGP41 = with(data, GP1/GPn) * 100
-    data$IGP42 = with(data, GP2/GPn) * 100
-    data$IGP43 = with(data, GP4/GPn) * 100
-    data$IGP44 = with(data, GP5/GPn) * 100
-    data$IGP45 = with(data, GP6/GPn) * 100
-    data$IGP46 = with(data, GP7/GPn) * 100
-    data$IGP47 = with(data, GP8/GPn) * 100
-    data$IGP48 = with(data, GP9/GPn) * 100
-    data$IGP49 = with(data, GP10/GPn) * 100
-    data$IGP50 = with(data, GP11/GPn) * 100
-    data$IGP51 = with(data, GP12/GPn) * 100
-    data$IGP52 = with(data, GP13/GPn) * 100
-    data$IGP53 = with(data, GP14/GPn) * 100
-    data$IGP54 = with(data, GP15/GPn) * 100
+    dteh(GPn <- with(data, GP1 + GP2 + GP4 + GP6 + GP7 + GP8 + GP9 + GP10 + GP11 + GP12 + GP13 + GP14 + GP15))
+    dteh(data$IGP41 <- with(data, GP1/GPn) * 100)
+    dteh(data$IGP42 <- with(data, GP2/GPn) * 100)
+    dteh(data$IGP43 <- with(data, GP4/GPn) * 100)
+    dteh(data$IGP44 <- with(data, GP5/GPn) * 100)
+    dteh(data$IGP45 <- with(data, GP6/GPn) * 100)
+    dteh(data$IGP46 <- with(data, GP7/GPn) * 100)
+    dteh(data$IGP47 <- with(data, GP8/GPn) * 100)
+    dteh(data$IGP48 <- with(data, GP9/GPn) * 100)
+    dteh(data$IGP49 <- with(data, GP10/GPn) * 100)
+    dteh(data$IGP50 <- with(data, GP11/GPn) * 100)
+    dteh(data$IGP51 <- with(data, GP12/GPn) * 100)
+    dteh(data$IGP52 <- with(data, GP13/GPn) * 100)
+    dteh(data$IGP53 <- with(data, GP14/GPn) * 100)
+    dteh(data$IGP54 <- with(data, GP15/GPn) * 100)
     
     # neutral derived glycans
-    data$IGP55 = with(data, (IGP41 + IGP42 + IGP43 + IGP45))
-    data$IGP56 = with(data, (IGP46 + IGP47 + IGP48 + IGP49 + IGP50))
-    data$IGP57 = with(data, (IGP51 + IGP52 + IGP53 + IGP54))
-    data$IGP58 = with(data, (IGP41 + IGP43 + IGP45 + IGP47 + IGP48 + IGP49 + IGP50 + 
-        IGP53 + IGP54))
-    data$IGP59 = with(data, (IGP41 + IGP43 + IGP45)/IGP55) * 100
-    data$IGP60 = with(data, (IGP47 + IGP48 + IGP49 + IGP50)/IGP56) * 100
-    data$IGP61 = with(data, (IGP53 + IGP54)/IGP57) * 100
-    data$IGP62 = with(data, (IGP41 + IGP43 + IGP47 + IGP48 + IGP53))
-    data$IGP63 = with(data, (IGP41 + IGP43)/IGP55) * 100
-    data$IGP64 = with(data, (IGP47 + IGP48)/IGP56) * 100
-    data$IGP65 = with(data, IGP53/IGP57) * 100
-    data$IGP66 = with(data, (IGP45 + IGP49 + IGP50 + IGP54))
-    data$IGP67 = with(data, IGP45/IGP55) * 100
-    data$IGP68 = with(data, (IGP49 + IGP50)/IGP56) * 100
-    data$IGP69 = with(data, IGP54/IGP57) * 100
-    data$IGP70 = with(data, IGP66/IGP62) * 100
-    data$IGP71 = with(data, IGP66/IGP58) * 100
-    data$IGP72 = with(data, IGP62/(IGP52 + IGP66))
-    data$IGP73 = with(data, IGP52/(IGP62 + IGP66)) * 1000
-    data$IGP74 = with(data, IGP54/IGP53)
-    data$IGP75 = with(data, IGP54/(IGP53 + IGP54)) * 100
-    data$IGP76 = with(data, IGP53/(IGP52 + IGP54))
-    data$IGP77 = with(data, IGP52/(IGP53 + IGP54)) * 1000
+    dteh(data$IGP55 <- with(data, (IGP41 + IGP42 + IGP43 + IGP45)))
+    dteh(data$IGP56 <- with(data, (IGP46 + IGP47 + IGP48 + IGP49 + IGP50)))
+    dteh(data$IGP57 <- with(data, (IGP51 + IGP52 + IGP53 + IGP54)))
+    dteh(data$IGP58 <- with(data, (IGP41 + IGP43 + IGP45 + IGP47 + IGP48 + IGP49 + IGP50 + IGP53 + IGP54)))
+    dteh(data$IGP59 <- with(data, (IGP41 + IGP43 + IGP45)/IGP55) * 100)
+    dteh(data$IGP60 <- with(data, (IGP47 + IGP48 + IGP49 + IGP50)/IGP56) * 100)
+    dteh(data$IGP61 <- with(data, (IGP53 + IGP54)/IGP57) * 100)
+    dteh(data$IGP62 <- with(data, (IGP41 + IGP43 + IGP47 + IGP48 + IGP53)))
+    dteh(data$IGP63 <- with(data, (IGP41 + IGP43)/IGP55) * 100)
+    dteh(data$IGP64 <- with(data, (IGP47 + IGP48)/IGP56) * 100)
+    dteh(data$IGP65 <- with(data, IGP53/IGP57) * 100)
+    dteh(data$IGP66 <- with(data, (IGP45 + IGP49 + IGP50 + IGP54)))
+    dteh(data$IGP67 <- with(data, IGP45/IGP55) * 100)
+    dteh(data$IGP68 <- with(data, (IGP49 + IGP50)/IGP56) * 100)
+    dteh(data$IGP69 <- with(data, IGP54/IGP57) * 100)
+    dteh(data$IGP70 <- with(data, IGP66/IGP62) * 100)
+    dteh(data$IGP71 <- with(data, IGP66/IGP58) * 100)
+    dteh(data$IGP72 <- with(data, IGP62/(IGP52 + IGP66)))
+    dteh(data$IGP73 <- with(data, IGP52/(IGP62 + IGP66)) * 1000)
+    dteh(data$IGP74 <- with(data, IGP54/IGP53))
+    dteh(data$IGP75 <- with(data, IGP54/(IGP53 + IGP54)) * 100)
+    dteh(data$IGP76 <- with(data, IGP53/(IGP52 + IGP54)))
+    dteh(data$IGP77 <- with(data, IGP52/(IGP53 + IGP54)) * 1000)
     
     return(data)
 }
@@ -103,192 +98,192 @@ igg.lcms.derived.traits.2014 <- function(data) {
     # IgG1 derived traits
     # =======================================
 
-    ildt.eh(data$LC_IGP21 <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G1FS1+IgG1_G2FS1+IgG1_G1FNS1+IgG1_G2FNS1))
-    ildt.eh(data$LC_IGP22 <- with(data, IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G0N+IgG1_G1N+IgG1_G2N+IgG1_G1NS1+IgG1_G2NS1))
-    ildt.eh(data$LC_IGP23 <- with(data, (IgG1_G1F+IgG1_G1FN+IgG1_G1FS1+IgG1_G1FNS1+IgG1_G1+IgG1_G1N+IgG1_G1S1+IgG1_G1NS1)*0.5+(IgG1_G2F+IgG1_G2FN+IgG1_G2FS1+IgG1_G2FNS1+IgG1_G2+IgG1_G2N+IgG1_G2S1+IgG1_G2NS1)))
-    ildt.eh(data$LC_IGP24 <- with(data, IgG1_G1FS1+IgG1_G2FS1+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G1S1+IgG1_G2S1+IgG1_G1NS1+IgG1_G2NS1))
-    ildt.eh(data$LC_IGP25 <- with(data, LC_IGP24/LC_IGP23))
-    ildt.eh(data$LC_IGP26 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
-    ildt.eh(data$LC_IGP27 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G0+IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
-    ildt.eh(data$LC_IGP28 <- with(data, IgG1_G1S1/(IgG1_G1+IgG1_G1S1)*100))
-    ildt.eh(data$LC_IGP29 <- with(data, IgG1_G2S1/(IgG1_G2+IgG1_G2S1)*100))
-    ildt.eh(data$LC_IGP30 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1N+IgG1_G1NS1+IgG1_G2N+IgG1_G2NS1)*100))
-    ildt.eh(data$LC_IGP31 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G0N+IgG1_G1N+IgG1_G1NS1+IgG1_G2N+IgG1_G2NS1)*100))
-    ildt.eh(data$LC_IGP32 <- with(data, IgG1_G1NS1/(IgG1_G1N+IgG1_G1NS1)*100))
-    ildt.eh(data$LC_IGP33 <- with(data, IgG1_G2NS1/(IgG1_G2N+IgG1_G2NS1)*100))
-    ildt.eh(data$LC_IGP34 <- with(data, (IgG1_G1FS1+IgG1_G2FS1)/(IgG1_G1F+IgG1_G1FS1+IgG1_G2F+IgG1_G2FS1)*100))
-    ildt.eh(data$LC_IGP35 <- with(data, (IgG1_G1FS1+IgG1_G2FS1)/(IgG1_G0F+IgG1_G1F+IgG1_G1FS1+IgG1_G2F+IgG1_G2FS1)*100))
-    ildt.eh(data$LC_IGP36 <- with(data, IgG1_G1FS1/(IgG1_G1F+IgG1_G1FS1)*100))
-    ildt.eh(data$LC_IGP37 <- with(data, IgG1_G2FS1/(IgG1_G2F+IgG1_G2FS1)*100))
-    ildt.eh(data$LC_IGP38 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FN+IgG1_G1FNS1+IgG1_G2FN+IgG1_G2FNS1)*100))
-    ildt.eh(data$LC_IGP39 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G0FN+IgG1_G1FN+IgG1_G1FS1+IgG1_G2FN+IgG1_G2FS1)*100))
-    ildt.eh(data$LC_IGP40 <- with(data, IgG1_G1FNS1/(IgG1_G1FN+IgG1_G1FNS1)*100))
-    ildt.eh(data$LC_IGP41 <- with(data, IgG1_G2FNS1/(IgG1_G2FN+IgG1_G2FNS1)*100))
-    ildt.eh(data$LC_IGP42 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G2S1)))
-    ildt.eh(data$LC_IGP43 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FS1+IgG1_G2FS1)))
-    ildt.eh(data$LC_IGP44 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G1NS1+IgG1_G2S1+IgG1_G2NS1)))
-    ildt.eh(data$LC_IGP45 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FS1+IgG1_G1FNS1+IgG1_G2FS1+IgG1_G2FNS1)))
+    dteh(data$LC_IGP21 <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G1FS1+IgG1_G2FS1+IgG1_G1FNS1+IgG1_G2FNS1))
+    dteh(data$LC_IGP22 <- with(data, IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G0N+IgG1_G1N+IgG1_G2N+IgG1_G1NS1+IgG1_G2NS1))
+    dteh(data$LC_IGP23 <- with(data, (IgG1_G1F+IgG1_G1FN+IgG1_G1FS1+IgG1_G1FNS1+IgG1_G1+IgG1_G1N+IgG1_G1S1+IgG1_G1NS1)*0.5+(IgG1_G2F+IgG1_G2FN+IgG1_G2FS1+IgG1_G2FNS1+IgG1_G2+IgG1_G2N+IgG1_G2S1+IgG1_G2NS1)))
+    dteh(data$LC_IGP24 <- with(data, IgG1_G1FS1+IgG1_G2FS1+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G1S1+IgG1_G2S1+IgG1_G1NS1+IgG1_G2NS1))
+    dteh(data$LC_IGP25 <- with(data, LC_IGP24/LC_IGP23))
+    dteh(data$LC_IGP26 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
+    dteh(data$LC_IGP27 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G0+IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
+    dteh(data$LC_IGP28 <- with(data, IgG1_G1S1/(IgG1_G1+IgG1_G1S1)*100))
+    dteh(data$LC_IGP29 <- with(data, IgG1_G2S1/(IgG1_G2+IgG1_G2S1)*100))
+    dteh(data$LC_IGP30 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1N+IgG1_G1NS1+IgG1_G2N+IgG1_G2NS1)*100))
+    dteh(data$LC_IGP31 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G0N+IgG1_G1N+IgG1_G1NS1+IgG1_G2N+IgG1_G2NS1)*100))
+    dteh(data$LC_IGP32 <- with(data, IgG1_G1NS1/(IgG1_G1N+IgG1_G1NS1)*100))
+    dteh(data$LC_IGP33 <- with(data, IgG1_G2NS1/(IgG1_G2N+IgG1_G2NS1)*100))
+    dteh(data$LC_IGP34 <- with(data, (IgG1_G1FS1+IgG1_G2FS1)/(IgG1_G1F+IgG1_G1FS1+IgG1_G2F+IgG1_G2FS1)*100))
+    dteh(data$LC_IGP35 <- with(data, (IgG1_G1FS1+IgG1_G2FS1)/(IgG1_G0F+IgG1_G1F+IgG1_G1FS1+IgG1_G2F+IgG1_G2FS1)*100))
+    dteh(data$LC_IGP36 <- with(data, IgG1_G1FS1/(IgG1_G1F+IgG1_G1FS1)*100))
+    dteh(data$LC_IGP37 <- with(data, IgG1_G2FS1/(IgG1_G2F+IgG1_G2FS1)*100))
+    dteh(data$LC_IGP38 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FN+IgG1_G1FNS1+IgG1_G2FN+IgG1_G2FNS1)*100))
+    dteh(data$LC_IGP39 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G0FN+IgG1_G1FN+IgG1_G1FS1+IgG1_G2FN+IgG1_G2FS1)*100))
+    dteh(data$LC_IGP40 <- with(data, IgG1_G1FNS1/(IgG1_G1FN+IgG1_G1FNS1)*100))
+    dteh(data$LC_IGP41 <- with(data, IgG1_G2FNS1/(IgG1_G2FN+IgG1_G2FNS1)*100))
+    dteh(data$LC_IGP42 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G2S1)))
+    dteh(data$LC_IGP43 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FS1+IgG1_G2FS1)))
+    dteh(data$LC_IGP44 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G1NS1+IgG1_G2S1+IgG1_G2NS1)))
+    dteh(data$LC_IGP45 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FS1+IgG1_G1FNS1+IgG1_G2FS1+IgG1_G2FNS1)))
 
     # neutral
-    ildt.eh(IgG1.neutral <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G0+IgG1_G1+IgG1_G2+IgG1_G0N+IgG1_G1N+IgG1_G2N),
+    dteh(IgG1.neutral <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G0+IgG1_G1+IgG1_G2+IgG1_G0N+IgG1_G1N+IgG1_G2N),
                                  mes="Not all neutral glycans where found in the data frame")
 
-    ildt.eh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral))
-    ildt.eh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral))
-    ildt.eh(data$LC_IGP48 <- with(data, IgG1_G2F/IgG1.neutral))
-    ildt.eh(data$LC_IGP49 <- with(data, IgG1_G0FN/IgG1.neutral))
-    ildt.eh(data$LC_IGP50 <- with(data, IgG1_G1FN/IgG1.neutral))
-    ildt.eh(data$LC_IGP51 <- with(data, IgG1_G2FN/IgG1.neutral))
-    ildt.eh(data$LC_IGP52 <- with(data, IgG1_G0/IgG1.neutral))
-    ildt.eh(data$LC_IGP53 <- with(data, IgG1_G1/IgG1.neutral))
-    ildt.eh(data$LC_IGP54 <- with(data, IgG1_G2/IgG1.neutral))
-    ildt.eh(data$LC_IGP55 <- with(data, IgG1_G0N/IgG1.neutral))
-    ildt.eh(data$LC_IGP56 <- with(data, IgG1_G1N/IgG1.neutral))
-    ildt.eh(data$LC_IGP57 <- with(data, IgG1_G2N/IgG1.neutral))
+    dteh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral))
+    dteh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral))
+    dteh(data$LC_IGP48 <- with(data, IgG1_G2F/IgG1.neutral))
+    dteh(data$LC_IGP49 <- with(data, IgG1_G0FN/IgG1.neutral))
+    dteh(data$LC_IGP50 <- with(data, IgG1_G1FN/IgG1.neutral))
+    dteh(data$LC_IGP51 <- with(data, IgG1_G2FN/IgG1.neutral))
+    dteh(data$LC_IGP52 <- with(data, IgG1_G0/IgG1.neutral))
+    dteh(data$LC_IGP53 <- with(data, IgG1_G1/IgG1.neutral))
+    dteh(data$LC_IGP54 <- with(data, IgG1_G2/IgG1.neutral))
+    dteh(data$LC_IGP55 <- with(data, IgG1_G0N/IgG1.neutral))
+    dteh(data$LC_IGP56 <- with(data, IgG1_G1N/IgG1.neutral))
+    dteh(data$LC_IGP57 <- with(data, IgG1_G2N/IgG1.neutral))
 
     # neutral - derived traits
-    ildt.eh(data$LC_IGP58 <- with(data, (LC_IGP52+LC_IGP46+LC_IGP49+LC_IGP55)))
-    ildt.eh(data$LC_IGP59 <- with(data, (LC_IGP53+LC_IGP47+LC_IGP50+LC_IGP56)))
-    ildt.eh(data$LC_IGP60 <- with(data, (LC_IGP54+LC_IGP48+LC_IGP51+LC_IGP57)))
-    ildt.eh(data$LC_IGP61 <- with(data, (LC_IGP46+LC_IGP49+LC_IGP47+LC_IGP50+LC_IGP48+LC_IGP51)))
-    ildt.eh(data$LC_IGP62 <- with(data, (LC_IGP46+LC_IGP49)/LC_IGP52*100))
-    ildt.eh(data$LC_IGP63 <- with(data, (LC_IGP47+LC_IGP50)/LC_IGP53*100))
-    ildt.eh(data$LC_IGP64 <- with(data, (LC_IGP48+LC_IGP51)/LC_IGP54*100))
-    ildt.eh(data$LC_IGP65 <- with(data, (LC_IGP46+LC_IGP47+LC_IGP48)))
-    ildt.eh(data$LC_IGP66 <- with(data, LC_IGP46/LC_IGP52*100))
-    ildt.eh(data$LC_IGP67 <- with(data, LC_IGP47/LC_IGP53*100))
-    ildt.eh(data$LC_IGP68 <- with(data, LC_IGP48/LC_IGP54*100))
-    ildt.eh(data$LC_IGP69 <- with(data, (LC_IGP49+LC_IGP50+LC_IGP51)))
-    ildt.eh(data$LC_IGP70 <- with(data, LC_IGP49/LC_IGP52*100))
-    ildt.eh(data$LC_IGP71 <- with(data, LC_IGP50/LC_IGP53*100))
-    ildt.eh(data$LC_IGP72 <- with(data, LC_IGP51/LC_IGP54*100))
-    ildt.eh(data$LC_IGP73 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57+LC_IGP49+LC_IGP50+LC_IGP51)))
-    ildt.eh(data$LC_IGP74 <- with(data, (LC_IGP55+LC_IGP49)/LC_IGP52*100))
-    ildt.eh(data$LC_IGP75 <- with(data, (LC_IGP56+LC_IGP50)/LC_IGP53*100))
-    ildt.eh(data$LC_IGP76 <- with(data, (LC_IGP57+LC_IGP51)/LC_IGP54*100))
-    ildt.eh(data$LC_IGP77 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57)))
-    ildt.eh(data$LC_IGP78 <- with(data, LC_IGP55/LC_IGP52*100))
-    ildt.eh(data$LC_IGP79 <- with(data, LC_IGP56/LC_IGP53*100))
-    ildt.eh(data$LC_IGP80 <- with(data, LC_IGP57/LC_IGP54*100))
-    ildt.eh(data$LC_IGP81 <- with(data, LC_IGP65/LC_IGP77))
-    ildt.eh(data$LC_IGP82 <- with(data, LC_IGP69/LC_IGP65))
-    ildt.eh(data$LC_IGP83 <- with(data, LC_IGP69/LC_IGP61*100))
-    ildt.eh(data$LC_IGP84 <- with(data, LC_IGP69/LC_IGP73*100))
-    ildt.eh(data$LC_IGP85 <- with(data, LC_IGP65/LC_IGP73))
-    ildt.eh(data$LC_IGP86 <- with(data, LC_IGP77/LC_IGP61*1000))
+    dteh(data$LC_IGP58 <- with(data, (LC_IGP52+LC_IGP46+LC_IGP49+LC_IGP55)))
+    dteh(data$LC_IGP59 <- with(data, (LC_IGP53+LC_IGP47+LC_IGP50+LC_IGP56)))
+    dteh(data$LC_IGP60 <- with(data, (LC_IGP54+LC_IGP48+LC_IGP51+LC_IGP57)))
+    dteh(data$LC_IGP61 <- with(data, (LC_IGP46+LC_IGP49+LC_IGP47+LC_IGP50+LC_IGP48+LC_IGP51)))
+    dteh(data$LC_IGP62 <- with(data, (LC_IGP46+LC_IGP49)/LC_IGP52*100))
+    dteh(data$LC_IGP63 <- with(data, (LC_IGP47+LC_IGP50)/LC_IGP53*100))
+    dteh(data$LC_IGP64 <- with(data, (LC_IGP48+LC_IGP51)/LC_IGP54*100))
+    dteh(data$LC_IGP65 <- with(data, (LC_IGP46+LC_IGP47+LC_IGP48)))
+    dteh(data$LC_IGP66 <- with(data, LC_IGP46/LC_IGP52*100))
+    dteh(data$LC_IGP67 <- with(data, LC_IGP47/LC_IGP53*100))
+    dteh(data$LC_IGP68 <- with(data, LC_IGP48/LC_IGP54*100))
+    dteh(data$LC_IGP69 <- with(data, (LC_IGP49+LC_IGP50+LC_IGP51)))
+    dteh(data$LC_IGP70 <- with(data, LC_IGP49/LC_IGP52*100))
+    dteh(data$LC_IGP71 <- with(data, LC_IGP50/LC_IGP53*100))
+    dteh(data$LC_IGP72 <- with(data, LC_IGP51/LC_IGP54*100))
+    dteh(data$LC_IGP73 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57+LC_IGP49+LC_IGP50+LC_IGP51)))
+    dteh(data$LC_IGP74 <- with(data, (LC_IGP55+LC_IGP49)/LC_IGP52*100))
+    dteh(data$LC_IGP75 <- with(data, (LC_IGP56+LC_IGP50)/LC_IGP53*100))
+    dteh(data$LC_IGP76 <- with(data, (LC_IGP57+LC_IGP51)/LC_IGP54*100))
+    dteh(data$LC_IGP77 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57)))
+    dteh(data$LC_IGP78 <- with(data, LC_IGP55/LC_IGP52*100))
+    dteh(data$LC_IGP79 <- with(data, LC_IGP56/LC_IGP53*100))
+    dteh(data$LC_IGP80 <- with(data, LC_IGP57/LC_IGP54*100))
+    dteh(data$LC_IGP81 <- with(data, LC_IGP65/LC_IGP77))
+    dteh(data$LC_IGP82 <- with(data, LC_IGP69/LC_IGP65))
+    dteh(data$LC_IGP83 <- with(data, LC_IGP69/LC_IGP61*100))
+    dteh(data$LC_IGP84 <- with(data, LC_IGP69/LC_IGP73*100))
+    dteh(data$LC_IGP85 <- with(data, LC_IGP65/LC_IGP73))
+    dteh(data$LC_IGP86 <- with(data, LC_IGP77/LC_IGP61*1000))
 
     # =======================================
     # IgG2 derived traits
     # =======================================
 
-    ildt.eh(data$LC_IGP107 <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G1FS1+IgG2_G2FS1+IgG2_G1FNS1+IgG2_G2FNS1))
-    ildt.eh(data$LC_IGP108 <- with(data, IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G0N+IgG2_G1N+IgG2_G2N+IgG2_G1NS1+IgG2_G2NS1))
-    ildt.eh(data$LC_IGP109 <- with(data, (IgG2_G1F+IgG2_G1FN+IgG2_G1FS1+IgG2_G1FNS1+IgG2_G1+IgG2_G1N+IgG2_G1S1+IgG2_G1NS1)*0.5+(IgG2_G2F+IgG2_G2FN+IgG2_G2FS1+IgG2_G2FNS1+IgG2_G2+IgG2_G2N+IgG2_G2S1+IgG2_G2NS1)))
-    ildt.eh(data$LC_IGP110 <- with(data, IgG2_G1FS1+IgG2_G2FS1+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G1S1+IgG2_G2S1+IgG2_G1NS1+IgG2_G2NS1))
-    ildt.eh(data$LC_IGP111 <- with(data, LC_IGP110/LC_IGP109))
-    ildt.eh(data$LC_IGP112 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
-    ildt.eh(data$LC_IGP113 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G0+IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
-    ildt.eh(data$LC_IGP114 <- with(data, IgG2_G1S1/(IgG2_G1+IgG2_G1S1)*100))
-    ildt.eh(data$LC_IGP115 <- with(data, IgG2_G2S1/(IgG2_G2+IgG2_G2S1)*100))
-    ildt.eh(data$LC_IGP116 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1N+IgG2_G1NS1+IgG2_G2N+IgG2_G2NS1)*100))
-    ildt.eh(data$LC_IGP117 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G0N+IgG2_G1N+IgG2_G1NS1+IgG2_G2N+IgG2_G2NS1)*100))
-    ildt.eh(data$LC_IGP118 <- with(data, IgG2_G1NS1/(IgG2_G1N+IgG2_G1NS1)*100))
-    ildt.eh(data$LC_IGP119 <- with(data, IgG2_G2NS1/(IgG2_G2N+IgG2_G2NS1)*100))
-    ildt.eh(data$LC_IGP120 <- with(data, (IgG2_G1FS1+IgG2_G2FS1)/(IgG2_G1F+IgG2_G1FS1+IgG2_G2F+IgG2_G2FS1)*100))
-    ildt.eh(data$LC_IGP121 <- with(data, (IgG2_G1FS1+IgG2_G2FS1)/(IgG2_G0F+IgG2_G1F+IgG2_G1FS1+IgG2_G2F+IgG2_G2FS1)*100))
-    ildt.eh(data$LC_IGP122 <- with(data, IgG2_G1FS1/(IgG2_G1F+IgG2_G1FS1)*100))
-    ildt.eh(data$LC_IGP123 <- with(data, IgG2_G2FS1/(IgG2_G2F+IgG2_G2FS1)*100))
-    ildt.eh(data$LC_IGP124 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FN+IgG2_G1FNS1+IgG2_G2FN+IgG2_G2FNS1)*100))
-    ildt.eh(data$LC_IGP125 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G0FN+IgG2_G1FN+IgG2_G1FS1+IgG2_G2FN+IgG2_G2FS1)*100))
-    ildt.eh(data$LC_IGP126 <- with(data, IgG2_G1FNS1/(IgG2_G1FN+IgG2_G1FNS1)*100))
-    ildt.eh(data$LC_IGP127 <- with(data, IgG2_G2FNS1/(IgG2_G2FN+IgG2_G2FNS1)*100))
-    ildt.eh(data$LC_IGP128 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G2S1)))
-    ildt.eh(data$LC_IGP129 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FS1+IgG2_G2FS1)))
-    ildt.eh(data$LC_IGP130 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G1NS1+IgG2_G2S1+IgG2_G2NS1)))
-    ildt.eh(data$LC_IGP131 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FS1+IgG2_G1FNS1+IgG2_G2FS1+IgG2_G2FNS1)))
+    dteh(data$LC_IGP107 <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G1FS1+IgG2_G2FS1+IgG2_G1FNS1+IgG2_G2FNS1))
+    dteh(data$LC_IGP108 <- with(data, IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G0N+IgG2_G1N+IgG2_G2N+IgG2_G1NS1+IgG2_G2NS1))
+    dteh(data$LC_IGP109 <- with(data, (IgG2_G1F+IgG2_G1FN+IgG2_G1FS1+IgG2_G1FNS1+IgG2_G1+IgG2_G1N+IgG2_G1S1+IgG2_G1NS1)*0.5+(IgG2_G2F+IgG2_G2FN+IgG2_G2FS1+IgG2_G2FNS1+IgG2_G2+IgG2_G2N+IgG2_G2S1+IgG2_G2NS1)))
+    dteh(data$LC_IGP110 <- with(data, IgG2_G1FS1+IgG2_G2FS1+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G1S1+IgG2_G2S1+IgG2_G1NS1+IgG2_G2NS1))
+    dteh(data$LC_IGP111 <- with(data, LC_IGP110/LC_IGP109))
+    dteh(data$LC_IGP112 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
+    dteh(data$LC_IGP113 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G0+IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
+    dteh(data$LC_IGP114 <- with(data, IgG2_G1S1/(IgG2_G1+IgG2_G1S1)*100))
+    dteh(data$LC_IGP115 <- with(data, IgG2_G2S1/(IgG2_G2+IgG2_G2S1)*100))
+    dteh(data$LC_IGP116 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1N+IgG2_G1NS1+IgG2_G2N+IgG2_G2NS1)*100))
+    dteh(data$LC_IGP117 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G0N+IgG2_G1N+IgG2_G1NS1+IgG2_G2N+IgG2_G2NS1)*100))
+    dteh(data$LC_IGP118 <- with(data, IgG2_G1NS1/(IgG2_G1N+IgG2_G1NS1)*100))
+    dteh(data$LC_IGP119 <- with(data, IgG2_G2NS1/(IgG2_G2N+IgG2_G2NS1)*100))
+    dteh(data$LC_IGP120 <- with(data, (IgG2_G1FS1+IgG2_G2FS1)/(IgG2_G1F+IgG2_G1FS1+IgG2_G2F+IgG2_G2FS1)*100))
+    dteh(data$LC_IGP121 <- with(data, (IgG2_G1FS1+IgG2_G2FS1)/(IgG2_G0F+IgG2_G1F+IgG2_G1FS1+IgG2_G2F+IgG2_G2FS1)*100))
+    dteh(data$LC_IGP122 <- with(data, IgG2_G1FS1/(IgG2_G1F+IgG2_G1FS1)*100))
+    dteh(data$LC_IGP123 <- with(data, IgG2_G2FS1/(IgG2_G2F+IgG2_G2FS1)*100))
+    dteh(data$LC_IGP124 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FN+IgG2_G1FNS1+IgG2_G2FN+IgG2_G2FNS1)*100))
+    dteh(data$LC_IGP125 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G0FN+IgG2_G1FN+IgG2_G1FS1+IgG2_G2FN+IgG2_G2FS1)*100))
+    dteh(data$LC_IGP126 <- with(data, IgG2_G1FNS1/(IgG2_G1FN+IgG2_G1FNS1)*100))
+    dteh(data$LC_IGP127 <- with(data, IgG2_G2FNS1/(IgG2_G2FN+IgG2_G2FNS1)*100))
+    dteh(data$LC_IGP128 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G2S1)))
+    dteh(data$LC_IGP129 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FS1+IgG2_G2FS1)))
+    dteh(data$LC_IGP130 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G1NS1+IgG2_G2S1+IgG2_G2NS1)))
+    dteh(data$LC_IGP131 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FS1+IgG2_G1FNS1+IgG2_G2FS1+IgG2_G2FNS1)))
 
     # neutral
-    ildt.eh(IgG2.neutral <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G0+IgG2_G1+IgG2_G2+IgG2_G0N+IgG2_G1N+IgG2_G2N),
+    dteh(IgG2.neutral <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G0+IgG2_G1+IgG2_G2+IgG2_G0N+IgG2_G1N+IgG2_G2N),
                                  mes="Not all neutral glycans where found in the data frame")
 
-    ildt.eh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral))
-    ildt.eh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral))
-    ildt.eh(data$LC_IGP134 <- with(data, IgG2_G2F/IgG2.neutral))
-    ildt.eh(data$LC_IGP135 <- with(data, IgG2_G0FN/IgG2.neutral))
-    ildt.eh(data$LC_IGP136 <- with(data, IgG2_G1FN/IgG2.neutral))
-    ildt.eh(data$LC_IGP137 <- with(data, IgG2_G2FN/IgG2.neutral))
-    ildt.eh(data$LC_IGP138 <- with(data, IgG2_G0/IgG2.neutral))
-    ildt.eh(data$LC_IGP139 <- with(data, IgG2_G1/IgG2.neutral))
-    ildt.eh(data$LC_IGP140 <- with(data, IgG2_G2/IgG2.neutral))
-    ildt.eh(data$LC_IGP141 <- with(data, IgG2_G0N/IgG2.neutral))
-    ildt.eh(data$LC_IGP142 <- with(data, IgG2_G1N/IgG2.neutral))
-    ildt.eh(data$LC_IGP143 <- with(data, IgG2_G2N/IgG2.neutral))
+    dteh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral))
+    dteh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral))
+    dteh(data$LC_IGP134 <- with(data, IgG2_G2F/IgG2.neutral))
+    dteh(data$LC_IGP135 <- with(data, IgG2_G0FN/IgG2.neutral))
+    dteh(data$LC_IGP136 <- with(data, IgG2_G1FN/IgG2.neutral))
+    dteh(data$LC_IGP137 <- with(data, IgG2_G2FN/IgG2.neutral))
+    dteh(data$LC_IGP138 <- with(data, IgG2_G0/IgG2.neutral))
+    dteh(data$LC_IGP139 <- with(data, IgG2_G1/IgG2.neutral))
+    dteh(data$LC_IGP140 <- with(data, IgG2_G2/IgG2.neutral))
+    dteh(data$LC_IGP141 <- with(data, IgG2_G0N/IgG2.neutral))
+    dteh(data$LC_IGP142 <- with(data, IgG2_G1N/IgG2.neutral))
+    dteh(data$LC_IGP143 <- with(data, IgG2_G2N/IgG2.neutral))
 
     # neutral - derived traits
-    ildt.eh(data$LC_IGP144 <- with(data, (LC_IGP138+LC_IGP132+LC_IGP135+LC_IGP141)))
-    ildt.eh(data$LC_IGP145 <- with(data, (LC_IGP139+LC_IGP133+LC_IGP136+LC_IGP142)))
-    ildt.eh(data$LC_IGP146 <- with(data, (LC_IGP140+LC_IGP134+LC_IGP137+LC_IGP143)))
-    ildt.eh(data$LC_IGP147 <- with(data, (LC_IGP132+LC_IGP135+LC_IGP133+LC_IGP136+LC_IGP134+LC_IGP137)))
-    ildt.eh(data$LC_IGP148 <- with(data, (LC_IGP132+LC_IGP135)/LC_IGP138*100))
-    ildt.eh(data$LC_IGP149 <- with(data, (LC_IGP133+LC_IGP136)/LC_IGP139*100))
-    ildt.eh(data$LC_IGP150 <- with(data, (LC_IGP134+LC_IGP137)/LC_IGP140*100))
-    ildt.eh(data$LC_IGP151 <- with(data, (LC_IGP132+LC_IGP133+LC_IGP134)))
-    ildt.eh(data$LC_IGP152 <- with(data, LC_IGP132/LC_IGP138*100))
-    ildt.eh(data$LC_IGP153 <- with(data, LC_IGP133/LC_IGP139*100))
-    ildt.eh(data$LC_IGP154 <- with(data, LC_IGP134/LC_IGP140*100))
-    ildt.eh(data$LC_IGP155 <- with(data, (LC_IGP135+LC_IGP136+LC_IGP137)))
-    ildt.eh(data$LC_IGP156 <- with(data, LC_IGP135/LC_IGP138*100))
-    ildt.eh(data$LC_IGP157 <- with(data, LC_IGP136/LC_IGP139*100))
-    ildt.eh(data$LC_IGP158 <- with(data, LC_IGP137/LC_IGP140*100))
-    ildt.eh(data$LC_IGP159 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143+LC_IGP135+LC_IGP136+LC_IGP137)))
-    ildt.eh(data$LC_IGP160 <- with(data, (LC_IGP141+LC_IGP135)/LC_IGP138*100))
-    ildt.eh(data$LC_IGP161 <- with(data, (LC_IGP142+LC_IGP136)/LC_IGP139*100))
-    ildt.eh(data$LC_IGP162 <- with(data, (LC_IGP143+LC_IGP137)/LC_IGP140*100))
-    ildt.eh(data$LC_IGP163 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143)))
-    ildt.eh(data$LC_IGP164 <- with(data, LC_IGP141/LC_IGP138*100))
-    ildt.eh(data$LC_IGP165 <- with(data, LC_IGP142/LC_IGP139*100))
-    ildt.eh(data$LC_IGP166 <- with(data, LC_IGP143/LC_IGP140*100))
-    ildt.eh(data$LC_IGP167 <- with(data, LC_IGP151/LC_IGP163))
-    ildt.eh(data$LC_IGP168 <- with(data, LC_IGP155/LC_IGP151))
-    ildt.eh(data$LC_IGP169 <- with(data, LC_IGP155/LC_IGP147*100))
-    ildt.eh(data$LC_IGP170 <- with(data, LC_IGP155/LC_IGP159*100))
-    ildt.eh(data$LC_IGP171 <- with(data, LC_IGP151/LC_IGP159))
-    ildt.eh(data$LC_IGP172 <- with(data, LC_IGP163/LC_IGP147*1000))
+    dteh(data$LC_IGP144 <- with(data, (LC_IGP138+LC_IGP132+LC_IGP135+LC_IGP141)))
+    dteh(data$LC_IGP145 <- with(data, (LC_IGP139+LC_IGP133+LC_IGP136+LC_IGP142)))
+    dteh(data$LC_IGP146 <- with(data, (LC_IGP140+LC_IGP134+LC_IGP137+LC_IGP143)))
+    dteh(data$LC_IGP147 <- with(data, (LC_IGP132+LC_IGP135+LC_IGP133+LC_IGP136+LC_IGP134+LC_IGP137)))
+    dteh(data$LC_IGP148 <- with(data, (LC_IGP132+LC_IGP135)/LC_IGP138*100))
+    dteh(data$LC_IGP149 <- with(data, (LC_IGP133+LC_IGP136)/LC_IGP139*100))
+    dteh(data$LC_IGP150 <- with(data, (LC_IGP134+LC_IGP137)/LC_IGP140*100))
+    dteh(data$LC_IGP151 <- with(data, (LC_IGP132+LC_IGP133+LC_IGP134)))
+    dteh(data$LC_IGP152 <- with(data, LC_IGP132/LC_IGP138*100))
+    dteh(data$LC_IGP153 <- with(data, LC_IGP133/LC_IGP139*100))
+    dteh(data$LC_IGP154 <- with(data, LC_IGP134/LC_IGP140*100))
+    dteh(data$LC_IGP155 <- with(data, (LC_IGP135+LC_IGP136+LC_IGP137)))
+    dteh(data$LC_IGP156 <- with(data, LC_IGP135/LC_IGP138*100))
+    dteh(data$LC_IGP157 <- with(data, LC_IGP136/LC_IGP139*100))
+    dteh(data$LC_IGP158 <- with(data, LC_IGP137/LC_IGP140*100))
+    dteh(data$LC_IGP159 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143+LC_IGP135+LC_IGP136+LC_IGP137)))
+    dteh(data$LC_IGP160 <- with(data, (LC_IGP141+LC_IGP135)/LC_IGP138*100))
+    dteh(data$LC_IGP161 <- with(data, (LC_IGP142+LC_IGP136)/LC_IGP139*100))
+    dteh(data$LC_IGP162 <- with(data, (LC_IGP143+LC_IGP137)/LC_IGP140*100))
+    dteh(data$LC_IGP163 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143)))
+    dteh(data$LC_IGP164 <- with(data, LC_IGP141/LC_IGP138*100))
+    dteh(data$LC_IGP165 <- with(data, LC_IGP142/LC_IGP139*100))
+    dteh(data$LC_IGP166 <- with(data, LC_IGP143/LC_IGP140*100))
+    dteh(data$LC_IGP167 <- with(data, LC_IGP151/LC_IGP163))
+    dteh(data$LC_IGP168 <- with(data, LC_IGP155/LC_IGP151))
+    dteh(data$LC_IGP169 <- with(data, LC_IGP155/LC_IGP147*100))
+    dteh(data$LC_IGP170 <- with(data, LC_IGP155/LC_IGP159*100))
+    dteh(data$LC_IGP171 <- with(data, LC_IGP151/LC_IGP159))
+    dteh(data$LC_IGP172 <- with(data, LC_IGP163/LC_IGP147*1000))
 
     # =======================================
     # IgG4 derived traits
     # =======================================
 
-    ildt.eh(data$LC_IGP183 <- with(data, (IgG4_G0FN+IgG4_G1FN+IgG4_G2FN) ))
-    ildt.eh(data$LC_IGP184 <- with(data, (IgG4_G1F+IgG4_G1FN+IgG4_G1FS1+IgG4_G1FNS1)*0.5+(IgG4_G2F+IgG4_G2FN+IgG4_G2FS1+IgG4_G2FNS1)))
-    ildt.eh(data$LC_IGP185 <- with(data, (IgG4_G1FS1+IgG4_G2FS1+IgG4_G1FNS1+IgG4_G2FNS1)))
-    ildt.eh(data$LC_IGP186 <- with(data, LC_IGP185/LC_IGP184))
-    ildt.eh(data$LC_IGP187 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
-    ildt.eh(data$LC_IGP188 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G0F+IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
-    ildt.eh(data$LC_IGP189 <- with(data, IgG4_G1FS1/(IgG4_G1F+IgG4_G1FS1)*100))
-    ildt.eh(data$LC_IGP190 <- with(data, IgG4_G2FS1/(IgG4_G2F+IgG4_G2FS1)*100))
-    ildt.eh(data$LC_IGP191 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FN+IgG4_G1FNS1+IgG4_G2FN+IgG4_G2FNS1)*100))
-    ildt.eh(data$LC_IGP192 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G0FN+IgG4_G1FN+IgG4_G1FNS1+IgG4_G2FN+IgG4_G2FNS1)*100))
-    ildt.eh(data$LC_IGP193 <- with(data, IgG4_G1FNS1/(IgG4_G1FN+IgG4_G1FNS1)*100))
-    ildt.eh(data$LC_IGP194 <- with(data, IgG4_G2FNS1/(IgG4_G2FN+IgG4_G2FNS1)*100))
-    ildt.eh(data$LC_IGP195 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G2FS1)))
-    ildt.eh(data$LC_IGP196 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G1FNS1+IgG4_G2FS1+IgG4_G2FNS1)))
+    dteh(data$LC_IGP183 <- with(data, (IgG4_G0FN+IgG4_G1FN+IgG4_G2FN) ))
+    dteh(data$LC_IGP184 <- with(data, (IgG4_G1F+IgG4_G1FN+IgG4_G1FS1+IgG4_G1FNS1)*0.5+(IgG4_G2F+IgG4_G2FN+IgG4_G2FS1+IgG4_G2FNS1)))
+    dteh(data$LC_IGP185 <- with(data, (IgG4_G1FS1+IgG4_G2FS1+IgG4_G1FNS1+IgG4_G2FNS1)))
+    dteh(data$LC_IGP186 <- with(data, LC_IGP185/LC_IGP184))
+    dteh(data$LC_IGP187 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
+    dteh(data$LC_IGP188 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G0F+IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
+    dteh(data$LC_IGP189 <- with(data, IgG4_G1FS1/(IgG4_G1F+IgG4_G1FS1)*100))
+    dteh(data$LC_IGP190 <- with(data, IgG4_G2FS1/(IgG4_G2F+IgG4_G2FS1)*100))
+    dteh(data$LC_IGP191 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FN+IgG4_G1FNS1+IgG4_G2FN+IgG4_G2FNS1)*100))
+    dteh(data$LC_IGP192 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G0FN+IgG4_G1FN+IgG4_G1FNS1+IgG4_G2FN+IgG4_G2FNS1)*100))
+    dteh(data$LC_IGP193 <- with(data, IgG4_G1FNS1/(IgG4_G1FN+IgG4_G1FNS1)*100))
+    dteh(data$LC_IGP194 <- with(data, IgG4_G2FNS1/(IgG4_G2FN+IgG4_G2FNS1)*100))
+    dteh(data$LC_IGP195 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G2FS1)))
+    dteh(data$LC_IGP196 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G1FNS1+IgG4_G2FS1+IgG4_G2FNS1)))
   
     # neutral
-    ildt.eh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN+IgG4_G0+IgG4_G1+IgG4_G2+IgG4_G0N+IgG4_G1N+IgG4_G2N),
+    dteh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN+IgG4_G0+IgG4_G1+IgG4_G2+IgG4_G0N+IgG4_G1N+IgG4_G2N),
                                  mes="Not all neutral glycans where found in the data frame")
 
-    ildt.eh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral))
-    ildt.eh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral))
-    ildt.eh(data$LC_IGP199 <- with(data, IgG4_G2F/IgG4.neutral))
-    ildt.eh(data$LC_IGP200 <- with(data, IgG4_G0FN/IgG4.neutral))
-    ildt.eh(data$LC_IGP201 <- with(data, IgG4_G1FN/IgG4.neutral))
-    ildt.eh(data$LC_IGP202 <- with(data, IgG4_G2FN/IgG4.neutral))
+    dteh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral))
+    dteh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral))
+    dteh(data$LC_IGP199 <- with(data, IgG4_G2F/IgG4.neutral))
+    dteh(data$LC_IGP200 <- with(data, IgG4_G0FN/IgG4.neutral))
+    dteh(data$LC_IGP201 <- with(data, IgG4_G1FN/IgG4.neutral))
+    dteh(data$LC_IGP202 <- with(data, IgG4_G2FN/IgG4.neutral))
 
     # neutral - derived traits
-    ildt.eh(data$LC_IGP203 <- with(data, IgG4_G0F + IgG4_G0FN))
-    ildt.eh(data$LC_IGP204 <- with(data, IgG4_G1F + IgG4_G1FN))
-    ildt.eh(data$LC_IGP205 <- with(data, IgG4_G2F + IgG4_G2FN))
+    dteh(data$LC_IGP203 <- with(data, IgG4_G0F + IgG4_G0FN))
+    dteh(data$LC_IGP204 <- with(data, IgG4_G1F + IgG4_G1FN))
+    dteh(data$LC_IGP205 <- with(data, IgG4_G2F + IgG4_G2FN))
 
     return(data)
 }
@@ -526,3 +521,5 @@ LC_IGP205	IgG4G2n"
            allnames$human[tmp],
            allnames$computer[match(orignames, allnames$human)])
 }
+
+
