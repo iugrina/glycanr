@@ -75,3 +75,23 @@ ildt.translate <- function(orignames, method="2014") {
 
     x
 }
+
+#' Translate names between computer readable and human readable
+#' for derived traits of IgG with UPLC
+#'
+#' Translates names between computer readable and human readable
+#' for derived traits of IgG with UPLC
+#'
+#' @author Ivo Ugrina
+#' @export iudt.translate
+#' @param orignames vector; type string
+#' @return Returns a character vector with original and translated names
+iudt.translate <- function(orignames, method="2014") {
+    x <- NULL
+  
+    if(method == "2014"){
+       x <- iudt.translate.2014(orignames)
+    }
+
+    x
+}

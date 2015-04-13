@@ -523,3 +523,109 @@ LC_IGP205	IgG4G2n"
 }
 
 
+#' Translate names between computer readable and human readable
+#' for derived traits of IgG with UPLC
+#' based on an article from 2014.
+#'
+#' Translates names between computer readable and human readable
+#' for derived traits of IgG with UPLC 
+#'
+#' @author Ivo Ugrina
+#' @export iudt.translate.2014
+#' @param orignames vector; type string
+#' @return Returns a character vector with original and translated names
+#' @references
+#' Jennifer E. Huffman et al. 
+#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
+iudt.translate.2014 <- function(orignames) {
+
+    allnames <- "computer	human
+IGP1	GP1
+IGP2	GP2
+IGP3	GP4
+IGP4	GP5
+IGP5	GP6
+IGP6	GP7
+IGP7	GP8
+IGP8	GP9
+IGP9	GP10
+IGP10	GP11
+IGP11	GP12
+IGP12	GP13
+IGP13	GP14
+IGP14	GP15
+IGP15	GP16
+IGP16	GP17
+IGP17	GP18
+IGP18	GP19
+IGP19	GP20
+IGP20	GP21
+IGP21	GP22
+IGP22	GP23
+IGP23	GP24
+IGP24	FGS/(FG+FGS)
+IGP25	FBGS/(FBG+FBGS)
+IGP26	FGS/(F+FG+FGS)
+IGP27	FBGS/(FB+FBG+FBGS)
+IGP28	FG1S1/(FG1+FG1S1)
+IGP29	FG2S1/(FG2+FG2S1+FG2S2)
+IGP30	FG2S2/(FG2+FG2S1+FG2S2)
+IGP31	FBG2S1/(FBG2+FBG2S1+FBG2S2)
+IGP32	FBG2S2/(FBG2+FBG2S1+FBG2S2)
+IGP33	FtotalS1/FtotalS2
+IGP34	FS1/FS2
+IGP35	FBS1/FBS2
+IGP36	FBStotal/FStotal
+IGP37	FBS1/FS1
+IGP38	FBS1/(FS1+FBS1)
+IGP39	FBS2/FS2
+IGP40	FBS2/(FS2+FBS2)
+IGP41	GP1n
+IGP42	GP2n
+IGP43	GP4n
+IGP44	GP5n
+IGP45	GP6n
+IGP46	GP7n
+IGP47	GP8n
+IGP48	GP9n
+IGP49	GP10n
+IGP50	GP11n
+IGP51	GP12n
+IGP52	GP13n
+IGP53	GP14n
+IGP54	GP15n
+IGP55	G0n
+IGP56	G1n
+IGP57	G2n
+IGP58	Fn total
+IGP59	FG0n total/G0n
+IGP60	FG1n total/G1n
+IGP61	FG2n total/G2n
+IGP62	Fn
+IGP63	FG0n/G0n
+IGP64	FG1n/G1n
+IGP65	FG2n/G2n
+IGP66	FBn
+IGP67	FBG0n/G0n
+IGP68	FBG1n/G1n
+IGP69	FBG2n/G2n
+IGP70	FBn/Fn
+IGP71	FBn/Fn total
+IGP72	Fn/(Bn+ FBn)
+IGP73	Bn/(Fn+ FBn)
+IGP74	FBG2n/FG2n
+IGP75	FBG2n/(FG2n+ FBG2n)
+IGP76	FG2n/(BG2n+ FBG2n)
+IGP77	BG2n/(FG2n+ FBG2n)"
+
+    con <- textConnection(allnames)
+    allnames <- read.delim(con, sep="\t", header=TRUE, stringsAsFactors=FALSE)
+    close(con)
+
+    tmp <- match(orignames, allnames$computer)
+    ifelse(!is.na(tmp),
+           allnames$human[tmp],
+           allnames$computer[match(orignames, allnames$human)])
+}
+
