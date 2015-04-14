@@ -102,7 +102,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
     dteh(data$LC_IGP22 <- with(data, IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G0N+IgG1_G1N+IgG1_G2N+IgG1_G1NS1+IgG1_G2NS1))
     dteh(data$LC_IGP23 <- with(data, (IgG1_G1F+IgG1_G1FN+IgG1_G1FS1+IgG1_G1FNS1+IgG1_G1+IgG1_G1N+IgG1_G1S1+IgG1_G1NS1)*0.5+(IgG1_G2F+IgG1_G2FN+IgG1_G2FS1+IgG1_G2FNS1+IgG1_G2+IgG1_G2N+IgG1_G2S1+IgG1_G2NS1)))
     dteh(data$LC_IGP24 <- with(data, IgG1_G1FS1+IgG1_G2FS1+IgG1_G1FNS1+IgG1_G2FNS1+IgG1_G1S1+IgG1_G2S1+IgG1_G1NS1+IgG1_G2NS1))
-    dteh(data$LC_IGP25 <- with(data, LC_IGP24/LC_IGP23))
+    dteh(data$LC_IGP25 <- with(data, LC_IGP24/(2*LC_IGP23)*100))
     dteh(data$LC_IGP26 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
     dteh(data$LC_IGP27 <- with(data, (IgG1_G1S1+IgG1_G2S1)/(IgG1_G0+IgG1_G1+IgG1_G1S1+IgG1_G2+IgG1_G2S1)*100))
     dteh(data$LC_IGP28 <- with(data, IgG1_G1S1/(IgG1_G1+IgG1_G1S1)*100))
@@ -116,7 +116,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
     dteh(data$LC_IGP36 <- with(data, IgG1_G1FS1/(IgG1_G1F+IgG1_G1FS1)*100))
     dteh(data$LC_IGP37 <- with(data, IgG1_G2FS1/(IgG1_G2F+IgG1_G2FS1)*100))
     dteh(data$LC_IGP38 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G1FN+IgG1_G1FNS1+IgG1_G2FN+IgG1_G2FNS1)*100))
-    dteh(data$LC_IGP39 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G0FN+IgG1_G1FN+IgG1_G1FS1+IgG1_G2FN+IgG1_G2FS1)*100))
+    dteh(data$LC_IGP39 <- with(data, (IgG1_G1FNS1+IgG1_G2FNS1)/(IgG1_G0FN+IgG1_G1FN+IgG1_G1FNS1+IgG1_G2FN+IgG1_G2FNS1)*100))
     dteh(data$LC_IGP40 <- with(data, IgG1_G1FNS1/(IgG1_G1FN+IgG1_G1FNS1)*100))
     dteh(data$LC_IGP41 <- with(data, IgG1_G2FNS1/(IgG1_G2FN+IgG1_G2FNS1)*100))
     dteh(data$LC_IGP42 <- with(data, (IgG1_G1NS1+IgG1_G2NS1)/(IgG1_G1S1+IgG1_G2S1)))
@@ -126,45 +126,45 @@ igg.lcms.derived.traits.2014 <- function(data) {
 
     # neutral
     dteh(IgG1.neutral <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G0+IgG1_G1+IgG1_G2+IgG1_G0N+IgG1_G1N+IgG1_G2N),
-                                 mes="Not all neutral glycans where found in the data frame")
+                                 mes="Not all neutral glycans for IgG1 where found in the data frame")
 
-    dteh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral))
-    dteh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral))
-    dteh(data$LC_IGP48 <- with(data, IgG1_G2F/IgG1.neutral))
-    dteh(data$LC_IGP49 <- with(data, IgG1_G0FN/IgG1.neutral))
-    dteh(data$LC_IGP50 <- with(data, IgG1_G1FN/IgG1.neutral))
-    dteh(data$LC_IGP51 <- with(data, IgG1_G2FN/IgG1.neutral))
-    dteh(data$LC_IGP52 <- with(data, IgG1_G0/IgG1.neutral))
-    dteh(data$LC_IGP53 <- with(data, IgG1_G1/IgG1.neutral))
-    dteh(data$LC_IGP54 <- with(data, IgG1_G2/IgG1.neutral))
-    dteh(data$LC_IGP55 <- with(data, IgG1_G0N/IgG1.neutral))
-    dteh(data$LC_IGP56 <- with(data, IgG1_G1N/IgG1.neutral))
-    dteh(data$LC_IGP57 <- with(data, IgG1_G2N/IgG1.neutral))
+    dteh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral) * 100)
+    dteh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral) * 100)
+    dteh(data$LC_IGP48 <- with(data, IgG1_G2F/IgG1.neutral) * 100)
+    dteh(data$LC_IGP49 <- with(data, IgG1_G0FN/IgG1.neutral) * 100)
+    dteh(data$LC_IGP50 <- with(data, IgG1_G1FN/IgG1.neutral) * 100)
+    dteh(data$LC_IGP51 <- with(data, IgG1_G2FN/IgG1.neutral) * 100)
+    dteh(data$LC_IGP52 <- with(data, IgG1_G0/IgG1.neutral) * 100)
+    dteh(data$LC_IGP53 <- with(data, IgG1_G1/IgG1.neutral) * 100)
+    dteh(data$LC_IGP54 <- with(data, IgG1_G2/IgG1.neutral) * 100)
+    dteh(data$LC_IGP55 <- with(data, IgG1_G0N/IgG1.neutral) * 100)
+    dteh(data$LC_IGP56 <- with(data, IgG1_G1N/IgG1.neutral) * 100)
+    dteh(data$LC_IGP57 <- with(data, IgG1_G2N/IgG1.neutral) * 100)
 
     # neutral - derived traits
     dteh(data$LC_IGP58 <- with(data, (LC_IGP52+LC_IGP46+LC_IGP49+LC_IGP55)))
     dteh(data$LC_IGP59 <- with(data, (LC_IGP53+LC_IGP47+LC_IGP50+LC_IGP56)))
     dteh(data$LC_IGP60 <- with(data, (LC_IGP54+LC_IGP48+LC_IGP51+LC_IGP57)))
     dteh(data$LC_IGP61 <- with(data, (LC_IGP46+LC_IGP49+LC_IGP47+LC_IGP50+LC_IGP48+LC_IGP51)))
-    dteh(data$LC_IGP62 <- with(data, (LC_IGP46+LC_IGP49)/LC_IGP52*100))
-    dteh(data$LC_IGP63 <- with(data, (LC_IGP47+LC_IGP50)/LC_IGP53*100))
-    dteh(data$LC_IGP64 <- with(data, (LC_IGP48+LC_IGP51)/LC_IGP54*100))
+    dteh(data$LC_IGP62 <- with(data, (LC_IGP46+LC_IGP49)/LC_IGP58*100))
+    dteh(data$LC_IGP63 <- with(data, (LC_IGP47+LC_IGP50)/LC_IGP59*100))
+    dteh(data$LC_IGP64 <- with(data, (LC_IGP48+LC_IGP51)/LC_IGP60*100))
     dteh(data$LC_IGP65 <- with(data, (LC_IGP46+LC_IGP47+LC_IGP48)))
-    dteh(data$LC_IGP66 <- with(data, LC_IGP46/LC_IGP52*100))
-    dteh(data$LC_IGP67 <- with(data, LC_IGP47/LC_IGP53*100))
-    dteh(data$LC_IGP68 <- with(data, LC_IGP48/LC_IGP54*100))
+    dteh(data$LC_IGP66 <- with(data, LC_IGP46/LC_IGP58*100))
+    dteh(data$LC_IGP67 <- with(data, LC_IGP47/LC_IGP59*100))
+    dteh(data$LC_IGP68 <- with(data, LC_IGP48/LC_IGP60*100))
     dteh(data$LC_IGP69 <- with(data, (LC_IGP49+LC_IGP50+LC_IGP51)))
-    dteh(data$LC_IGP70 <- with(data, LC_IGP49/LC_IGP52*100))
-    dteh(data$LC_IGP71 <- with(data, LC_IGP50/LC_IGP53*100))
-    dteh(data$LC_IGP72 <- with(data, LC_IGP51/LC_IGP54*100))
+    dteh(data$LC_IGP70 <- with(data, LC_IGP49/LC_IGP58*100))
+    dteh(data$LC_IGP71 <- with(data, LC_IGP50/LC_IGP59*100))
+    dteh(data$LC_IGP72 <- with(data, LC_IGP51/LC_IGP60*100))
     dteh(data$LC_IGP73 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57+LC_IGP49+LC_IGP50+LC_IGP51)))
-    dteh(data$LC_IGP74 <- with(data, (LC_IGP55+LC_IGP49)/LC_IGP52*100))
-    dteh(data$LC_IGP75 <- with(data, (LC_IGP56+LC_IGP50)/LC_IGP53*100))
-    dteh(data$LC_IGP76 <- with(data, (LC_IGP57+LC_IGP51)/LC_IGP54*100))
+    dteh(data$LC_IGP74 <- with(data, (LC_IGP55+LC_IGP49)/LC_IGP58*100))
+    dteh(data$LC_IGP75 <- with(data, (LC_IGP56+LC_IGP50)/LC_IGP59*100))
+    dteh(data$LC_IGP76 <- with(data, (LC_IGP57+LC_IGP51)/LC_IGP60*100))
     dteh(data$LC_IGP77 <- with(data, (LC_IGP55+LC_IGP56+LC_IGP57)))
-    dteh(data$LC_IGP78 <- with(data, LC_IGP55/LC_IGP52*100))
-    dteh(data$LC_IGP79 <- with(data, LC_IGP56/LC_IGP53*100))
-    dteh(data$LC_IGP80 <- with(data, LC_IGP57/LC_IGP54*100))
+    dteh(data$LC_IGP78 <- with(data, LC_IGP55/LC_IGP58*100))
+    dteh(data$LC_IGP79 <- with(data, LC_IGP56/LC_IGP59*100))
+    dteh(data$LC_IGP80 <- with(data, LC_IGP57/LC_IGP60*100))
     dteh(data$LC_IGP81 <- with(data, LC_IGP65/LC_IGP77))
     dteh(data$LC_IGP82 <- with(data, LC_IGP69/LC_IGP65))
     dteh(data$LC_IGP83 <- with(data, LC_IGP69/LC_IGP61*100))
@@ -180,7 +180,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
     dteh(data$LC_IGP108 <- with(data, IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G0N+IgG2_G1N+IgG2_G2N+IgG2_G1NS1+IgG2_G2NS1))
     dteh(data$LC_IGP109 <- with(data, (IgG2_G1F+IgG2_G1FN+IgG2_G1FS1+IgG2_G1FNS1+IgG2_G1+IgG2_G1N+IgG2_G1S1+IgG2_G1NS1)*0.5+(IgG2_G2F+IgG2_G2FN+IgG2_G2FS1+IgG2_G2FNS1+IgG2_G2+IgG2_G2N+IgG2_G2S1+IgG2_G2NS1)))
     dteh(data$LC_IGP110 <- with(data, IgG2_G1FS1+IgG2_G2FS1+IgG2_G1FNS1+IgG2_G2FNS1+IgG2_G1S1+IgG2_G2S1+IgG2_G1NS1+IgG2_G2NS1))
-    dteh(data$LC_IGP111 <- with(data, LC_IGP110/LC_IGP109))
+    dteh(data$LC_IGP111 <- with(data, LC_IGP110/(2*LC_IGP109)*100))
     dteh(data$LC_IGP112 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
     dteh(data$LC_IGP113 <- with(data, (IgG2_G1S1+IgG2_G2S1)/(IgG2_G0+IgG2_G1+IgG2_G1S1+IgG2_G2+IgG2_G2S1)*100))
     dteh(data$LC_IGP114 <- with(data, IgG2_G1S1/(IgG2_G1+IgG2_G1S1)*100))
@@ -194,7 +194,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
     dteh(data$LC_IGP122 <- with(data, IgG2_G1FS1/(IgG2_G1F+IgG2_G1FS1)*100))
     dteh(data$LC_IGP123 <- with(data, IgG2_G2FS1/(IgG2_G2F+IgG2_G2FS1)*100))
     dteh(data$LC_IGP124 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G1FN+IgG2_G1FNS1+IgG2_G2FN+IgG2_G2FNS1)*100))
-    dteh(data$LC_IGP125 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G0FN+IgG2_G1FN+IgG2_G1FS1+IgG2_G2FN+IgG2_G2FS1)*100))
+    dteh(data$LC_IGP125 <- with(data, (IgG2_G1FNS1+IgG2_G2FNS1)/(IgG2_G0FN+IgG2_G1FN+IgG2_G1FNS1+IgG2_G2FN+IgG2_G2FNS1)*100))
     dteh(data$LC_IGP126 <- with(data, IgG2_G1FNS1/(IgG2_G1FN+IgG2_G1FNS1)*100))
     dteh(data$LC_IGP127 <- with(data, IgG2_G2FNS1/(IgG2_G2FN+IgG2_G2FNS1)*100))
     dteh(data$LC_IGP128 <- with(data, (IgG2_G1NS1+IgG2_G2NS1)/(IgG2_G1S1+IgG2_G2S1)))
@@ -204,45 +204,45 @@ igg.lcms.derived.traits.2014 <- function(data) {
 
     # neutral
     dteh(IgG2.neutral <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G0+IgG2_G1+IgG2_G2+IgG2_G0N+IgG2_G1N+IgG2_G2N),
-                                 mes="Not all neutral glycans where found in the data frame")
+                                 mes="Not all neutral glycans for IgG2 where found in the data frame")
 
-    dteh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral))
-    dteh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral))
-    dteh(data$LC_IGP134 <- with(data, IgG2_G2F/IgG2.neutral))
-    dteh(data$LC_IGP135 <- with(data, IgG2_G0FN/IgG2.neutral))
-    dteh(data$LC_IGP136 <- with(data, IgG2_G1FN/IgG2.neutral))
-    dteh(data$LC_IGP137 <- with(data, IgG2_G2FN/IgG2.neutral))
-    dteh(data$LC_IGP138 <- with(data, IgG2_G0/IgG2.neutral))
-    dteh(data$LC_IGP139 <- with(data, IgG2_G1/IgG2.neutral))
-    dteh(data$LC_IGP140 <- with(data, IgG2_G2/IgG2.neutral))
-    dteh(data$LC_IGP141 <- with(data, IgG2_G0N/IgG2.neutral))
-    dteh(data$LC_IGP142 <- with(data, IgG2_G1N/IgG2.neutral))
-    dteh(data$LC_IGP143 <- with(data, IgG2_G2N/IgG2.neutral))
+    dteh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral) * 100)
+    dteh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral) * 100)
+    dteh(data$LC_IGP134 <- with(data, IgG2_G2F/IgG2.neutral) * 100)
+    dteh(data$LC_IGP135 <- with(data, IgG2_G0FN/IgG2.neutral) * 100)
+    dteh(data$LC_IGP136 <- with(data, IgG2_G1FN/IgG2.neutral) * 100)
+    dteh(data$LC_IGP137 <- with(data, IgG2_G2FN/IgG2.neutral) * 100)
+    dteh(data$LC_IGP138 <- with(data, IgG2_G0/IgG2.neutral) * 100)
+    dteh(data$LC_IGP139 <- with(data, IgG2_G1/IgG2.neutral) * 100)
+    dteh(data$LC_IGP140 <- with(data, IgG2_G2/IgG2.neutral) * 100)
+    dteh(data$LC_IGP141 <- with(data, IgG2_G0N/IgG2.neutral) * 100)
+    dteh(data$LC_IGP142 <- with(data, IgG2_G1N/IgG2.neutral) * 100)
+    dteh(data$LC_IGP143 <- with(data, IgG2_G2N/IgG2.neutral) * 100)
 
     # neutral - derived traits
     dteh(data$LC_IGP144 <- with(data, (LC_IGP138+LC_IGP132+LC_IGP135+LC_IGP141)))
     dteh(data$LC_IGP145 <- with(data, (LC_IGP139+LC_IGP133+LC_IGP136+LC_IGP142)))
     dteh(data$LC_IGP146 <- with(data, (LC_IGP140+LC_IGP134+LC_IGP137+LC_IGP143)))
     dteh(data$LC_IGP147 <- with(data, (LC_IGP132+LC_IGP135+LC_IGP133+LC_IGP136+LC_IGP134+LC_IGP137)))
-    dteh(data$LC_IGP148 <- with(data, (LC_IGP132+LC_IGP135)/LC_IGP138*100))
-    dteh(data$LC_IGP149 <- with(data, (LC_IGP133+LC_IGP136)/LC_IGP139*100))
-    dteh(data$LC_IGP150 <- with(data, (LC_IGP134+LC_IGP137)/LC_IGP140*100))
+    dteh(data$LC_IGP148 <- with(data, (LC_IGP132+LC_IGP135)/LC_IGP144*100))
+    dteh(data$LC_IGP149 <- with(data, (LC_IGP133+LC_IGP136)/LC_IGP145*100))
+    dteh(data$LC_IGP150 <- with(data, (LC_IGP134+LC_IGP137)/LC_IGP146*100))
     dteh(data$LC_IGP151 <- with(data, (LC_IGP132+LC_IGP133+LC_IGP134)))
-    dteh(data$LC_IGP152 <- with(data, LC_IGP132/LC_IGP138*100))
-    dteh(data$LC_IGP153 <- with(data, LC_IGP133/LC_IGP139*100))
-    dteh(data$LC_IGP154 <- with(data, LC_IGP134/LC_IGP140*100))
+    dteh(data$LC_IGP152 <- with(data, LC_IGP132/LC_IGP144*100))
+    dteh(data$LC_IGP153 <- with(data, LC_IGP133/LC_IGP145*100))
+    dteh(data$LC_IGP154 <- with(data, LC_IGP134/LC_IGP146*100))
     dteh(data$LC_IGP155 <- with(data, (LC_IGP135+LC_IGP136+LC_IGP137)))
-    dteh(data$LC_IGP156 <- with(data, LC_IGP135/LC_IGP138*100))
-    dteh(data$LC_IGP157 <- with(data, LC_IGP136/LC_IGP139*100))
-    dteh(data$LC_IGP158 <- with(data, LC_IGP137/LC_IGP140*100))
+    dteh(data$LC_IGP156 <- with(data, LC_IGP135/LC_IGP144*100))
+    dteh(data$LC_IGP157 <- with(data, LC_IGP136/LC_IGP145*100))
+    dteh(data$LC_IGP158 <- with(data, LC_IGP137/LC_IGP146*100))
     dteh(data$LC_IGP159 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143+LC_IGP135+LC_IGP136+LC_IGP137)))
-    dteh(data$LC_IGP160 <- with(data, (LC_IGP141+LC_IGP135)/LC_IGP138*100))
-    dteh(data$LC_IGP161 <- with(data, (LC_IGP142+LC_IGP136)/LC_IGP139*100))
-    dteh(data$LC_IGP162 <- with(data, (LC_IGP143+LC_IGP137)/LC_IGP140*100))
+    dteh(data$LC_IGP160 <- with(data, (LC_IGP141+LC_IGP135)/LC_IGP144*100))
+    dteh(data$LC_IGP161 <- with(data, (LC_IGP142+LC_IGP136)/LC_IGP145*100))
+    dteh(data$LC_IGP162 <- with(data, (LC_IGP143+LC_IGP137)/LC_IGP146*100))
     dteh(data$LC_IGP163 <- with(data, (LC_IGP141+LC_IGP142+LC_IGP143)))
-    dteh(data$LC_IGP164 <- with(data, LC_IGP141/LC_IGP138*100))
-    dteh(data$LC_IGP165 <- with(data, LC_IGP142/LC_IGP139*100))
-    dteh(data$LC_IGP166 <- with(data, LC_IGP143/LC_IGP140*100))
+    dteh(data$LC_IGP164 <- with(data, LC_IGP141/LC_IGP144*100))
+    dteh(data$LC_IGP165 <- with(data, LC_IGP142/LC_IGP145*100))
+    dteh(data$LC_IGP166 <- with(data, LC_IGP143/LC_IGP146*100))
     dteh(data$LC_IGP167 <- with(data, LC_IGP151/LC_IGP163))
     dteh(data$LC_IGP168 <- with(data, LC_IGP155/LC_IGP151))
     dteh(data$LC_IGP169 <- with(data, LC_IGP155/LC_IGP147*100))
@@ -254,10 +254,10 @@ igg.lcms.derived.traits.2014 <- function(data) {
     # IgG4 derived traits
     # =======================================
 
-    dteh(data$LC_IGP183 <- with(data, (IgG4_G0FN+IgG4_G1FN+IgG4_G2FN) ))
+    dteh(data$LC_IGP183 <- with(data, (IgG4_G0FN+IgG4_G1FN+IgG4_G2FN+IgG4_G1FNS1+IgG4_G2FNS1) ))
     dteh(data$LC_IGP184 <- with(data, (IgG4_G1F+IgG4_G1FN+IgG4_G1FS1+IgG4_G1FNS1)*0.5+(IgG4_G2F+IgG4_G2FN+IgG4_G2FS1+IgG4_G2FNS1)))
     dteh(data$LC_IGP185 <- with(data, (IgG4_G1FS1+IgG4_G2FS1+IgG4_G1FNS1+IgG4_G2FNS1)))
-    dteh(data$LC_IGP186 <- with(data, LC_IGP185/LC_IGP184))
+    dteh(data$LC_IGP186 <- with(data, LC_IGP185/(2*LC_IGP184)*100))
     dteh(data$LC_IGP187 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
     dteh(data$LC_IGP188 <- with(data, (IgG4_G1FS1+IgG4_G2FS1)/(IgG4_G0F+IgG4_G1F+IgG4_G1FS1+IgG4_G2F+IgG4_G2FS1)*100))
     dteh(data$LC_IGP189 <- with(data, IgG4_G1FS1/(IgG4_G1F+IgG4_G1FS1)*100))
@@ -270,20 +270,20 @@ igg.lcms.derived.traits.2014 <- function(data) {
     dteh(data$LC_IGP196 <- with(data, (IgG4_G1FNS1+IgG4_G2FNS1)/(IgG4_G1FS1+IgG4_G1FNS1+IgG4_G2FS1+IgG4_G2FNS1)))
   
     # neutral
-    dteh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN+IgG4_G0+IgG4_G1+IgG4_G2+IgG4_G0N+IgG4_G1N+IgG4_G2N),
-                                 mes="Not all neutral glycans where found in the data frame")
+    dteh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN),
+                                 mes="Not all neutral glycans for IgG4 where found in the data frame")
 
-    dteh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral))
-    dteh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral))
-    dteh(data$LC_IGP199 <- with(data, IgG4_G2F/IgG4.neutral))
-    dteh(data$LC_IGP200 <- with(data, IgG4_G0FN/IgG4.neutral))
-    dteh(data$LC_IGP201 <- with(data, IgG4_G1FN/IgG4.neutral))
-    dteh(data$LC_IGP202 <- with(data, IgG4_G2FN/IgG4.neutral))
+    dteh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral) * 100)
+    dteh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral) * 100)
+    dteh(data$LC_IGP199 <- with(data, IgG4_G2F/IgG4.neutral) * 100)
+    dteh(data$LC_IGP200 <- with(data, IgG4_G0FN/IgG4.neutral) * 100)
+    dteh(data$LC_IGP201 <- with(data, IgG4_G1FN/IgG4.neutral) * 100)
+    dteh(data$LC_IGP202 <- with(data, IgG4_G2FN/IgG4.neutral) * 100)
 
     # neutral - derived traits
-    dteh(data$LC_IGP203 <- with(data, IgG4_G0F + IgG4_G0FN))
-    dteh(data$LC_IGP204 <- with(data, IgG4_G1F + IgG4_G1FN))
-    dteh(data$LC_IGP205 <- with(data, IgG4_G2F + IgG4_G2FN))
+    dteh(data$LC_IGP203 <- with(data, LC_IGP197 + LC_IGP200))
+    dteh(data$LC_IGP204 <- with(data, LC_IGP198 + LC_IGP201))
+    dteh(data$LC_IGP205 <- with(data, LC_IGP199 + LC_IGP202))
 
     return(data)
 }
@@ -371,13 +371,13 @@ LC_IGP62	IgG1  FG0n total/G0n
 LC_IGP63	IgG1  FG1n total/G1n
 LC_IGP64	IgG1  FG2n total/G2n
 LC_IGP65	IgG1 Fn
-LC_IGP66	IgG2 FG0n/G0n
-LC_IGP67	IgG2 FG1n/G1n
-LC_IGP68	IgG2 FG2n/G2n
-LC_IGP69	IgG2 FBn
-LC_IGP70	IgG2 FBG0n/G0n
-LC_IGP71	IgG2 FBG1n/G1n
-LC_IGP72	IgG2 FBG2n/G2n
+LC_IGP66	IgG1 FG0n/G0n
+LC_IGP67	IgG1 FG1n/G1n
+LC_IGP68	IgG1 FG2n/G2n
+LC_IGP69	IgG1 FBn
+LC_IGP70	IgG1 FBG0n/G0n
+LC_IGP71	IgG1 FBG1n/G1n
+LC_IGP72	IgG1 FBG2n/G2n
 LC_IGP73	IgG1 Bn total
 LC_IGP74	IgG1 BG0n total/G0n
 LC_IGP75	IgG1 BG1n total/G1n
