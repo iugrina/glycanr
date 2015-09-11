@@ -19,7 +19,7 @@
 #'   all columns having 'GP' in their names will be used.
 #' @return Returns a data.frame with outliers 
 #' @examples
-#' exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=T)))
+#' exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=TRUE)))
 #' glyco.outliers(exampleData)
 #' glyco.outliers(exampleData, group="Plate")
 glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
