@@ -19,7 +19,9 @@
 #'   all columns having 'GP' in their names will be used.
 #' @return Returns a data.frame with outliers 
 #' @examples
-#' exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=TRUE)))
+#' exampleData <- data.frame(ID=1:100, GP1=runif(100),
+#'   GP2=rexp(100,0.2), GP3=rgamma(100, 3),
+#'   Plate=factor(sample(1:2,100,replace=TRUE)))
 #' glyco.outliers(exampleData)
 #' glyco.outliers(exampleData, group="Plate")
 glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
@@ -48,10 +50,14 @@ glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
     newdata <- tidyr::gather_(data, "variable", "value", gps)
     
     if (is.null(group)) {
-        X.out <- newdata %>% dplyr::group_by(variable) %>% dplyr::mutate(outlier = outf(value))
+        X.out <- newdata %>%
+          dplyr::group_by(variable) %>%
+          dplyr::mutate(outlier = outf(value))
     } else {
         g <- lapply(c("variable", group), as.symbol)
-        X.out <- newdata %>% dplyr::regroup(g) %>% dplyr::mutate(outlier = outf(value))
+        X.out <- newdata %>%
+          dplyr::group_by_(.dots=g) %>%
+          dplyr::mutate(outlier = outf(value))
     }
     
     dplyr::select(dplyr::filter(X.out, outlier == TRUE), -outlier)

@@ -6,6 +6,7 @@
 #' @export igg.uplc.derived.traits
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
+#' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a data.frame with derived traits
 igg.uplc.derived.traits <- function(data, method="2014") {
     x <- NULL
@@ -26,8 +27,9 @@ igg.uplc.derived.traits <- function(data, method="2014") {
 #' @export plasma.hplc.derived.traits
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
+#' @param method year of the derived traits introduction. By default 2011.
 #' @return Returns a data.frame with derived traits
-plasma.hplc.derived.traits <- function(d, method="2011") {
+plasma.hplc.derived.traits <- function(data, method="2011") {
     x <- NULL
 
     if(method == "2011"){
@@ -45,6 +47,7 @@ plasma.hplc.derived.traits <- function(d, method="2011") {
 #' @author Ivo Ugrina
 #' @export igg.lcms.derived.traits
 #' @param data data frame that holds columns representing Glycans.
+#' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a data.frame with derived traits
 igg.lcms.derived.traits <- function(data, method="2014") {
     x <- NULL
@@ -65,6 +68,7 @@ igg.lcms.derived.traits <- function(data, method="2014") {
 #' @author Ivo Ugrina
 #' @export ildt.translate
 #' @param orignames vector; type string
+#' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a character vector with original and translated names
 ildt.translate <- function(orignames, method="2014") {
     x <- NULL
@@ -85,6 +89,7 @@ ildt.translate <- function(orignames, method="2014") {
 #' @author Ivo Ugrina
 #' @export iudt.translate
 #' @param orignames vector; type string
+#' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a character vector with original and translated names
 iudt.translate <- function(orignames, method="2014") {
     x <- NULL

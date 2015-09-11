@@ -5,14 +5,14 @@
 #'
 #' @author Ivo Ugrina; Lucija Klarić
 #' @export plasma.hplc.derived.traits.2011
-#' @param data data frame which holds columns representing Glycans.
+#' @param d data frame which holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
 #' @references
 #' Lu et al. 
 #' "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
 #'  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-#' \link{http://dx.doi.org/10.1021/pr2004067}
+#' \url{http://dx.doi.org/10.1021/pr2004067}
 plasma.hplc.derived.traits.2011 <- function(d) {
 	d = d[, c(1:(grep("GP1$", names(d))-1), grep("GP\\d+$|DG\\d+$|sial",names(d)))]
 	

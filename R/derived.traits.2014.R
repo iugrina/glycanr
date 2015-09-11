@@ -11,7 +11,7 @@
 #' @references
 #' Jennifer E. Huffman et al. 
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
+#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 igg.uplc.derived.traits.2014 <- function(data) {
     
     # derived glycans
@@ -91,7 +91,7 @@ igg.uplc.derived.traits.2014 <- function(data) {
 #' @references
 #' Jennifer E. Huffman et al. 
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
+#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 igg.lcms.derived.traits.2014 <- function(data) {
     
     # =======================================
@@ -126,7 +126,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
 
     # neutral
     dteh(IgG1.neutral <- with(data, IgG1_G0F+IgG1_G1F+IgG1_G2F+IgG1_G0FN+IgG1_G1FN+IgG1_G2FN+IgG1_G0+IgG1_G1+IgG1_G2+IgG1_G0N+IgG1_G1N+IgG1_G2N),
-                                 mes="Not all neutral glycans for IgG1 where found in the data frame")
+                                 mess="Not all neutral glycans for IgG1 where found in the data frame")
 
     dteh(data$LC_IGP46 <- with(data, IgG1_G0F/IgG1.neutral) * 100)
     dteh(data$LC_IGP47 <- with(data, IgG1_G1F/IgG1.neutral) * 100)
@@ -204,7 +204,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
 
     # neutral
     dteh(IgG2.neutral <- with(data, IgG2_G0F+IgG2_G1F+IgG2_G2F+IgG2_G0FN+IgG2_G1FN+IgG2_G2FN+IgG2_G0+IgG2_G1+IgG2_G2+IgG2_G0N+IgG2_G1N+IgG2_G2N),
-                                 mes="Not all neutral glycans for IgG2 where found in the data frame")
+                                 mess="Not all neutral glycans for IgG2 where found in the data frame")
 
     dteh(data$LC_IGP132 <- with(data, IgG2_G0F/IgG2.neutral) * 100)
     dteh(data$LC_IGP133 <- with(data, IgG2_G1F/IgG2.neutral) * 100)
@@ -271,7 +271,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
   
     # neutral
     dteh(IgG4.neutral <- with(data, IgG4_G0F+IgG4_G1F+IgG4_G2F+IgG4_G0FN+IgG4_G1FN+IgG4_G2FN),
-                                 mes="Not all neutral glycans for IgG4 where found in the data frame")
+                                 mess="Not all neutral glycans for IgG4 where found in the data frame")
 
     dteh(data$LC_IGP197 <- with(data, IgG4_G0F/IgG4.neutral) * 100)
     dteh(data$LC_IGP198 <- with(data, IgG4_G1F/IgG4.neutral) * 100)
@@ -302,7 +302,7 @@ igg.lcms.derived.traits.2014 <- function(data) {
 #' @references
 #' Jennifer E. Huffman et al. 
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
+#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 ildt.translate.2014 <- function(orignames) {
 
     allnames <- "computer	human
@@ -537,7 +537,7 @@ LC_IGP205	IgG4G2n"
 #' @references
 #' Jennifer E. Huffman et al. 
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \link{http://dx.doi.org/10.1074/mcp.M113.037465 }
+#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 iudt.translate.2014 <- function(orignames) {
 
     allnames <- "computer	human
