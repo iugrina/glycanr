@@ -15,3 +15,5 @@ LazyData: true
 Suggests:
     knitr
 VignetteBuilder: knitr
+URL: https://github.com/iugrina/glycanr
+BugReports: https://github.com/iugrina/glycanr/issues
