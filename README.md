@@ -1,4 +1,4 @@
 glycanr
 =======
 
-R library for glycan analysis
+R library for N-glycan analysis
