@@ -51,8 +51,10 @@ This function constructs standard plots in exploratory analysis
 of N-Glycans.
 }
 \examples{
-devAskNewPage(T)
-exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=T)))
+devAskNewPage(TRUE)
+exampleData <- data.frame(ID=1:100, GP1=runif(100),
+  GP2=rexp(100,0.2), GP3=rgamma(100, 3),
+  Plate=factor(sample(1:2,100,replace=TRUE)))
 glyco.plot(exampleData)
 glyco.plot(exampleData, group='Plate', collapse=FALSE, log=TRUE)
 }

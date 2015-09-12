@@ -17,7 +17,9 @@ Returns a data.frame with original glycan values substituted by normalized ones
 Returns glycans normalized with Total Area Normalization approach.
 }
 \examples{
-exampleData <- data.frame(ID=1:100, GP1=runif(100), GP2=rexp(100,0.2), GP3=rgamma(100, 3), Plate=factor(sample(1:2,100,replace=T)))
+exampleData <- data.frame(ID=1:100, GP1=runif(100),
+  GP2=rexp(100,0.2), GP3=rgamma(100, 3),
+  Plate=factor(sample(1:2,100,replace=TRUE)))
 print(head(tanorm(exampleData)))
 }
 \author{

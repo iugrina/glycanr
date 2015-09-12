@@ -9,6 +9,8 @@ ildt.translate(orignames, method = "2014")
 }
 \arguments{
 \item{orignames}{vector; type string}
+
+\item{method}{year of the derived traits definition. By default 2014.}
 }
 \value{
 Returns a character vector with original and translated names
@@ -17,7 +19,16 @@ Returns a character vector with original and translated names
 Translates names between computer readable and human readable
 for derived traits of IgG with LCMS
 }
+\details{
+User can choose which definition of the derived traits he will use
+(see references for different versions/definitions of derived traits).
+}
 \author{
 Ivo Ugrina
+}
+\references{
+Jennifer E. Huffman et al. (2014)
+"Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+\url{http://dx.doi.org/10.1074/mcp.M113.037465}
 }
 
