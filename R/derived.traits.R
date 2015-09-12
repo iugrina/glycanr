@@ -24,7 +24,7 @@ iudt <- function(data, method="2014") {
 #' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
 #' @author Ivo Ugrina
-#' @export plasma.hplc.derived.traits
+#' @export phdt
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits introduction. By default 2011.
