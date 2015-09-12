@@ -3,12 +3,12 @@
 #' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
 #'
 #' @author Ivo Ugrina
-#' @export igg.uplc.derived.traits
+#' @export iudt
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a data.frame with derived traits
-igg.uplc.derived.traits <- function(data, method="2014") {
+iudt <- function(data, method="2014") {
     x <- NULL
 
     if(method == "2014"){
@@ -29,7 +29,7 @@ igg.uplc.derived.traits <- function(data, method="2014") {
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits introduction. By default 2011.
 #' @return Returns a data.frame with derived traits
-plasma.hplc.derived.traits <- function(data, method="2011") {
+phdt <- function(data, method="2011") {
     x <- NULL
 
     if(method == "2011"){
@@ -45,11 +45,11 @@ plasma.hplc.derived.traits <- function(data, method="2011") {
 #' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
 #'
 #' @author Ivo Ugrina
-#' @export igg.lcms.derived.traits
+#' @export ildt
 #' @param data data frame that holds columns representing Glycans.
 #' @param method year of the derived traits introduction. By default 2014.
 #' @return Returns a data.frame with derived traits
-igg.lcms.derived.traits <- function(data, method="2014") {
+ildt <- function(data, method="2014") {
     x <- NULL
  
     if(method == "2014"){
