@@ -1,16 +1,16 @@
-#' Derived traits for Glycan peaks in IgG for UPLC
-#' based on paper from 2014.
-#'
-#' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
-#'
-#' @author Ivo Ugrina; Frano Vučković
-#' @param data data frame that holds columns representing Glycans.
-#'   These column names should start with 'GP'.
-#' @return Returns a data.frame with derived traits
-#' @references
-#' Jennifer E. Huffman et al. 
-#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# Derived traits for Glycan peaks in IgG for UPLC
+# based on paper from 2014.
+#
+# Calcuates values of derived traits for Glycan peaks in IgG for UPLC
+#
+# @author Ivo Ugrina; Frano Vučković
+# @param data data frame that holds columns representing Glycans.
+#   These column names should start with 'GP'.
+# @return Returns a data.frame with derived traits
+# @references
+# Jennifer E. Huffman et al. 
+# "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 igg.uplc.derived.traits.2014 <- function(data) {
     
     # derived glycans
@@ -78,18 +78,18 @@ igg.uplc.derived.traits.2014 <- function(data) {
 }
 
 
-#' Derived traits for Glycan peaks in IgG for LCMS
-#' based on paper from 2014.
-#'
-#' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
-#'
-#' @author Ivo Ugrina
-#' @param data data frame that holds columns representing Glycans.
-#' @return Returns a data.frame with derived traits
-#' @references
-#' Jennifer E. Huffman et al. 
-#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# Derived traits for Glycan peaks in IgG for LCMS
+# based on paper from 2014.
+#
+# Calcuates values of derived traits for Glycan peaks in IgG for LCMS
+#
+# @author Ivo Ugrina
+# @param data data frame that holds columns representing Glycans.
+# @return Returns a data.frame with derived traits
+# @references
+# Jennifer E. Huffman et al. 
+# "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 igg.lcms.derived.traits.2014 <- function(data) {
     
     # =======================================
@@ -286,20 +286,20 @@ igg.lcms.derived.traits.2014 <- function(data) {
     return(data)
 }
 
-#' Translate names between computer readable and human readable
-#' for derived traits of IgG with LCMS
-#' based on paper from 2014.
-#'
-#' Translates names between computer readable and human readable
-#' for derived traits of IgG with LCMS
-#'
-#' @author Ivo Ugrina
-#' @param orignames vector; type string
-#' @return Returns a character vector with original and translated names
-#' @references
-#' Jennifer E. Huffman et al. 
-#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# Translate names between computer readable and human readable
+# for derived traits of IgG with LCMS
+# based on paper from 2014.
+#
+# Translates names between computer readable and human readable
+# for derived traits of IgG with LCMS
+#
+# @author Ivo Ugrina
+# @param orignames vector; type string
+# @return Returns a character vector with original and translated names
+# @references
+# Jennifer E. Huffman et al. 
+# "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 ildt.translate.2014 <- function(orignames) {
 
     allnames <- "computer	human
@@ -520,20 +520,20 @@ LC_IGP205	IgG4G2n"
 }
 
 
-#' Translate names between computer readable and human readable
-#' for derived traits of IgG with UPLC
-#' based on an article from 2014.
-#'
-#' Translates names between computer readable and human readable
-#' for derived traits of IgG with UPLC 
-#'
-#' @author Ivo Ugrina
-#' @param orignames vector; type string
-#' @return Returns a character vector with original and translated names
-#' @references
-#' Jennifer E. Huffman et al. 
-#' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# Translate names between computer readable and human readable
+# for derived traits of IgG with UPLC
+# based on an article from 2014.
+#
+# Translates names between computer readable and human readable
+# for derived traits of IgG with UPLC 
+#
+# @author Ivo Ugrina
+# @param orignames vector; type string
+# @return Returns a character vector with original and translated names
+# @references
+# Jennifer E. Huffman et al. 
+# "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
+# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 iudt.translate.2014 <- function(orignames) {
 
     allnames <- "computer	human
