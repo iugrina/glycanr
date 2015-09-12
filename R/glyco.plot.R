@@ -93,7 +93,7 @@ glyco.plot <- function(data, collapse = TRUE, violin = FALSE, group = NULL, all 
         
     } else {
         if (2 == length(levels(data[[group]]))) {
-            wilcox.test.multinumeric <- function(Y, x, ...) {
+            wilcox.test.multinumeric <- function(Y, x) {
                 apply(Y, 2, function(column) {
                   tmp <- coin::wilcox_test(column ~ x)
                   coin::pvalue(tmp)
@@ -104,9 +104,9 @@ glyco.plot <- function(data, collapse = TRUE, violin = FALSE, group = NULL, all 
             p.val.unadj <- wilcox.test.multinumeric(X[, gps], X[[group]])
             p.val <- p.adjust(p.val.unadj, method = p.adjust.method)
         } else {
-            kw.test.multinumeric <- function(Y, x, ...) {
+            kw.test.multinumeric <- function(Y, x) {
                 apply(Y, 2, function(column) {
-                  tmp <- kruskal.test(column, x, ...)
+                  tmp <- kruskal.test(column, x)
                   tmp$p.value
                 })
             }
