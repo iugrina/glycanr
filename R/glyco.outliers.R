@@ -1,3 +1,8 @@
+# Fix the Non-standard evaluation usage for check()
+if(getRversion() >= "2.15.1"){
+    utils::globalVariables(c("value", "variable", "outlier", "desc"))
+}
+
 #' Discover outliers in glycan data
 #'
 #' Returns outliers in data columns starting with GP (representing glycans)
