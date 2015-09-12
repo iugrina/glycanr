@@ -4,7 +4,6 @@
 #' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
 #'
 #' @author Ivo Ugrina; Frano Vučković
-#' @export igg.uplc.derived.traits.2014
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
@@ -85,7 +84,6 @@ igg.uplc.derived.traits.2014 <- function(data) {
 #' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
 #'
 #' @author Ivo Ugrina
-#' @export igg.lcms.derived.traits.2014
 #' @param data data frame that holds columns representing Glycans.
 #' @return Returns a data.frame with derived traits
 #' @references
@@ -296,7 +294,6 @@ igg.lcms.derived.traits.2014 <- function(data) {
 #' for derived traits of IgG with LCMS
 #'
 #' @author Ivo Ugrina
-#' @export ildt.translate.2014
 #' @param orignames vector; type string
 #' @return Returns a character vector with original and translated names
 #' @references
@@ -531,7 +528,6 @@ LC_IGP205	IgG4G2n"
 #' for derived traits of IgG with UPLC 
 #'
 #' @author Ivo Ugrina
-#' @export iudt.translate.2014
 #' @param orignames vector; type string
 #' @return Returns a character vector with original and translated names
 #' @references

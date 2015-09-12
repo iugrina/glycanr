@@ -4,7 +4,6 @@
 #' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
 #' @author Ivo Ugrina; Lucija Klarić
-#' @export plasma.hplc.derived.traits.2011
 #' @param d data frame which holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with derived traits
