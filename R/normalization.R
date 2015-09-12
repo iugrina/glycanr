@@ -3,7 +3,7 @@
 #' Returns glycans normalized with Total Area Normalization approach.
 #'
 #' @author Ivo Ugrina
-#' @export
+#' @export tanorm
 #' @param data data frame which holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
@@ -13,8 +13,7 @@
 #'   Plate=factor(sample(1:2,100,replace=TRUE)))
 #' print(head(tanorm(exampleData)))
 tanorm <- function(data){	
-	glycans <- grep("^GP\\d+$|^x\\d+$",
-                    names(data),
+	glycans <- grep("^GP\\d+$", names(data),
                     ignore.case = TRUE)
 	data[, glycans] <- t(apply(data[, glycans], 1,
                             function(x){ x/sum(x)*100 }
