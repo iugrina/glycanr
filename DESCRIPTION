@@ -1,6 +1,6 @@
 Package: glycanr
 Title: Tools for Analysing N-Glycan Data
-Version: 0.1.5
+Version: 0.1.6
 Authors@R: person("Ivo", "Ugrina", role=c("aut", "cre"),
 		email="ivo@iugrina.com")
 Description: Useful utilities in N-glycan data analysis.
