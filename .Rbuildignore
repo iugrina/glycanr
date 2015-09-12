@@ -1,0 +1,4 @@
+.build_test.R
+.gitignore
+.git
+inst/
