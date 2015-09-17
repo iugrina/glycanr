@@ -5,10 +5,14 @@
 \title{Translate names between computer readable and human readable
 for derived traits of IgG with UPLC}
 \usage{
-iudt.translate(orignames, method = "2014")
+iudt.translate(orignames, to = "inverse", method = "2014")
 }
 \arguments{
 \item{orignames}{vector; type string}
+
+\item{to}{type of translation. If \code{inverse} is used everything will be
+translated. For \code{computer} names will be translated to computer
+readable, and for \code{human} names will be translated to human readable.}
 
 \item{method}{year of the derived traits definition. By default 2014.}
 }
