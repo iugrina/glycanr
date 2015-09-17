@@ -109,7 +109,7 @@ ildt <- function(data, method="2014") {
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 #' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-ildt.translate <- function(orignames, to="inverse") {
+ildt.translate <- function(orignames, to="inverse", method="2014") {
     x <- NULL
   
     if(method == "2014"){
