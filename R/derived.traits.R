@@ -97,6 +97,9 @@ ildt <- function(data, method="2014") {
 #' @export ildt.translate
 #' @param orignames vector; type string
 #' @param method year of the derived traits definition. By default 2014.
+#' @param to type of translation. If \code{inverse} is used everything will be
+#'   translated. For \code{computer} names will be translated to computer
+#'   readable, and for \code{human} names will be translated to human readable.
 #' @return Returns a character vector with original and translated names
 #' @details
 #' User can choose which definition of the derived traits he will use
@@ -106,11 +109,11 @@ ildt <- function(data, method="2014") {
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 #' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-ildt.translate <- function(orignames, method="2014") {
+ildt.translate <- function(orignames, to="inverse") {
     x <- NULL
   
     if(method == "2014"){
-       x <- ildt.translate.2014(orignames)
+       x <- ildt.translate.2014(orignames, to)
     }
 
     x
@@ -126,6 +129,9 @@ ildt.translate <- function(orignames, method="2014") {
 #' @export iudt.translate
 #' @param orignames vector; type string
 #' @param method year of the derived traits definition. By default 2014.
+#' @param to type of translation. If \code{inverse} is used everything will be
+#'   translated. For \code{computer} names will be translated to computer
+#'   readable, and for \code{human} names will be translated to human readable.
 #' @return Returns a character vector with original and translated names
 #' @details
 #' User can choose which definition of the derived traits he will use
@@ -135,11 +141,11 @@ ildt.translate <- function(orignames, method="2014") {
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 #' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-iudt.translate <- function(orignames, method="2014") {
+iudt.translate <- function(orignames, to="inverse", method="2014") {
     x <- NULL
   
     if(method == "2014"){
-       x <- iudt.translate.2014(orignames)
+       x <- iudt.translate.2014(orignames, to)
     }
 
     x

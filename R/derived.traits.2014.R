@@ -295,12 +295,15 @@ igg.lcms.derived.traits.2014 <- function(data) {
 #
 # @author Ivo Ugrina
 # @param orignames vector; type string
+# @param to type of translation. If \code{inverse} is used everything will be
+#   translated. For \code{computer} names will be translated to computer
+#   readable, and for \code{human} names will be translated to human readable.
 # @return Returns a character vector with original and translated names
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 # \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-ildt.translate.2014 <- function(orignames) {
+ildt.translate.2014 <- function(orignames, to="inverse") {
 
     allnames <- "computer	human
 LC_IGP1	IgG1_G0F
@@ -513,10 +516,25 @@ LC_IGP205	IgG4G2n"
     allnames <- read.delim(con, sep="\t", header=TRUE, stringsAsFactors=FALSE)
     close(con)
 
-    tmp <- match(orignames, allnames$computer)
-    ifelse(!is.na(tmp),
-           allnames$human[tmp],
-           allnames$computer[match(orignames, allnames$human)])
+    cn <- match(orignames, allnames$computer)
+    hn <- match(orignames, allnames$human)
+    if(to=="inverse"){
+        newnames <- ifelse(!is.na(cn),
+                           allnames$human[cn],
+                           allnames$computer[hn])
+    }
+    if(to=="computer"){
+        newnames <- ifelse(!is.na(cn),
+                           allnames$computer[cn],
+                           allnames$computer[hn])
+    }
+    if(to=="human"){
+        newnames <- ifelse(!is.na(hn),
+                           allnames$human[hn],
+                           allnames$human[cn])
+    }
+
+    return(newnames)
 }
 
 
@@ -529,12 +547,15 @@ LC_IGP205	IgG4G2n"
 #
 # @author Ivo Ugrina
 # @param orignames vector; type string
+# @param to type of translation. If \code{inverse} is used everything will be
+#   translated. For \code{computer} names will be translated to computer
+#   readable, and for \code{human} names will be translated to human readable.
 # @return Returns a character vector with original and translated names
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 # \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-iudt.translate.2014 <- function(orignames) {
+iudt.translate.2014 <- function(orignames, to="inverse") {
 
     allnames <- "computer	human
 IGP1	GP1
@@ -619,9 +640,24 @@ IGP77	BG2n/(FG2n+ FBG2n)"
     allnames <- read.delim(con, sep="\t", header=TRUE, stringsAsFactors=FALSE)
     close(con)
 
-    tmp <- match(orignames, allnames$computer)
-    ifelse(!is.na(tmp),
-           allnames$human[tmp],
-           allnames$computer[match(orignames, allnames$human)])
+    cn <- match(orignames, allnames$computer)
+    hn <- match(orignames, allnames$human)
+    if(to=="inverse"){
+        newnames <- ifelse(!is.na(cn),
+                           allnames$human[cn],
+                           allnames$computer[hn])
+    }
+    if(to=="computer"){
+        newnames <- ifelse(!is.na(cn),
+                           allnames$computer[cn],
+                           allnames$computer[hn])
+    }
+    if(to=="human"){
+        newnames <- ifelse(!is.na(hn),
+                           allnames$human[hn],
+                           allnames$human[cn])
+    }
+
+    return(newnames)
 }
 
