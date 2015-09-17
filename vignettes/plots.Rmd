@@ -5,7 +5,6 @@
 
 # Plotting glycans with glycanr package
 
-## Working with glycanr package
 
 First we need to load the package.
 
@@ -14,7 +13,7 @@ First we need to load the package.
 library(glycanr)
 ```
 
-First we need to create a *data.frame* to simulate our glycan data.
+Lets create a *data.frame* to simulate our glycan data.
 
 ```{r}
 set.seed(123)
@@ -23,8 +22,8 @@ X <- data.frame(ID=1:n, GP1=runif(n), GP2=rexp(n, 0.3),
                 GP3=rgamma(n, 2), cc=factor(sample(1:2, n, replace=TRUE)))
 ```
 
-Now we have data.frame *X* where *GP* represents glycans, *ID* represents e.g. sample IDs
-and *cc* represents Case/Control status.
+Now we have data.frame *X* where *GP* represents glycans,
+*ID* represents e.g. sample IDs and *cc* represents Case/Control status.
 
 ```{r}
 head(X)
