@@ -14,3 +14,27 @@ oriented to data obtained by UPLC and LCMS analysis of Plasma and IgG
 glycome.
 
 For a broader introduction take a look at "Introduction" vignette.
+
+# Install
+
+## From GitHub
+
+The package can be installed for example with  **devtools** package.
+
+```r
+install.packages('devtools')
+```
+
+Load the **devtools** package.
+
+```r
+library(devtools)
+```
+
+Install the package.
+
+```r
+install_github('iugrina/glycanr', build_vignette=TRUE)
+```
+
+

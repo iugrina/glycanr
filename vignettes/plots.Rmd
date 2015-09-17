@@ -5,33 +5,6 @@
 
 # Plotting glycans with glycanr package
 
-## Prerequisits
-
-As a help for plotting basic plots like boxplots of glycan data
-**glycanr** package can be used.
-
-To install it we first need to install **devtools** package.
-
-```{r, eval=FALSE}
-# install additional packages to help us work with R
-install.packages('devtools')
-```
-
-Now we can load **devtools** package.
-
-```{r, eval=FALSE}
-# load devtools package
-library(devtools)
-```
-
-Devtools package has a function to help us install packages from GitHub.
-Using this function we will install **glycanr** package.
-
-```{r, eval=FALSE}
-# install 'glycanr' package from GitHub to help us plot glycans
-install_github('iugrina/glycanr')
-```
-
 ## Working with glycanr package
 
 First we need to load the package.
