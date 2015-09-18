@@ -4,16 +4,21 @@
 \alias{phdt}
 \title{Derived traits for Glycan peaks in PLASMA for HPLC}
 \usage{
-phdt(data, method = "2011")
+phdt(data = NULL, method = "2011", print.exp.names = FALSE)
 }
 \arguments{
 \item{data}{data frame that holds columns representing Glycans.
 These column names should start with 'GP'.}
 
 \item{method}{year of the derived traits definition. By default 2011.}
+
+\item{print.exp.names}{If \code{TRUE} return expected column names
+representing glycans the \code{data} data frame should have to
+calculate derived traits for a specific \code{method}.
+Does not calculate derived traits in that case!}
 }
 \value{
-Returns a data.frame with derived traits
+Returns the data frame with derived traits
 }
 \description{
 Calcuates values of derived traits for Glycan peaks in Plasma for HPLC

@@ -21,7 +21,7 @@ a vector. Receives one parameter representing a vector and returns
 logical vector indicating outliers.}
 
 \item{glyco.names}{names of columns that represent glycan data. If \code{NULL}
-all columns having 'GP' in their names will be used.}
+all columns starting with 'GP' in their names will be used}
 }
 \value{
 Returns a data.frame with outliers

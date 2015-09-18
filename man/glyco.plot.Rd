@@ -41,7 +41,7 @@ testing. Variable p.adjust.method must be an element of
 \item{log.transform}{should Glycans be log transform prior to plotting.}
 
 \item{glyco.names}{names of columns that represent glycan data. If \code{NULL}
-all columns having 'GP' in their names will be used}
+all columns starting with 'GP' in their names will be used}
 }
 \value{
 Returns a list consisting of p-values, adjusted p-vales and the plot.

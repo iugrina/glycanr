@@ -4,11 +4,13 @@
 \alias{tanorm}
 \title{Total Area Normalization of glycan data}
 \usage{
-tanorm(data)
+tanorm(data, glyco.names = NULL)
 }
 \arguments{
-\item{data}{data frame which holds columns representing Glycans.
-These column names should start with 'GP'.}
+\item{data}{data frame which holds columns representing Glycans.}
+
+\item{glyco.names}{names of columns that represent glycan data. If \code{NULL}
+all columns starting with 'GP' in their names will be used}
 }
 \value{
 Returns a data.frame with original glycan values substituted by normalized ones
