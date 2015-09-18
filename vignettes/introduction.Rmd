@@ -42,7 +42,7 @@ functions to quickly explore the data.
 Functions ***ildt***, ***iudt*** and ***phdt*** return derived traits
 obtained from basic glycans. They have a standardised input
 depending on the definition of derived traits (e.g. derived
-traits as defined in [Huffman et al.][7]. Names of the
+traits as defined in [Huffman et al.][7]). Names of the
 columns representing glycans for a specific definition
 can be obtained with the argument *print.exp.names*.
 Columns of the data frame used to store glycan measurement
@@ -52,10 +52,11 @@ expected names can also be used if some glycans weren't measured.
 Functions ***ildt.translate*** and ***iudt.translate*** are
 useful to translate between computer friendly and human friendly names.
 
-Function ***tanorm*** is used for quick Total Area Normalization of the data.
+Function ***tanorm*** is used normalize the data by
+Total Area Normalization.
 
-Some functions have a default scheme for names of glycans (e.g.
-columns starting with "GP" present glycan data) and additional argument
+Some functions have a default scheme for column names representing glycans
+(e.g. columns starting with "GP" present glycan data) and additional argument
 *glyco.names* to change the default.
 
 
