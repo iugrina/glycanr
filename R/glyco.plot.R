@@ -5,6 +5,8 @@
 #'
 #' @author Ivo Ugrina
 #' @export
+#' @importFrom grDevices boxplot.stats
+#' @importFrom stats IQR kruskal.test p.adjust
 #' @param data data frame which holds columns representing Glycans.
 #'   These column names must start with 'GP'.
 #' @param collapse should Glycans be presented in one facet (default)

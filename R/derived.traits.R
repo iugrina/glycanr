@@ -122,6 +122,7 @@ ildt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 #'
 #' @author Ivo Ugrina
 #' @export ildt.translate
+#' @importFrom utils read.delim
 #' @param orignames vector; type string
 #' @param method year of the derived traits definition. By default 2014.
 #' @param to type of translation. If \code{inverse} is used everything will be
@@ -154,6 +155,7 @@ ildt.translate <- function(orignames, to="inverse", method="2014") {
 #'
 #' @author Ivo Ugrina
 #' @export iudt.translate
+#' @importFrom utils read.delim
 #' @param orignames vector; type string
 #' @param method year of the derived traits definition. By default 2014.
 #' @param to type of translation. If \code{inverse} is used everything will be
