@@ -5,7 +5,7 @@ Authors@R: person("Ivo", "Ugrina", role=c("aut", "cre"),
 		email="ivo@iugrina.com")
 Description: Useful utilities in N-glycan data analysis.
 Depends:
-    R (>= 3.2.2)
+    R (>= 3.1.2)
 Imports:
     ggplot2,
     tidyr (>= 0.3.1),
