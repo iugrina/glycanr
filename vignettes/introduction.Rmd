@@ -35,10 +35,28 @@ or computational modelling of the N-glycan data like in
 
 ## Working with glycanr package
 
+At the moment glycanr package consists of 8 functions (for general use).
+Functions  ***glyco.plot*** and ***glyco.outliers*** are handy
+functions to quickly explore the data. 
 
+Functions ***ildt***, ***iudt*** and ***phdt*** return derived traits
+obtained from basic glycans. They have a standardised input
+depending on the definition of derived traits (e.g. derived
+traits as defined in [Huffman et al.][7]. Names of the
+columns representing glycans for a specific definition
+can be obtained with the argument *print.exp.names*.
+Columns of the data frame used to store glycan measurement
+should be named according to the expected names. Subset of the
+expected names can also be used if some glycans weren't measured.
 
+Functions ***ildt.translate*** and ***iudt.translate*** are
+useful to translate between computer friendly and human friendly names.
 
+Function ***tanorm*** is used for quick Total Area Normalization of the data.
 
+Some functions have a default scheme for names of glycans (e.g.
+columns starting with "GP" present glycan data) and additional argument
+*glyco.names* to change the default.
 
 
 [1]: http://www.sciencedirect.com/science/article/pii/S1874391911005549
@@ -47,3 +65,4 @@ or computational modelling of the N-glycan data like in
 [4]: http://www.ncbi.nlm.nih.gov/pubmed/26200652
 [5]: http://www.ncbi.nlm.nih.gov/pubmed/24325898
 [6]: http://jasn.asnjournals.org/content/early/2015/07/15/ASN.2015010109.full
+[7]: http://dx.doi.org/10.1074/mcp.M113.037465

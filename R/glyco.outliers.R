@@ -21,7 +21,7 @@ if(getRversion() >= "2.15.1"){
 #'   a vector. Receives one parameter representing a vector and returns
 #'   logical vector indicating outliers.
 #' @param glyco.names names of columns that represent glycan data. If \code{NULL}
-#'   all columns having 'GP' in their names will be used.
+#'   all columns starting with 'GP' in their names will be used
 #' @return Returns a data.frame with outliers 
 #' @examples
 #' exampleData <- data.frame(ID=1:100, GP1=runif(100),
@@ -46,7 +46,7 @@ glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
     }
     
     if (is.null(glyco.names)) {
-        tmp <- grep("GP", names(data))
+        tmp <- grep("^GP", names(data))
         gps <- names(data)[tmp]
     } else {
         gps <- glyco.names

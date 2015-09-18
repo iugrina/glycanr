@@ -29,7 +29,7 @@
 #' @param print.p.values should p-values be printed on plots
 #' @param log.transform should Glycans be log transform prior to plotting.
 #' @param glyco.names names of columns that represent glycan data. If \code{NULL}
-#'   all columns having 'GP' in their names will be used
+#'   all columns starting with 'GP' in their names will be used
 #' @return Returns a list consisting of p-values, adjusted p-vales and the plot.
 #' @examples
 #' devAskNewPage(TRUE)
@@ -56,7 +56,7 @@ glyco.plot <- function(data, collapse = TRUE, violin = FALSE, group = NULL, all 
     
     # other
     if (is.null(glyco.names)) {
-        tmp <- grep("GP", names(data))
+        tmp <- grep("^GP", names(data))
         gps <- names(data)[tmp]
         not.gps <- names(data[-tmp])
     } else {
