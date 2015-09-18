@@ -7,7 +7,11 @@
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits definition. By default 2014.
-#' @return Returns a data.frame with derived traits
+#' @param print.exp.names If \code{TRUE} return expected column names 
+#'   representing glycans the \code{data} data frame should have to
+#'   calculate derived traits for a specific \code{method}.
+#'   Does not calculate derived traits in that case!
+#' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
 #' which definition of the derived traits he will use
@@ -17,11 +21,16 @@
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 #' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-iudt <- function(data, method="2014") {
+iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
     x <- NULL
 
     if(method == "2014"){
-       x <- igg.uplc.derived.traits.2014(data)
+        if(!print.exp.names & !is.data.frame(data)){
+            warning("Either use print.exp.names=TRUE or
+                    set the paramater data to be a data frame")
+            return(x)
+        }
+        x <- igg.uplc.derived.traits.2014(data, print.exp.names)
     }
 
     x
@@ -37,7 +46,11 @@ iudt <- function(data, method="2014") {
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits definition. By default 2011.
-#' @return Returns a data.frame with derived traits
+#' @param print.exp.names If \code{TRUE} return expected column names 
+#'   representing glycans the \code{data} data frame should have to
+#'   calculate derived traits for a specific \code{method}.
+#'   Does not calculate derived traits in that case!
+#' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
 #' which definition of the derived traits he will use
@@ -48,11 +61,16 @@ iudt <- function(data, method="2014") {
 #' "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
 #'  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
 #' \url{http://dx.doi.org/10.1021/pr2004067}
-phdt <- function(data, method="2011") {
+phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
     x <- NULL
 
     if(method == "2011"){
-       x <- plasma.hplc.derived.traits.2011(data)
+        if(!print.exp.names & !is.data.frame(data)){
+            warning("Either use print.exp.names=TRUE or
+                    set the paramater data to be a data frame")
+            return(x)
+        }
+        x <- plasma.hplc.derived.traits.2011(data, print.exp.names)
     }
 
     x
@@ -67,7 +85,11 @@ phdt <- function(data, method="2011") {
 #' @export ildt
 #' @param data data frame that holds columns representing Glycans.
 #' @param method year of the derived traits definition. By default 2014.
-#' @return Returns a data.frame with derived traits
+#' @param print.exp.names If \code{TRUE} return expected column names 
+#'   representing glycans the \code{data} data frame should have to
+#'   calculate derived traits for a specific \code{method}.
+#'   Does not calculate derived traits in that case!
+#' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
 #' which definition of the derived traits he will use
@@ -77,11 +99,16 @@ phdt <- function(data, method="2011") {
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 #' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-ildt <- function(data, method="2014") {
+ildt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
     x <- NULL
  
     if(method == "2014"){
-       x <- igg.lcms.derived.traits.2014(data)
+        if(!print.exp.names & !is.data.frame(data)){
+            warning("Either use print.exp.names=TRUE or
+                    set the paramater data to be a data frame")
+            return(x)
+        }
+        x <- igg.lcms.derived.traits.2014(data, print.exp.names)
     }
 
     x

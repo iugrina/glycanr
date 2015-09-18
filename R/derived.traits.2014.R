@@ -1,17 +1,14 @@
 # Derived traits for Glycan peaks in IgG for UPLC
 # based on paper from 2014.
 #
-# Calcuates values of derived traits for Glycan peaks in IgG for UPLC
-#
-# @author Ivo Ugrina; Frano Vučković
-# @param data data frame that holds columns representing Glycans.
-#   These column names should start with 'GP'.
-# @return Returns a data.frame with derived traits
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 # \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-igg.uplc.derived.traits.2014 <- function(data) {
+igg.uplc.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
+    if(print.exp.names){
+        return(paste0("GP", 1:24))
+    }
     
     # derived glycans
     dteh(data$IGP24 <- with(data, (GP16 + GP18 + GP23)/(GP16 + GP18 + GP23 + GP8 + GP9 + GP14)) * 100)
@@ -81,16 +78,25 @@ igg.uplc.derived.traits.2014 <- function(data) {
 # Derived traits for Glycan peaks in IgG for LCMS
 # based on paper from 2014.
 #
-# Calcuates values of derived traits for Glycan peaks in IgG for LCMS
-#
-# @author Ivo Ugrina
-# @param data data frame that holds columns representing Glycans.
-# @return Returns a data.frame with derived traits
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 # \url{http://dx.doi.org/10.1074/mcp.M113.037465}
-igg.lcms.derived.traits.2014 <- function(data) {
+igg.lcms.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
+    if(print.exp.names){
+        return(c("IgG1_G0F","IgG1_G1F","IgG1_G2F","IgG1_G0FN","IgG1_G1FN",
+               "IgG1_G2FN","IgG1_G1FS1","IgG1_G2FS1","IgG1_G1FNS1","IgG1_G2FNS1",
+               "IgG1_G0","IgG1_G1","IgG1_G2","IgG1_G0N","IgG1_G1N",
+               "IgG1_G2N","IgG1_G1S1","IgG1_G2S1","IgG1_G1NS1","IgG1_G2NS1",
+               "IgG2_G0F","IgG2_G1F","IgG2_G2F","IgG2_G0FN","IgG2_G1FN",
+               "IgG2_G2FN","IgG2_G1FS1","IgG2_G2FS1","IgG2_G1FNS1","IgG2_G2FNS1",
+               "IgG2_G0","IgG2_G1","IgG2_G2","IgG2_G0N","IgG2_G1N",
+               "IgG2_G2N","IgG2_G1S1","IgG2_G2S1","IgG2_G1NS1","IgG2_G2NS1",
+               "IgG4_G0F","IgG4_G1F","IgG4_G2F","IgG4_G0FN","IgG4_G1FN",
+               "IgG4_G2FN","IgG4_G1FS1","IgG4_G2FS1","IgG4_G1FNS1","IgG4_G2FNS1",
+               "IgG4_G0","IgG4_G1","IgG4_G2","IgG4_G0N","IgG4_G1N",
+               "IgG4_G2N","IgG4_G1S1","IgG4_G2S1","IgG4_G1NS1","IgG4_G2NS1"))
+    }
     
     # =======================================
     # IgG1 derived traits

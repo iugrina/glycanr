@@ -1,18 +1,16 @@
 # Derived traits for Glycan peaks in PLASMA for HPLC
 # based on paper from 2011.
 #
-# Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
-#
-# @author Ivo Ugrina; Lucija Klarić
-# @param d data frame which holds columns representing Glycans.
-#   These column names should start with 'GP'.
-# @return Returns a data.frame with derived traits
 # @references
 # Lu et al. 
 # "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
 #  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
 # \url{http://dx.doi.org/10.1021/pr2004067}
-plasma.hplc.derived.traits.2011 <- function(d) {
+plasma.hplc.derived.traits.2011 <- function(d, print.exp.names=FALSE) {
+    if(print.exp.names){
+        return("")
+    }
+
 	d = d[, c(1:(grep("GP1$", names(d))-1), grep("GP\\d+$|DG\\d+$|sial",names(d)))]
 	
 	# sialylation of biantennary glycans 
