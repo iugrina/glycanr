@@ -1,3 +1,8 @@
+## Resubmission #2
+This is a resubmission. In this version I have:
+
+* improved the description of the package in the DESCRIPTION file
+
 ## Resubmission
 This is a resubmission. In this version I have:
 
