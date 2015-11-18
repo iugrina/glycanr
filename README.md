@@ -17,6 +17,12 @@ For a broader introduction take a look at "Introduction" vignette.
 
 # Install
 
+## From CRAN
+
+```r
+install.packages('glycanr')
+```
+
 ## From GitHub
 
 The package can be installed for example with  **devtools** package.
