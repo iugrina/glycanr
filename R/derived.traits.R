@@ -2,7 +2,7 @@
 #'
 #' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
 #'
-#' @author Ivo Ugrina
+#' @author Ivo Ugrina, Frano Vučković
 #' @export iudt
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
@@ -41,7 +41,7 @@ iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 #'
 #' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
-#' @author Ivo Ugrina
+#' @author Ivo Ugrina, Lucija Klarić
 #' @export phdt
 #' @param data data frame that holds columns representing Glycans.
 #'   These column names should start with 'GP'.
