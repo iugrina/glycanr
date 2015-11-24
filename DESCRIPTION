@@ -1,8 +1,11 @@
 Package: glycanr
 Title: Tools for Analysing N-Glycan Data
 Version: 0.2.0.9000
-Authors@R: person("Ivo", "Ugrina", role=c("aut", "cre"),
-		email="ivo@iugrina.com")
+Authors@R: c(
+	person("Ivo", "Ugrina", role=c("aut", "cre", "cph"),
+		email="ivo@iugrina.com"),
+	person("Lucija", "Klarić", role="aut"),
+	person("Frano", "Vučković", role="aut"))
 Description: Useful utilities in N-glycan data analysis. This package tries
 	to fill the gap in N-glycan data analysis by providing easy
 	to use functions for glycomics analysis
@@ -16,6 +19,8 @@ Imports:
     tidyr (>= 0.3.1),
     dplyr (>= 0.4.3),
     coin
+Suggests:
+    preprocessCore
 License: MIT + file LICENSE
 LazyData: true
 Suggests:
