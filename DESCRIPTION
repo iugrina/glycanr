@@ -19,12 +19,11 @@ Imports:
     tidyr (>= 0.3.1),
     dplyr (>= 0.4.3),
     coin
-Suggests:
-    preprocessCore
 License: MIT + file LICENSE
 LazyData: true
 Suggests:
-    knitr
+    knitr,
+    preprocessCore
 VignetteBuilder: knitr
 URL: https://github.com/iugrina/glycanr
 BugReports: https://github.com/iugrina/glycanr/issues

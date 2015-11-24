@@ -1,3 +1,9 @@
+# Fix the Non-standard evaluation usage for check()
+if(getRversion() >= "2.15.1"){
+    utils::globalVariables(c("value", "variable", "glycan", "isoform", ".",
+                             "transpose", "gid", "mxxx", "s"))
+}
+
 #' Total Area Normalization of glycan data
 #'
 #' Returns glycans normalized with Total Area Normalization approach.
@@ -24,17 +30,17 @@ tanorm <- function(d, subclasses=FALSE){
 
 tanorm_basic <- function(d){
     d <- d %>% 
-        group_by(gid) %>%
-		mutate(value = value/sum(value, na.rm = TRUE)*100) %>%
-		ungroup()
+        dplyr::group_by(gid) %>%
+		dplyr::mutate(value = value/sum(value, na.rm = TRUE)*100) %>%
+		dplyr::ungroup()
 	d
 }
 
 tanorm_subclasses <- function(d){	
 	d <- d %>%
-        group_by(isoform, gid) %>%
-		mutate(value = value/sum(value, na.rm = TRUE)*100) %>%
-		ungroup()
+        dplyr::group_by(isoform, gid) %>%
+		dplyr::mutate(value = value/sum(value, na.rm = TRUE)*100) %>%
+		dplyr::ungroup()
 	d
 }
 
@@ -64,25 +70,25 @@ refpeaknorm <- function(d, subclasses=FALSE){
 
 refpeaknorm_basic <- function(d){
     tmp <- d %>% 
-        group_by(glycan) %>% 
-        summarise(s = sum(value, na.rm=TRUE)) %>% 
-        ungroup() %>% 
-        arrange(desc(s))
+        dplyr::group_by(glycan) %>% 
+        dplyr::summarise(s = sum(value, na.rm=TRUE)) %>% 
+        dplyr::ungroup() %>% 
+        dplyr::arrange(desc(s))
 
     max_peak <- as.character(tmp[,1]$glycan)
 
     d <- d %>%
-        group_by(gid) %>% 
-        mutate(value=value/value[glycan==max_peak]) %>% 
-        ungroup()
+        dplyr::group_by(gid) %>% 
+        dplyr::mutate(value=value/value[glycan==max_peak]) %>% 
+        dplyr::ungroup()
 	return(d)
 }
 
 refpeaknorm_subclasses <- function(d){
     d <- d %>% 
-        group_by(isoform) %>% 
-        do(refpeaknorm_basic(.)) %>% 
-        ungroup()
+        dplyr::group_by(isoform) %>% 
+        dplyr::do(refpeaknorm_basic(.)) %>% 
+        dplyr::ungroup()
 
     d
 }
@@ -113,23 +119,23 @@ mediannorm <- function(d, subclasses=FALSE){
 
 mediannorm_basic <- function(d) {
 	d <- d %>%
-		group_by(glycan) %>%
-		mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
-		ungroup() 
+		dplyr::group_by(glycan) %>%
+		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
+		dplyr::ungroup() 
     d
 }
 
 mediannorm_subclasses = function(d) {
 	d <- d %>%
-		group_by(isoform, glycan) %>%
-		mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
-		ungroup() 
+		dplyr::group_by(isoform, glycan) %>%
+		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
+		dplyr::ungroup() 
     d
 }
 
-#' Median Quantile Normalization of glycan data
+#' Median Quotient Normalization of glycan data
 #'
-#' Returns glycans normalized with Median Quantile Normalization approach.
+#' Returns glycans normalized with Median Quotient Normalization approach.
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export medianquotientnorm
@@ -154,24 +160,24 @@ medianquotientnorm <- function(d, subclasses=FALSE){
 
 medianquotientnorm_basic <- function(d){
     ref_chromx <- d %>% 
-        group_by(glycan) %>% 
-        mutate(mxxx=value/median(value, na.rm=TRUE)) %>% 
-        ungroup()
+        dplyr::group_by(glycan) %>% 
+        dplyr::mutate(mxxx=value/median(value, na.rm=TRUE)) %>% 
+        dplyr::ungroup()
 
     d <- ref_chromx %>% 
-        group_by(gid) %>% 
-        mutate(value=value/median(mxxx, na.rm=TRUE)) %>% 
-        ungroup() %>% 
-        select(-mxxx)
+        dplyr::group_by(gid) %>% 
+        dplyr::mutate(value=value/median(mxxx, na.rm=TRUE)) %>% 
+        dplyr::ungroup() %>% 
+        dplyr::select(-mxxx)
 
     d
 }
 
 medianquotientnorm_subclasses <- function(d){
     d <- d %>% 
-        group_by(isoform) %>% 
-        do(medianquotientnorm_basic(.)) %>% 
-        ungroup()
+        dplyr::group_by(isoform) %>% 
+        dplyr::do(medianquotientnorm_basic(.)) %>% 
+        dplyr::ungroup()
 
     d
 }
@@ -194,32 +200,37 @@ medianquotientnorm_subclasses <- function(d){
 #' and if the subclasses argument is given it should also have column:
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
 quantilenorm <- function(d, subclasses=FALSE, transpose=FALSE){
-    x <- requireNamespace("preprocessCore", quietly=TRUE)
-    if(!x){
+    if(!requireNamespace("preprocessCore", quietly=TRUE)){
         stop("Unable to proceed since package preprocessCore from
         BioConductor is not available on this system. This
         package is a prerequisite to use the quantilenorm function!")
     }
 
     if(subclasses==FALSE){
-        return(medianquotientnorm_basic(d, transpose))
+        return(quantilenorm_basic(d, transpose))
     }else{
-        return(medianquotientnorm_subclasses(d, transpose))
+        return(quantilenorm_subclasses(d, transpose))
     }
 }
 
 
 quantilenorm_basic <- function(d, transpose=FALSE){
+    if(!requireNamespace("preprocessCore", quietly=TRUE)){
+        stop("Unable to proceed since package preprocessCore from
+        BioConductor is not available on this system. This
+        package is a prerequisite to use the quantilenorm function!")
+    }
+
     tmp <- d %>% 
-        select(gid, glycan, value) %>% 
-        spread(glycan, value)
+        dplyr::select(gid, glycan, value) %>% 
+        tidyr::spread(glycan, value)
 
 	glycans <- unique(d$glycan)
 
     if(transpose){
-        tempD <- normalize.quantiles(as.matrix(tmp[, glycans]))
+        tempD <- preprocessCore::normalize.quantiles(as.matrix(tmp[, glycans]))
     }else{
-        tempD <- normalize.quantiles(t(as.matrix(tmp[, glycans])))
+        tempD <- preprocessCore::normalize.quantiles(t(as.matrix(tmp[, glycans])))
     }
 
     if(transpose){
@@ -229,10 +240,10 @@ quantilenorm_basic <- function(d, transpose=FALSE){
     }
 
     tmp <- tmp %>% 
-        gather_("glycan", "value", glycans)
+        tidyr::gather_("glycan", "value", glycans)
 
     d <- d %>% 
-        select(-value)
+        dplyr::select(-value)
     d <- merge(d, tmp, by=c("gid", "glycan"))
 
 	return(d)
@@ -240,9 +251,9 @@ quantilenorm_basic <- function(d, transpose=FALSE){
 
 quantilenorm_subclasses <- function(d, transpose=FALSE){
     d <- d %>% 
-        group_by(isoform) %>% 
-        do(quantilenorm_basic(., transpose)) %>% 
-        ungroup()
+        dplyr::group_by(isoform) %>% 
+        dplyr::do(quantilenorm_basic(., transpose)) %>% 
+        dplyr::ungroup()
 
     d
 }
