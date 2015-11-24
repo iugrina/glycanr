@@ -2,7 +2,7 @@
 % Please edit documentation in R/normalization.R
 \name{medianquotientnorm}
 \alias{medianquotientnorm}
-\title{Median Quantile Normalization of glycan data}
+\title{Median Quotient Normalization of glycan data}
 \usage{
 medianquotientnorm(d, subclasses = FALSE)
 }
@@ -15,7 +15,7 @@ medianquotientnorm(d, subclasses = FALSE)
 Returns a data.frame with original glycan values substituted by normalized ones
 }
 \description{
-Returns glycans normalized with Median Quantile Normalization approach.
+Returns glycans normalized with Median Quotient Normalization approach.
 }
 \details{
 Input data frame should have at least the following three columns:
