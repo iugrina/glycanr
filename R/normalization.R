@@ -194,7 +194,13 @@ medianquotientnorm_subclasses <- function(d){
 #' and if the subclasses argument is given it should also have column:
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
 quantilenorm <- function(d, subclasses=FALSE, transpose=FALSE){
-    library(preprocessCore)
+    x <- requireNamespace("preprocessCore", quietly=TRUE)
+    if(!x){
+        stop("Unable to proceed since package preprocessCore from
+        BioConductor is not available on this system. This
+        package is a prerequisite to use the quantilenorm function!")
+    }
+
     if(subclasses==FALSE){
         return(medianquotientnorm_basic(d, transpose))
     }else{
