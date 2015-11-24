@@ -4,7 +4,7 @@
 #'
 #' @author Ivo Ugrina
 #' @export tanorm
-#' @param data data frame in long format containing glycan measurements
+#' @param d data frame in long format containing glycan measurements
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
@@ -44,7 +44,7 @@ tanorm_subclasses <- function(d){
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export refpeaknorm
-#' @param data data frame with glycan measurements containing glycan measurements 
+#' @param d data frame in long format containing glycan measurements
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
@@ -93,7 +93,7 @@ refpeaknorm_subclasses <- function(d){
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export mediannorm
-#' @param data data frame with glycan measurements containing glycan measurements 
+#' @param d data frame in long format containing glycan measurements
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
@@ -133,7 +133,7 @@ mediannorm_subclasses = function(d) {
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export medianquotientnorm
-#' @param data data frame with glycan measurements containing glycan measurements 
+#' @param d data frame in long format containing glycan measurements
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
@@ -182,7 +182,7 @@ medianquotientnorm_subclasses <- function(d){
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export quantilenorm
-#' @param data data frame with glycan measurements containing glycan measurements 
+#' @param d data frame in long format containing glycan measurements
 #' @param transpose transpose the data prior to normalization
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones

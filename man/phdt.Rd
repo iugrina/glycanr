@@ -29,7 +29,7 @@ which definition of the derived traits he will use
 (see references for different versions/definitions of derived traits).
 }
 \author{
-Ivo Ugrina
+Ivo Ugrina, Lucija Klarić
 }
 \references{
 Lu et al. (2011)
