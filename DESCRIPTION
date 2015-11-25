@@ -12,18 +12,19 @@ Description: Useful utilities in N-glycan data analysis. This package tries
 	(see https://en.wikipedia.org/wiki/Glycomics for more
 	 details on Glycomics). At the moment glycanr is mostly oriented 
 	to data obtained by UPLC and LCMS analysis of Plasma and IgG glycome.
-Depends:
+Depends: 
     R (>= 3.1.2)
-Imports:
+Imports: 
     ggplot2,
     tidyr (>= 0.3.1),
     dplyr (>= 0.4.3),
     coin
 License: MIT + file LICENSE
 LazyData: true
-Suggests:
+Suggests: 
     knitr,
-    preprocessCore
+    preprocessCore,
+    testthat
 VignetteBuilder: knitr
 URL: https://github.com/iugrina/glycanr
 BugReports: https://github.com/iugrina/glycanr/issues
