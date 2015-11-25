@@ -1,2 +1,1 @@
-- add UPLC and LCMS example data
 - normalization vignette
