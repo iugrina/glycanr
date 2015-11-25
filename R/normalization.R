@@ -75,7 +75,7 @@ refpeaknorm_basic <- function(d){
         dplyr::ungroup() %>% 
         dplyr::arrange(desc(s))
 
-    max_peak <- as.character(tmp[,1]$glycan)
+    max_peak <- as.character(tmp[1,]$glycan)
 
     d <- d %>%
         dplyr::group_by(gid) %>% 
@@ -119,7 +119,7 @@ mediannorm <- function(d, subclasses=FALSE){
 
 mediannorm_basic <- function(d) {
 	d <- d %>%
-		dplyr::group_by(glycan) %>%
+		dplyr::group_by(gid) %>%
 		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
 		dplyr::ungroup() 
     d
@@ -127,7 +127,7 @@ mediannorm_basic <- function(d) {
 
 mediannorm_subclasses = function(d) {
 	d <- d %>%
-		dplyr::group_by(isoform, glycan) %>%
+		dplyr::group_by(isoform, gid) %>%
 		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
 		dplyr::ungroup() 
     d
@@ -225,7 +225,7 @@ quantilenorm_basic <- function(d, transpose=FALSE){
         dplyr::select(gid, glycan, value) %>% 
         tidyr::spread(glycan, value)
 
-	glycans <- unique(d$glycan)
+	glycans <- as.character(unique(d$glycan))
 
     if(transpose){
         tempD <- preprocessCore::normalize.quantiles(as.matrix(tmp[, glycans]))
