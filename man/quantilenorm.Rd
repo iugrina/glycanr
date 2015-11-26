@@ -20,14 +20,30 @@ Returns a data.frame with original glycan values substituted by normalized ones
 Returns glycans normalized with Quantile Normalization approach.
 }
 \details{
-Input data frame should have at least the following three columns:
-  - gid - representing a unique name of a sample
-  - glycan - representing glycan names
-  - value - representing measured values
-and if the subclasses argument is given it should also have column:
+Input data frame should have at least the following three columns: \cr
+  - gid - representing a unique name of a sample \cr
+  - glycan - representing glycan names \cr
+  - value - representing measured values \cr
+and if the subclasses argument is given it should also have column: \cr
   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+}
+\examples{
+data(mpiu)
+mpiun <- quantilenorm(mpiu)
+head(mpiun)
+
+# transpose (change) subjects and measurements
+mpiunt <- quantilenorm(mpiu, transpose=TRUE)
+head(mpiunt)
 }
 \author{
 Ivo Ugrina, Lucija Klarić
+}
+\references{
+Bolstad, B. M., Irizarry R. A., Astrand, M, and Speed, T. P.: \cr
+A Comparison of Normalization Methods for High Density Oligonucleotide
+Array Data Based on Bias and Variance.\cr
+Bioinformatics 19(2), p. 185-193, 2003. \cr
+\url{http://dx.doi.org/10.1093/bioinformatics/19.2.185}
 }
 

@@ -14,12 +14,16 @@ if(getRversion() >= "2.15.1"){
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
-#' Input data frame should have at least the following three columns:
-#'   - gid - representing a unique name of a sample
-#'   - glycan - representing glycan names
-#'   - value - representing measured values
-#' and if the subclasses argument is given it should also have column:
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values \cr
+#' and if the subclasses argument is given it should also have column: \cr
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' @examples
+#' data(mpiu)
+#' mpiun <- tanorm(mpiu)
+#' head(mpiun)
 tanorm <- function(d, subclasses=FALSE){
     if(subclasses==FALSE){
         return(tanorm_basic(d))
@@ -54,12 +58,16 @@ tanorm_subclasses <- function(d){
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
-#' Input data frame should have at least the following three columns:
-#'   - gid - representing a unique name of a sample
-#'   - glycan - representing glycan names
-#'   - value - representing measured values
-#' and if the subclasses argument is given it should also have column:
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values \cr
+#' and if the subclasses argument is given it should also have column: \cr
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' @examples
+#' data(mpiu)
+#' mpiun <- refpeaknorm(mpiu)
+#' head(mpiun)
 refpeaknorm <- function(d, subclasses=FALSE){
     if(subclasses==FALSE){
         return(refpeaknorm_basic(d))
@@ -103,12 +111,16 @@ refpeaknorm_subclasses <- function(d){
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
-#' Input data frame should have at least the following three columns:
-#'   - gid - representing a unique name of a sample
-#'   - glycan - representing glycan names
-#'   - value - representing measured values
-#' and if the subclasses argument is given it should also have column:
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values \cr
+#' and if the subclasses argument is given it should also have column: \cr
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' @examples
+#' data(mpiu)
+#' mpiun <- mediannorm(mpiu)
+#' head(mpiun)
 mediannorm <- function(d, subclasses=FALSE){
     if(subclasses==FALSE){
         return(mediannorm_basic(d))
@@ -143,12 +155,22 @@ mediannorm_subclasses = function(d) {
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
-#' Input data frame should have at least the following three columns:
-#'   - gid - representing a unique name of a sample
-#'   - glycan - representing glycan names
-#'   - value - representing measured values
-#' and if the subclasses argument is given it should also have column:
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values \cr
+#' and if the subclasses argument is given it should also have column: \cr
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' @references
+#' Dieterle F,Ross A, Schlotterbeck G, Senn H.: \cr
+#' Probabilistic Quotient Normalization as Robust Method to Account for
+#' Diluition of Complex Biological Mixtures. Application in 1H NMR Metabolomics. \cr
+#' Anal Chem 2006;78:4281-90. \cr
+#' \url{http://dx.doi.org/10.1021/ac051632c}
+#' @examples
+#' data(mpiu)
+#' mpiun <- medianquotientnorm(mpiu)
+#' head(mpiun)
 medianquotientnorm <- function(d, subclasses=FALSE){
     if(subclasses==FALSE){
         return(medianquotientnorm_basic(d))
@@ -156,7 +178,6 @@ medianquotientnorm <- function(d, subclasses=FALSE){
         return(medianquotientnorm_subclasses(d))
     }
 }
-
 
 medianquotientnorm_basic <- function(d){
     ref_chromx <- d %>% 
@@ -193,12 +214,26 @@ medianquotientnorm_subclasses <- function(d){
 #' @param subclasses should data be normalized per subclass
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
-#' Input data frame should have at least the following three columns:
-#'   - gid - representing a unique name of a sample
-#'   - glycan - representing glycan names
-#'   - value - representing measured values
-#' and if the subclasses argument is given it should also have column:
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values \cr
+#' and if the subclasses argument is given it should also have column: \cr
 #'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' @references
+#' Bolstad, B. M., Irizarry R. A., Astrand, M, and Speed, T. P.: \cr
+#' A Comparison of Normalization Methods for High Density Oligonucleotide
+#' Array Data Based on Bias and Variance.\cr
+#' Bioinformatics 19(2), p. 185-193, 2003. \cr
+#' \url{http://dx.doi.org/10.1093/bioinformatics/19.2.185}
+#' @examples
+#' data(mpiu)
+#' mpiun <- quantilenorm(mpiu)
+#' head(mpiun)
+#' 
+#' # transpose (change) subjects and measurements
+#' mpiunt <- quantilenorm(mpiu, transpose=TRUE)
+#' head(mpiunt)
 quantilenorm <- function(d, subclasses=FALSE, transpose=FALSE){
     if(!requireNamespace("preprocessCore", quietly=TRUE)){
         stop("Unable to proceed since package preprocessCore from

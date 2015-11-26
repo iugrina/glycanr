@@ -18,12 +18,17 @@ Returns a data.frame with original glycan values substituted by normalized ones
 Returns glycans normalized with Reference Peak Normalization approach.
 }
 \details{
-Input data frame should have at least the following three columns:
-  - gid - representing a unique name of a sample
-  - glycan - representing glycan names
-  - value - representing measured values
-and if the subclasses argument is given it should also have column:
+Input data frame should have at least the following three columns: \cr
+  - gid - representing a unique name of a sample \cr
+  - glycan - representing glycan names \cr
+  - value - representing measured values \cr
+and if the subclasses argument is given it should also have column: \cr
   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+}
+\examples{
+data(mpiu)
+mpiun <- refpeaknorm(mpiu)
+head(mpiun)
 }
 \author{
 Ivo Ugrina, Lucija Klarić
