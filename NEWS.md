@@ -1,6 +1,7 @@
 # glycanr 0.2.0.9002
 
 * improved doc for normalization functions
+* glyco.outliers now expects data frame in long format
 
 # glycanr 0.2.0.9001
 

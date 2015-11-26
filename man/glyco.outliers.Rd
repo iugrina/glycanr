@@ -4,12 +4,10 @@
 \alias{glyco.outliers}
 \title{Discover outliers in glycan data}
 \usage{
-glyco.outliers(data, group = NULL, outlier.function = NULL,
-  glyco.names = NULL)
+glyco.outliers(data, group = NULL, outlier.function = NULL, alpha = 1.5)
 }
 \arguments{
-\item{data}{data frame which holds columns representing Glycans.
-These column names should start with 'GP'.}
+\item{data}{data frame in long format containing glycan measurements}
 
 \item{group}{this a possible grouping parameter on which
 stratification of \code{data} should be conducted. It should be
@@ -20,22 +18,31 @@ and of type \code{factor}.}
 a vector. Receives one parameter representing a vector and returns
 logical vector indicating outliers.}
 
-\item{glyco.names}{names of columns that represent glycan data. If \code{NULL}
-all columns starting with 'GP' in their names will be used}
+\item{alpha}{If outlier.function parameter is set to NULL
+outliers are calculated as those points that are greater
+than upper quartile + alpha * IQR (interquartile range) or
+lower than lower quartile - alpha * IQR (interquartile range).
+If parameter outlier.funtion is not NULL parameter alpha is not used.}
 }
 \value{
 Returns a data.frame with outliers
 }
 \description{
-Returns outliers in data columns starting with GP (representing glycans)
-sometimes grouped by other variables
+Returns outliers within every glycan structure
+}
+\details{
+Input data frame should have at least the following three columns: \cr
+  - gid - representing a unique name of a sample \cr
+  - glycan - representing glycan names \cr
+  - value - representing measured values
 }
 \examples{
-exampleData <- data.frame(ID=1:100, GP1=runif(100),
-  GP2=rexp(100,0.2), GP3=rgamma(100, 3),
-  Plate=factor(sample(1:2,100,replace=TRUE)))
-glyco.outliers(exampleData)
-glyco.outliers(exampleData, group="Plate")
+data(mpiu)
+
+glyco.outliers(mpiu)
+
+# outliers per plate
+glyco.outliers(mpiu, group="Plate")
 }
 \author{
 Ivo Ugrina

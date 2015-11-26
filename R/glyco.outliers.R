@@ -5,16 +5,14 @@ if(getRversion() >= "2.15.1"){
 
 #' Discover outliers in glycan data
 #'
-#' Returns outliers in data columns starting with GP (representing glycans)
-#' sometimes grouped by other variables
+#' Returns outliers within every glycan structure
 #'
 #' @author Ivo Ugrina
 #' @export
 #' @importFrom dplyr %>%
 #' @importFrom grDevices boxplot.stats
 #' @importFrom stats IQR kruskal.test p.adjust
-#' @param data data frame which holds columns representing Glycans.
-#'   These column names should start with 'GP'.
+#' @param data data frame in long format containing glycan measurements
 #' @param group this a possible grouping parameter on which
 #'   stratification of \code{data} should be conducted. It should be
 #'   a name of one of the columns in dataframe \code{data}
@@ -22,23 +20,36 @@ if(getRversion() >= "2.15.1"){
 #' @param outlier.function is a function that checks for outliers in
 #'   a vector. Receives one parameter representing a vector and returns
 #'   logical vector indicating outliers.
-#' @param glyco.names names of columns that represent glycan data. If \code{NULL}
-#'   all columns starting with 'GP' in their names will be used
+#' @param alpha If outlier.function parameter is set to NULL
+#'   outliers are calculated as those points that are greater
+#'   than upper quartile + alpha * IQR (interquartile range) or
+#'   lower than lower quartile - alpha * IQR (interquartile range).
+#'   If parameter outlier.funtion is not NULL parameter alpha is not used.
+#' @details
+#' Input data frame should have at least the following three columns: \cr
+#'   - gid - representing a unique name of a sample \cr
+#'   - glycan - representing glycan names \cr
+#'   - value - representing measured values 
 #' @return Returns a data.frame with outliers 
 #' @examples
-#' exampleData <- data.frame(ID=1:100, GP1=runif(100),
-#'   GP2=rexp(100,0.2), GP3=rgamma(100, 3),
-#'   Plate=factor(sample(1:2,100,replace=TRUE)))
-#' glyco.outliers(exampleData)
-#' glyco.outliers(exampleData, group="Plate")
-glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
-			   glyco.names=NULL) {
+#' data(mpiu)
+#' 
+#' glyco.outliers(mpiu)
+#'
+#' # outliers per plate
+#' glyco.outliers(mpiu, group="Plate")
+glyco.outliers <- function(data,
+                           group=NULL,
+                           outlier.function=NULL,
+                           alpha=1.5){
     
     outf <- function(x) {
         lq <- boxplot.stats(x)$stats[2]
         uq <- boxplot.stats(x)$stats[4]
+
+        iqr <- IQR(x, na.rm=TRUE)
         
-        ifelse(x > uq + 1.5 * IQR(x) | x < lq - 1.5 * IQR(x), TRUE, FALSE)
+        ifelse(x > uq + alpha * iqr | x < lq - alpha * iqr, TRUE, FALSE)
     }
     
     stopifnot(is.data.frame(data))
@@ -47,24 +58,17 @@ glyco.outliers <- function(data, group=NULL, outlier.function=NULL,
         outf <- outlier.function
     }
     
-    if (is.null(glyco.names)) {
-        tmp <- grep("^GP", names(data))
-        gps <- names(data)[tmp]
-    } else {
-        gps <- glyco.names
-    }
-    
-    newdata <- tidyr::gather_(data, "variable", "value", gps)
-    
     if (is.null(group)) {
-        X.out <- newdata %>%
-          dplyr::group_by(variable) %>%
-          dplyr::mutate(outlier = outf(value))
+        X.out <- data %>%
+          dplyr::group_by(glycan) %>%
+          dplyr::mutate(outlier = outf(value)) %>% 
+          dplyr::ungroup()
     } else {
-        g <- lapply(c("variable", group), as.symbol)
-        X.out <- newdata %>%
+        g <- lapply(c("glycan", group), as.symbol)
+        X.out <- data %>%
           dplyr::group_by_(.dots=g) %>%
-          dplyr::mutate(outlier = outf(value))
+          dplyr::mutate(outlier = outf(value)) %>% 
+          dplyr::ungroup()
     }
     
     dplyr::select(dplyr::filter(X.out, outlier == TRUE), -outlier)
