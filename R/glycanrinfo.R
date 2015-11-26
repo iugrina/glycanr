@@ -1,4 +1,3 @@
-
 #
 # Data section
 #
@@ -9,7 +8,7 @@
 #' while analysing IgG.
 "mpiu"
 
-#' Normalizied mpiu data
+#' Normalized mpiu data
 #' 
 #' This is an example of the normalized mpiu data.
 #' It is intended to be used for unit tests.

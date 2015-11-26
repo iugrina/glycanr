@@ -1,4 +1,4 @@
-# Derived traits for Glycan peaks in PLASMA for HPLC
+# Derived traits for Glycan peaks in Plasma for HPLC
 # based on paper from 2011.
 #
 # @references
