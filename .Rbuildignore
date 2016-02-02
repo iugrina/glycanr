@@ -2,5 +2,4 @@
 .gitignore
 .git
 cran-comments.md
-^NEWS\.md$
 ^TODO\.md$
