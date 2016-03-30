@@ -132,7 +132,7 @@ mediannorm <- function(d, subclasses=FALSE){
 mediannorm_basic <- function(d) {
 	d <- d %>%
 		dplyr::group_by(gid) %>%
-		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
+		dplyr::mutate(value = (value - stats::median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
 		dplyr::ungroup() 
     d
 }
@@ -140,7 +140,7 @@ mediannorm_basic <- function(d) {
 mediannorm_subclasses = function(d) {
 	d <- d %>%
 		dplyr::group_by(isoform, gid) %>%
-		dplyr::mutate(value = (value - median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
+		dplyr::mutate(value = (value - stats::median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
 		dplyr::ungroup() 
     d
 }
@@ -182,12 +182,12 @@ medianquotientnorm <- function(d, subclasses=FALSE){
 medianquotientnorm_basic <- function(d){
     ref_chromx <- d %>% 
         dplyr::group_by(glycan) %>% 
-        dplyr::mutate(mxxx=value/median(value, na.rm=TRUE)) %>% 
+        dplyr::mutate(mxxx=value/stats::median(value, na.rm=TRUE)) %>% 
         dplyr::ungroup()
 
     d <- ref_chromx %>% 
         dplyr::group_by(gid) %>% 
-        dplyr::mutate(value=value/median(mxxx, na.rm=TRUE)) %>% 
+        dplyr::mutate(value=value/stats::median(mxxx, na.rm=TRUE)) %>% 
         dplyr::ungroup() %>% 
         dplyr::select(-mxxx)
 
