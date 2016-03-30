@@ -7,4 +7,5 @@ r:
   - release
   - devel
 
-bioc_packages: preprocessCore
+bioc_packages:
+  - preprocessCore
