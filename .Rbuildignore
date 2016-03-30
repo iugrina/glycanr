@@ -1,5 +1,6 @@
-.build_test.R
-.gitignore
-.git
-cran-comments.md
-^TODO\.md$
+^.build_test.R$
+^.gitignore$
+^.git$
+^cran-comments.md$
+^TODO.md$
+^.travis.yml$
