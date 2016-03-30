@@ -8,7 +8,7 @@ Authors@R: c(
 	person("Frano", "Vučković", role="aut"))
 Description: Useful utilities in N-glycan data analysis. This package tries
 	to fill the gap in N-glycan data analysis by providing easy
-	to use functions for glycomics analysis
+	to use functions for basic operations on data
 	(see https://en.wikipedia.org/wiki/Glycomics for more
 	 details on Glycomics). At the moment glycanr is mostly oriented 
 	to data obtained by UPLC and LCMS analysis of Plasma and IgG glycome.
