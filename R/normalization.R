@@ -56,6 +56,8 @@ tanorm_subclasses <- function(d){
 #' @export refpeaknorm
 #' @param d data frame in long format containing glycan measurements
 #' @param subclasses should data be normalized per subclass
+#' @param peak glycan name to use as the reference peak. If \code{NULL}
+#'   peak with maximal value (summed through all samples) is used
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
 #' Input data frame should have at least the following three columns: \cr
@@ -76,7 +78,7 @@ refpeaknorm <- function(d, subclasses=FALSE, peak=NULL){
     }
 }
 
-refpeaknorm_basic <- function(d){
+refpeaknorm_basic <- function(d, peak=NULL){
     if(is.null(peak)){
         tmp <- d %>% 
             dplyr::group_by(glycan) %>% 
@@ -96,10 +98,10 @@ refpeaknorm_basic <- function(d){
 	return(d)
 }
 
-refpeaknorm_subclasses <- function(d){
+refpeaknorm_subclasses <- function(d, peak=NULL){
     d <- d %>% 
         dplyr::group_by(isoform) %>% 
-        dplyr::do(refpeaknorm_basic(.)) %>% 
+        dplyr::do(refpeaknorm_basic(., peak)) %>% 
         dplyr::ungroup()
 
     d
