@@ -13,9 +13,7 @@ These column names should start with 'GP'.}
 \item{method}{year of the derived traits definition. By default 2011.}
 
 \item{print.exp.names}{If \code{TRUE} return expected column names 
-representing glycans the \code{data} data frame should have to
-calculate derived traits for a specific \code{method}.
-Does not calculate derived traits in that case!}
+representing glycans.}
 }
 \value{
 Returns the data frame with derived traits

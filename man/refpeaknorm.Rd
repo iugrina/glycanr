@@ -4,12 +4,15 @@
 \alias{refpeaknorm}
 \title{Reference Peak Normalization of glycan data}
 \usage{
-refpeaknorm(d, subclasses = FALSE)
+refpeaknorm(d, subclasses = FALSE, peak = NULL)
 }
 \arguments{
 \item{d}{data frame in long format containing glycan measurements}
 
 \item{subclasses}{should data be normalized per subclass}
+
+\item{peak}{glycan name to use as the reference peak. If \code{NULL}
+peak with maximal value (summed through all samples) is used}
 }
 \value{
 Returns a data.frame with original glycan values substituted by normalized ones
