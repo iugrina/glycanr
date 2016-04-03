@@ -8,9 +8,7 @@
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits definition. By default 2014.
 #' @param print.exp.names If \code{TRUE} return expected column names 
-#'   representing glycans the \code{data} data frame should have to
-#'   calculate derived traits for a specific \code{method}.
-#'   Does not calculate derived traits in that case!
+#'   representing glycans. 
 #' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
@@ -47,9 +45,7 @@ iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 #'   These column names should start with 'GP'.
 #' @param method year of the derived traits definition. By default 2011.
 #' @param print.exp.names If \code{TRUE} return expected column names 
-#'   representing glycans the \code{data} data frame should have to
-#'   calculate derived traits for a specific \code{method}.
-#'   Does not calculate derived traits in that case!
+#'   representing glycans. 
 #' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
@@ -86,9 +82,7 @@ phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
 #' @param data data frame that holds columns representing Glycans.
 #' @param method year of the derived traits definition. By default 2014.
 #' @param print.exp.names If \code{TRUE} return expected column names 
-#'   representing glycans the \code{data} data frame should have to
-#'   calculate derived traits for a specific \code{method}.
-#'   Does not calculate derived traits in that case!
+#'   representing glycans. 
 #' @return Returns the data frame with derived traits
 #' @details
 #' Calculates derived traits from basic glycan peaks. User can choose
