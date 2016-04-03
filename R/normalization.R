@@ -68,26 +68,30 @@ tanorm_subclasses <- function(d){
 #' data(mpiu)
 #' mpiun <- refpeaknorm(mpiu)
 #' head(mpiun)
-refpeaknorm <- function(d, subclasses=FALSE){
+refpeaknorm <- function(d, subclasses=FALSE, peak=NULL){
     if(subclasses==FALSE){
-        return(refpeaknorm_basic(d))
+        return(refpeaknorm_basic(d, peak))
     }else{
-        return(refpeaknorm_subclasses(d))
+        return(refpeaknorm_subclasses(d, peak))
     }
 }
 
 refpeaknorm_basic <- function(d){
-    tmp <- d %>% 
-        dplyr::group_by(glycan) %>% 
-        dplyr::summarise(s = sum(value, na.rm=TRUE)) %>% 
-        dplyr::ungroup() %>% 
-        dplyr::arrange(desc(s))
+    if(is.null(peak)){
+        tmp <- d %>% 
+            dplyr::group_by(glycan) %>% 
+            dplyr::summarise(s = sum(value, na.rm=TRUE)) %>% 
+            dplyr::ungroup() %>% 
+            dplyr::arrange(desc(s))
 
-    max_peak <- as.character(tmp[1,]$glycan)
+        ref_peak <- as.character(tmp[1,]$glycan)
+    } else {
+        ref_peak <- peak
+    }
 
     d <- d %>%
         dplyr::group_by(gid) %>% 
-        dplyr::mutate(value=value/value[glycan==max_peak]) %>% 
+        dplyr::mutate(value=value/value[glycan==ref_peak]) %>% 
         dplyr::ungroup()
 	return(d)
 }
