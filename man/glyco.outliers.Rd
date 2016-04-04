@@ -9,12 +9,12 @@ glyco.outliers(data, group = NULL, outlier.function = NULL, alpha = 1.5)
 \arguments{
 \item{data}{data frame in long format containing glycan measurements}
 
-\item{group}{this a possible grouping parameter on which
+\item{group}{a possible grouping parameter on which
 stratification of \code{data} should be conducted. It should be
 a name of one of the columns in dataframe \code{data}
 and of type \code{factor}.}
 
-\item{outlier.function}{is a function that checks for outliers in
+\item{outlier.function}{a function that checks for outliers in
 a vector. Receives one parameter representing a vector and returns
 logical vector indicating outliers.}
 
@@ -22,7 +22,7 @@ logical vector indicating outliers.}
 outliers are calculated as those points that are greater
 than upper quartile + alpha * IQR (interquartile range) or
 lower than lower quartile - alpha * IQR (interquartile range).
-If parameter outlier.funtion is not NULL parameter alpha is not used.}
+If parameter outlier.function is not NULL parameter alpha is not used.}
 }
 \value{
 Returns a data.frame with outliers
