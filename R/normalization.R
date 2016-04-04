@@ -1,6 +1,6 @@
 # Fix the Non-standard evaluation usage for check()
 if(getRversion() >= "2.15.1"){
-    utils::globalVariables(c("value", "variable", "glycan", "isoform", ".",
+    utils::globalVariables(c("value", "variable", "glycan", "groups", ".",
                              "transpose", "gid", "mxxx", "s"))
 }
 
@@ -11,24 +11,24 @@ if(getRversion() >= "2.15.1"){
 #' @author Ivo Ugrina
 #' @export tanorm
 #' @param d data frame in long format containing glycan measurements
-#' @param subclasses should data be normalized per subclass
+#' @param grouping should data be normalized per groups
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
 #' Input data frame should have at least the following three columns: \cr
 #'   - gid - representing a unique name of a sample \cr
 #'   - glycan - representing glycan names \cr
 #'   - value - representing measured values \cr
-#' and if the subclasses argument is given it should also have column: \cr
-#'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' and if the grouping argument is \code{TRUE} it should also have column: \cr
+#'   - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 #' @examples
 #' data(mpiu)
 #' mpiun <- tanorm(mpiu)
 #' head(mpiun)
-tanorm <- function(d, subclasses=FALSE){
-    if(subclasses==FALSE){
+tanorm <- function(d, grouping=FALSE){
+    if(grouping==FALSE){
         return(tanorm_basic(d))
     }else{
-        return(tanorm_subclasses(d))
+        return(tanorm_groups(d))
     }
 }
 
@@ -40,9 +40,9 @@ tanorm_basic <- function(d){
 	d
 }
 
-tanorm_subclasses <- function(d){	
+tanorm_groups <- function(d){	
 	d <- d %>%
-        dplyr::group_by(isoform, gid) %>%
+        dplyr::group_by(groups, gid) %>%
 		dplyr::mutate(value = value/sum(value, na.rm = TRUE)*100) %>%
 		dplyr::ungroup()
 	d
@@ -55,7 +55,7 @@ tanorm_subclasses <- function(d){
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export refpeaknorm
 #' @param d data frame in long format containing glycan measurements
-#' @param subclasses should data be normalized per subclass
+#' @param grouping should data be normalized per groups
 #' @param peak glycan name to use as the reference peak. If \code{NULL}
 #'   peak with maximal value (summed through all samples) is used
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
@@ -64,17 +64,17 @@ tanorm_subclasses <- function(d){
 #'   - gid - representing a unique name of a sample \cr
 #'   - glycan - representing glycan names \cr
 #'   - value - representing measured values \cr
-#' and if the subclasses argument is given it should also have column: \cr
-#'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' and if the grouping argument is \code{TRUE} it should also have column: \cr
+#'   - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 #' @examples
 #' data(mpiu)
 #' mpiun <- refpeaknorm(mpiu)
 #' head(mpiun)
-refpeaknorm <- function(d, subclasses=FALSE, peak=NULL){
-    if(subclasses==FALSE){
+refpeaknorm <- function(d, grouping=FALSE, peak=NULL){
+    if(grouping==FALSE){
         return(refpeaknorm_basic(d, peak))
     }else{
-        return(refpeaknorm_subclasses(d, peak))
+        return(refpeaknorm_groups(d, peak))
     }
 }
 
@@ -98,9 +98,9 @@ refpeaknorm_basic <- function(d, peak=NULL){
 	return(d)
 }
 
-refpeaknorm_subclasses <- function(d, peak=NULL){
+refpeaknorm_groups <- function(d, peak=NULL){
     d <- d %>% 
-        dplyr::group_by(isoform) %>% 
+        dplyr::group_by(groups) %>% 
         dplyr::do(refpeaknorm_basic(., peak)) %>% 
         dplyr::ungroup()
 
@@ -114,24 +114,24 @@ refpeaknorm_subclasses <- function(d, peak=NULL){
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export mediannorm
 #' @param d data frame in long format containing glycan measurements
-#' @param subclasses should data be normalized per subclass
+#' @param grouping should data be normalized per groups
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
 #' Input data frame should have at least the following three columns: \cr
 #'   - gid - representing a unique name of a sample \cr
 #'   - glycan - representing glycan names \cr
 #'   - value - representing measured values \cr
-#' and if the subclasses argument is given it should also have column: \cr
-#'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' and if the grouping argument is \code{TRUE} it should also have column: \cr
+#'   - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 #' @examples
 #' data(mpiu)
 #' mpiun <- mediannorm(mpiu)
 #' head(mpiun)
-mediannorm <- function(d, subclasses=FALSE){
-    if(subclasses==FALSE){
+mediannorm <- function(d, grouping=FALSE){
+    if(grouping==FALSE){
         return(mediannorm_basic(d))
     }else{
-        return(mediannorm_subclasses(d))
+        return(mediannorm_groups(d))
     }
 }
 
@@ -143,9 +143,9 @@ mediannorm_basic <- function(d) {
     d
 }
 
-mediannorm_subclasses = function(d) {
+mediannorm_groups = function(d) {
 	d <- d %>%
-		dplyr::group_by(isoform, gid) %>%
+		dplyr::group_by(groups, gid) %>%
 		dplyr::mutate(value = (value - stats::median(value, na.rm = TRUE))/IQR(value, na.rm = TRUE)) %>%
 		dplyr::ungroup() 
     d
@@ -158,15 +158,15 @@ mediannorm_subclasses = function(d) {
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export medianquotientnorm
 #' @param d data frame in long format containing glycan measurements
-#' @param subclasses should data be normalized per subclass
+#' @param grouping should data be normalized per groups
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
 #' Input data frame should have at least the following three columns: \cr
 #'   - gid - representing a unique name of a sample \cr
 #'   - glycan - representing glycan names \cr
 #'   - value - representing measured values \cr
-#' and if the subclasses argument is given it should also have column: \cr
-#'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' and if the grouping argument is \code{TRUE} it should also have column: \cr
+#'   - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 #' @references
 #' Dieterle F,Ross A, Schlotterbeck G, Senn H.: \cr
 #' Probabilistic Quotient Normalization as Robust Method to Account for
@@ -177,11 +177,11 @@ mediannorm_subclasses = function(d) {
 #' data(mpiu)
 #' mpiun <- medianquotientnorm(mpiu)
 #' head(mpiun)
-medianquotientnorm <- function(d, subclasses=FALSE){
-    if(subclasses==FALSE){
+medianquotientnorm <- function(d, grouping=FALSE){
+    if(grouping==FALSE){
         return(medianquotientnorm_basic(d))
     }else{
-        return(medianquotientnorm_subclasses(d))
+        return(medianquotientnorm_groups(d))
     }
 }
 
@@ -200,9 +200,9 @@ medianquotientnorm_basic <- function(d){
     d
 }
 
-medianquotientnorm_subclasses <- function(d){
+medianquotientnorm_groups <- function(d){
     d <- d %>% 
-        dplyr::group_by(isoform) %>% 
+        dplyr::group_by(groups) %>% 
         dplyr::do(medianquotientnorm_basic(.)) %>% 
         dplyr::ungroup()
 
@@ -217,15 +217,15 @@ medianquotientnorm_subclasses <- function(d){
 #' @export quantilenorm
 #' @param d data frame in long format containing glycan measurements
 #' @param transpose transpose the data prior to normalization
-#' @param subclasses should data be normalized per subclass
+#' @param grouping should data be normalized per groups
 #' @return Returns a data.frame with original glycan values substituted by normalized ones
 #' @details
 #' Input data frame should have at least the following three columns: \cr
 #'   - gid - representing a unique name of a sample \cr
 #'   - glycan - representing glycan names \cr
 #'   - value - representing measured values \cr
-#' and if the subclasses argument is given it should also have column: \cr
-#'   - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+#' and if the grouping argument is \code{TRUE} it should also have column: \cr
+#'   - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 #' @references
 #' Bolstad, B. M., Irizarry R. A., Astrand, M, and Speed, T. P.: \cr
 #' A Comparison of Normalization Methods for High Density Oligonucleotide
@@ -240,17 +240,17 @@ medianquotientnorm_subclasses <- function(d){
 #' # transpose (change) subjects and measurements
 #' mpiunt <- quantilenorm(mpiu, transpose=TRUE)
 #' head(mpiunt)
-quantilenorm <- function(d, subclasses=FALSE, transpose=FALSE){
+quantilenorm <- function(d, grouping=FALSE, transpose=FALSE){
     if(!requireNamespace("preprocessCore", quietly=TRUE)){
         stop("Unable to proceed since package preprocessCore from
         BioConductor is not available on this system. This
         package is a prerequisite to use the quantilenorm function!")
     }
 
-    if(subclasses==FALSE){
+    if(grouping==FALSE){
         return(quantilenorm_basic(d, transpose))
     }else{
-        return(quantilenorm_subclasses(d, transpose))
+        return(quantilenorm_groups(d, transpose))
     }
 }
 
@@ -290,9 +290,9 @@ quantilenorm_basic <- function(d, transpose=FALSE){
 	return(d)
 }
 
-quantilenorm_subclasses <- function(d, transpose=FALSE){
+quantilenorm_groups <- function(d, transpose=FALSE){
     d <- d %>% 
-        dplyr::group_by(isoform) %>% 
+        dplyr::group_by(groups) %>% 
         dplyr::do(quantilenorm_basic(., transpose)) %>% 
         dplyr::ungroup()
 
