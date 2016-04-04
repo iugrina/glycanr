@@ -4,12 +4,12 @@
 \alias{tanorm}
 \title{Total Area Normalization of glycan data}
 \usage{
-tanorm(d, subclasses = FALSE)
+tanorm(d, grouping = FALSE)
 }
 \arguments{
 \item{d}{data frame in long format containing glycan measurements}
 
-\item{subclasses}{should data be normalized per subclass}
+\item{grouping}{should data be normalized per groups}
 }
 \value{
 Returns a data.frame with original glycan values substituted by normalized ones
@@ -22,8 +22,8 @@ Input data frame should have at least the following three columns: \cr
   - gid - representing a unique name of a sample \cr
   - glycan - representing glycan names \cr
   - value - representing measured values \cr
-and if the subclasses argument is given it should also have column: \cr
-  - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+and if the grouping argument is \code{TRUE} it should also have column: \cr
+  - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 }
 \examples{
 data(mpiu)

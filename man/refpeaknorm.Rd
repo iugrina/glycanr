@@ -4,12 +4,12 @@
 \alias{refpeaknorm}
 \title{Reference Peak Normalization of glycan data}
 \usage{
-refpeaknorm(d, subclasses = FALSE, peak = NULL)
+refpeaknorm(d, grouping = FALSE, peak = NULL)
 }
 \arguments{
 \item{d}{data frame in long format containing glycan measurements}
 
-\item{subclasses}{should data be normalized per subclass}
+\item{grouping}{should data be normalized per groups}
 
 \item{peak}{glycan name to use as the reference peak. If \code{NULL}
 peak with maximal value (summed through all samples) is used}
@@ -25,8 +25,8 @@ Input data frame should have at least the following three columns: \cr
   - gid - representing a unique name of a sample \cr
   - glycan - representing glycan names \cr
   - value - representing measured values \cr
-and if the subclasses argument is given it should also have column: \cr
-  - isoform - representing subclasses (e.g. IgG1, IgG2 and IgG4)
+and if the grouping argument is \code{TRUE} it should also have column: \cr
+  - groups - representing groupings (e.g. IgG1, IgG2 and IgG4)
 }
 \examples{
 data(mpiu)
