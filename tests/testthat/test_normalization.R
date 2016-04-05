@@ -103,55 +103,59 @@ context("Normalization functions")
 #mpiunorm <- data.frame(mpiunorm)
 #save(mpiunorm, file="./mpiunorm.RData")
 
-data(mpiu)
-data(mpiunorm)
+if(.Machine$sizeof.pointer==8){
+
+    data(mpiu)
+    data(mpiunorm)
 
 
-tanormdf <- mpiunorm %>% 
-    filter(norm=="tanorm") %>% 
-    select(-norm)
+    tanormdf <- mpiunorm %>% 
+        filter(norm=="tanorm") %>% 
+        select(-norm)
 
-refpeaknormdf <- mpiunorm %>% 
-    filter(norm=="refpeaknorm") %>% 
-    select(-norm)
+    refpeaknormdf <- mpiunorm %>% 
+        filter(norm=="refpeaknorm") %>% 
+        select(-norm)
 
-mediannormdf <- mpiunorm %>% 
-    filter(norm=="mediannorm") %>% 
-    select(-norm)
+    mediannormdf <- mpiunorm %>% 
+        filter(norm=="mediannorm") %>% 
+        select(-norm)
 
-medianquotientnormdf <- mpiunorm %>% 
-    filter(norm=="medianquotientnorm") %>% 
-    select(-norm)
+    medianquotientnormdf <- mpiunorm %>% 
+        filter(norm=="medianquotientnorm") %>% 
+        select(-norm)
 
-quantilenormtdf <- mpiunorm %>% 
-    filter(norm=="quantilenormt") %>% 
-    select(-norm)
+    quantilenormtdf <- mpiunorm %>% 
+        filter(norm=="quantilenormt") %>% 
+        select(-norm)
 
-test_that("tanorm", {
-  expect_equal(tanorm(mpiu), tanormdf)
-})
-
-
-test_that("refpeaknorm", {
-  expect_equal(refpeaknorm(mpiu), refpeaknormdf)
-})
+    test_that("tanorm", {
+      expect_equal(tanorm(mpiu), tanormdf)
+    })
 
 
-test_that("mediannorm", {
-  expect_equal(mediannorm(mpiu), mediannormdf)
-})
+    test_that("refpeaknorm", {
+      expect_equal(refpeaknorm(mpiu), refpeaknormdf)
+    })
 
 
-test_that("medianquotientnorm", {
-  expect_equal(medianquotientnorm(mpiu), medianquotientnormdf)
-})
+    test_that("mediannorm", {
+      expect_equal(mediannorm(mpiu), mediannormdf)
+    })
 
 
-tmp <- quantilenorm(mpiu, transpose=TRUE)
-# reorder columns
-tmp <- tmp[, names(quantilenormtdf)] %>% 
-    arrange(Plate, gid, glycan)
-    
-test_that("quantilenormt", {
-  expect_equal(tmp, quantilenormtdf)
-})
+    test_that("medianquotientnorm", {
+      expect_equal(medianquotientnorm(mpiu), medianquotientnormdf)
+    })
+
+
+    tmp <- quantilenorm(mpiu, transpose=TRUE)
+    # reorder columns
+    tmp <- tmp[, names(quantilenormtdf)] %>% 
+        arrange(Plate, gid, glycan)
+        
+    test_that("quantilenormt", {
+      expect_equal(tmp, quantilenormtdf)
+    })
+
+}
