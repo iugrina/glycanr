@@ -25,6 +25,9 @@ if(getRversion() >= "2.15.1"){
 #' mpiun <- tanorm(mpiu)
 #' head(mpiun)
 tanorm <- function(d, grouping=FALSE){
+    warning("Version 0.3 of glycanr introduces a change in tanorm function. It expects data frame input in long format now.",
+            call. = FALSE)
+
     if(grouping==FALSE){
         return(tanorm_basic(d))
     }else{

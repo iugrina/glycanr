@@ -42,6 +42,8 @@ glyco.outliers <- function(data,
                            group=NULL,
                            outlier.function=NULL,
                            alpha=1.5){
+    warning("Version 0.3 of glycanr introduces a change in glyco.outliers function. It expects data frame input in long format now.",
+            call. = FALSE)
     
     outf <- function(x) {
         lq <- boxplot.stats(x)$stats[2]
