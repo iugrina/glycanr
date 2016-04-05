@@ -1,5 +1,8 @@
 # glycanr 0.2.0.9004
 
+* refpeaknorm improved to take any peak
+* improved doc
+
 # glycanr 0.2.0.9003
 
 * travis conf added (GitHub related)
