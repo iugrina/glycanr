@@ -9,3 +9,6 @@ install(build_vignettes = TRUE)
 check(cran = TRUE)
 build_win()
 revdep_check()
+
+# release to CRAN
+release()
