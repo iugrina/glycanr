@@ -1,3 +1,44 @@
+# version 0.3.0
+
+## Initial submission
+
+### Test environments
+* Debian, R 3.2.4 (x86_64)
+* Debian, R-devel (x86_64)
+* win-builder (win-builder.r-project.org)
+* travis-ci 
+  * R-devel
+  * R-release
+  * R-old
+
+### R CMD check (--as-cran) results
+There were no ERRORs and WARNINGs. 
+
+There was 1 NOTE:
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: 'Ivo Ugrina <ivo@iugrina.com>'
+
+License components with restrictions and base license permitting such:
+  MIT + file LICENSE
+File 'LICENSE':
+  YEAR: 2014-2016
+  COPYRIGHT HOLDER: Ivo Ugrina
+
+Possibly mis-spelled words in DESCRIPTION:
+  Glycan (2:30)
+  Glycomics (13:16)
+  IgG (14:62)
+  LCMS (14:34)
+  UPLC (14:25)
+  glycan (9:36, 10:26)
+  glycanr (13:42)
+  glycome (14:66)
+
+**comment**: Words are not mis-spelled and I don't see a problem with the
+license.
+
+# version 0.2.0
+
 ## Resubmission #2
 This is a resubmission. In this version I have:
 
@@ -11,13 +52,9 @@ This is a resubmission. In this version I have:
 * Resolved problems with the new "include only base package"
   policy within R-devel for check --as-cran
 
-## Test environments
-* OS X, R 3.2.2
-* Debian, R 3.2.2
-* Debian, R-devel
-* win-builder (win-builder.r-project.org)
+## Initial submission
 
-## R CMD check results
+### R CMD check results
 There were no ERRORs and WARNINGs. 
 
 There was 1 NOTE:
@@ -25,4 +62,11 @@ There was 1 NOTE:
 * checking CRAN incoming feasibility ... NOTE
   Maintainer: ‘Ivo Ugrina <ivo@iugrina.com>’
   New submission
+
+
+## Test environments
+* OS X, R 3.2.2
+* Debian, R 3.2.2
+* Debian, R-devel
+* win-builder (win-builder.r-project.org)
 
