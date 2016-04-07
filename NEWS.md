@@ -1,28 +1,15 @@
-# glycanr 0.2.0.9004
-
-* refpeaknorm improved to take any peak
-* improved doc
-
-# glycanr 0.2.0.9003
+# glycanr 0.3.0
 
 * travis conf added (GitHub related)
+* updated README
+* improved DESCRIPTION by adding Suggests
 * improved documentation
-
-# glycanr 0.2.0.9002
-
-* improved doc for normalization functions
-* glyco.outliers now expects data frame in long format
-
-# glycanr 0.2.0.9001
-
+* unit tests for normalization functions added
 * new normalization functions added
 * improved list of authors
-* updated README
-* improved documentation
 * tanorm function now expects data frame in long format
-* improved DESCRIPTION by adding Suggests
+* glyco.outliers now expects data frame in long format
 * added example data (raw and normalized) for IgG UPLC measurements
-* unit tests for normalization functions added
 
 # glycanr 0.2.0
 
