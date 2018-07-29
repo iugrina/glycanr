@@ -1,4 +1,3 @@
-library(stringr)
 library(dplyr)
 context("Normalization functions")
 
