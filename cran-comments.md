@@ -1,3 +1,43 @@
+# version 0.3.1
+
+## Initial submission
+
+### Test environments
+* Debian, R 3.3.3 (x86_64)
+* Debian, R-devel (x86_64)
+* win-builder (win-builder.r-project.org)
+* travis-ci 
+  * R-devel (2018-06-20 r74923)
+  * R-release (3.5.0)
+  * R-old (3.4.4)
+
+### R CMD check (--as-cran) results
+There were no ERRORs and WARNINGs. 
+
+There was 1 NOTE:
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Ivo Ugrina <ivougrina@gmail.com>’
+
+New submission
+
+Package was archived on CRAN
+
+License components with restrictions and base license permitting such:
+  MIT + file LICENSE
+File 'LICENSE':
+  YEAR: 2014-2018
+  COPYRIGHT HOLDER: Ivo Ugrina
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2018-02-20 as check problems were not
+    corrected despite reminders.
+
+  Unconditional use of Suggests package(s) from BioC.
+
+**comment**: The package was archived due to the unconditional
+use of Suggests package(s) from BioC in tests. This should
+now be resolved.
+
 # version 0.3.0
 
 ## Initial submission

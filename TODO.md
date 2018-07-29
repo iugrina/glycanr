@@ -3,6 +3,6 @@
 - add randomization function
 - add check randomization functions
 
-# v0.3.1:
+# v0.3.2:
 
 - normalization vignette
