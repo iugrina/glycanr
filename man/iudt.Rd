@@ -26,12 +26,11 @@ Calculates derived traits from basic glycan peaks. User can choose
 which definition of the derived traits he will use
 (see references for different versions/definitions of derived traits).
 }
-\author{
-Ivo Ugrina, Frano Vučković
-}
 \references{
 Jennifer E. Huffman et al. (2014)
 "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
 \url{http://dx.doi.org/10.1074/mcp.M113.037465}
 }
-
+\author{
+Ivo Ugrina, Frano Vučković
+}

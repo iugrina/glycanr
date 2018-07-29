@@ -149,13 +149,14 @@ if(.Machine$sizeof.pointer==8){
     })
 
 
-    tmp <- quantilenorm(mpiu, transpose=TRUE)
-    # reorder columns
-    tmp <- tmp[, names(quantilenormtdf)] %>% 
-        arrange(Plate, gid, glycan)
-        
-    test_that("quantilenormt", {
-      expect_equal(tmp, quantilenormtdf)
-    })
-
+    if(requireNamespace("preprocessCore", quietly=TRUE)){
+        tmp <- quantilenorm(mpiu, transpose=TRUE)
+        # reorder columns
+        tmp <- tmp[, names(quantilenormtdf)] %>% 
+            arrange(Plate, gid, glycan)
+            
+        test_that("quantilenormt", {
+          expect_equal(tmp, quantilenormtdf)
+        })
+    }
 }

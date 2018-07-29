@@ -33,4 +33,3 @@ head(mpiun)
 \author{
 Ivo Ugrina
 }
-

@@ -13,4 +13,3 @@ This is an example of the data obtained by UPLC
 while analysing IgG.
 }
 \keyword{datasets}
-

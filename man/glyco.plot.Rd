@@ -61,4 +61,3 @@ glyco.plot(exampleData, group='Plate', collapse=FALSE, log=TRUE)
 \author{
 Ivo Ugrina
 }
-

@@ -26,13 +26,12 @@ Calculates derived traits from basic glycan peaks. User can choose
 which definition of the derived traits he will use
 (see references for different versions/definitions of derived traits).
 }
-\author{
-Ivo Ugrina, Lucija Klarić
-}
 \references{
 Lu et al. (2011)
 "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
 \url{http://dx.doi.org/10.1021/pr2004067}
 }
-
+\author{
+Ivo Ugrina, Lucija Klarić
+}

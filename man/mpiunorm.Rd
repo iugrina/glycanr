@@ -13,4 +13,3 @@ This is an example of the normalized mpiu data.
 It is intended to be used for unit tests.
 }
 \keyword{datasets}
-

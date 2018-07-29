@@ -36,4 +36,3 @@ head(mpiun)
 \author{
 Ivo Ugrina, Lucija Klarić
 }
-

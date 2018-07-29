@@ -47,4 +47,3 @@ glyco.outliers(mpiu, group="Plate")
 \author{
 Ivo Ugrina
 }
-

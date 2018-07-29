@@ -36,9 +36,6 @@ head(mpiun)
 mpiunt <- quantilenorm(mpiu, transpose=TRUE)
 head(mpiunt)
 }
-\author{
-Ivo Ugrina, Lucija Klarić
-}
 \references{
 Bolstad, B. M., Irizarry R. A., Astrand, M, and Speed, T. P.: \cr
 A Comparison of Normalization Methods for High Density Oligonucleotide
@@ -46,4 +43,6 @@ Array Data Based on Bias and Variance.\cr
 Bioinformatics 19(2), p. 185-193, 2003. \cr
 \url{http://dx.doi.org/10.1093/bioinformatics/19.2.185}
 }
-
+\author{
+Ivo Ugrina, Lucija Klarić
+}
