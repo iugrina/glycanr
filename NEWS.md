@@ -1,3 +1,7 @@
+# glycanr 0.3.1
+
+* improve BioC dependencies handling
+
 # glycanr 0.3.0
 
 * travis conf added (GitHub related)
