@@ -29,12 +29,14 @@ and if the grouping argument is \code{TRUE} it should also have column: \cr
 }
 \examples{
 data(mpiu)
-mpiun <- quantilenorm(mpiu)
-head(mpiun)
+if(requireNamespace("preprocessCore", quietly=TRUE)){
+  mpiun <- quantilenorm(mpiu)
+  head(mpiun)
 
-# transpose (change) subjects and measurements
-mpiunt <- quantilenorm(mpiu, transpose=TRUE)
-head(mpiunt)
+  # transpose (change) subjects and measurements
+  mpiunt <- quantilenorm(mpiu, transpose=TRUE)
+  head(mpiunt)
+}
 }
 \references{
 Bolstad, B. M., Irizarry R. A., Astrand, M, and Speed, T. P.: \cr

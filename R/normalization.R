@@ -237,12 +237,14 @@ medianquotientnorm_groups <- function(d){
 #' \url{http://dx.doi.org/10.1093/bioinformatics/19.2.185}
 #' @examples
 #' data(mpiu)
-#' mpiun <- quantilenorm(mpiu)
-#' head(mpiun)
+#' if(requireNamespace("preprocessCore", quietly=TRUE)){
+#'   mpiun <- quantilenorm(mpiu)
+#'   head(mpiun)
 #' 
-#' # transpose (change) subjects and measurements
-#' mpiunt <- quantilenorm(mpiu, transpose=TRUE)
-#' head(mpiunt)
+#'   # transpose (change) subjects and measurements
+#'   mpiunt <- quantilenorm(mpiu, transpose=TRUE)
+#'   head(mpiunt)
+#' }
 quantilenorm <- function(d, grouping=FALSE, transpose=FALSE){
     if(!requireNamespace("preprocessCore", quietly=TRUE)){
         stop("Unable to proceed since package preprocessCore from
