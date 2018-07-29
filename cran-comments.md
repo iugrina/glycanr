@@ -1,5 +1,10 @@
 # version 0.3.1
 
+## Resubmission
+This is a resubmission. In this version I have:
+
+* enclosed the URLs in DESCRIPTION in angle brackets (<...>)
+
 ## Initial submission
 
 ### Test environments
