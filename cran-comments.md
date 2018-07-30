@@ -1,5 +1,11 @@
 # version 0.3.1
 
+## Resubmission #2
+This is a resubmission.
+
+* Package names, software names and API names in single quotes (e.g. 'glycanr') in Description.
+* Acronyms (e.g. LCMS and UPLC) explaind in Description text to avoid misunderstandings.
+
 ## Resubmission
 This is a resubmission. In this version I have:
 

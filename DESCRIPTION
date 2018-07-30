@@ -12,8 +12,10 @@ Description: Useful utilities in N-glycan data analysis. This package tries
     to fill the gap in N-glycan data analysis by providing easy
     to use functions for basic operations on data
     (see <https://en.wikipedia.org/wiki/Glycomics> for more
-    details on Glycomics). At the moment glycanr is mostly oriented
-    to data obtained by UPLC and LCMS analysis of Plasma and IgG glycome.
+    details on Glycomics). At the moment 'glycanr' is mostly oriented
+    to data obtained by UPLC (Ultra Performance Liquid Chromatography)
+    and LCMS (Liquid chromatography–mass spectrometry)
+    analysis of Plasma and IgG glycome.
 Depends:
     R (>= 3.1.2)
 Imports:
