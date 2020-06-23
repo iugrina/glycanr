@@ -15,6 +15,11 @@ glycome.
 
 For a broader introduction take a look at "Introduction" vignette.
 
+This project has received funding from:
+
+- the European Union’s Horizon FP7 research and innovation programme through the EU research project MIMOmics (Grant Agreement no. 305280),
+- the European Union’s Horizon 2020 research and innovation programme through the EU research project Back-UP (Grant Agreement no. 777090).
+
 # Install
 
 ## From CRAN
