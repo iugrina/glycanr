@@ -7,12 +7,13 @@
   * R 4.0.4 (2021-02-15) / x86_64-apple-darwin17.0 (64-bit)
 * Debian, R-devel (x86_64)
 * win-builder (win-builder.r-project.org)
-  * 3.6.3 (2020-02-29)
+  * R-devel (unstable) (2021-03-25 r80117)
+  * R 3.6.3 (2020-02-29)
   * R 4.0.4 (2021-02-15)
 * travis-ci
-  * R-devel (?)
-  * R-release (?)
-  * R-old (?)
+  * R-devel (unstable) (2021-03-25 r80120) / x86_64-pc-linux-gnu (64-bit)
+  * R version 4.0.2 (2020-06-22) / x86_64-pc-linux-gnu (64-bit)
+  * R version 3.6.3 (2020-02-29) / x86_64-pc-linux-gnu (64-bit)
 
 ### R CMD check (--as-cran) results
 There were no ERRORs and WARNINGs.
