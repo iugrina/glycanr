@@ -30,10 +30,10 @@ which definition of the derived traits he will use
 Lu et al. (2011)
 "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-\url{https://dx.doi.org/10.1021/pr2004067}
+\doi{10.1021/pr2004067}
 Irena Trbojevic-Akmacic et al.
 "Plasma N-glycome composition associates with chronic low back pain"
-\url{https://doi.org/10.1016/j.bbagen.2018.07.003}
+\doi{10.1016/j.bbagen.2018.07.003}
 }
 \author{
 Ivo Ugrina, Lucija Klarić

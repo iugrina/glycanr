@@ -14,5 +14,8 @@ check_win_oldrelease()
 check_win_release()
 #revdep_check()
 
+spell_check()
+check_rhub()
+
 # release to CRAN
 release()

@@ -4,7 +4,7 @@
 # @references
 # Irena Trbojevic-Akmacic et al.
 # "Plasma N-glycome composition associates with chronic low back pain"
-# \url{https://doi.org/10.1016/j.bbagen.2018.07.003}
+# \doi{10.1016/j.bbagen.2018.07.003}
 plasma.hplc.derived.traits.2018 <- function(data, print.exp.names=FALSE) {
     if(print.exp.names){
         return(paste0("GP", 1:39))
