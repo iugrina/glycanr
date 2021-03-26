@@ -1,3 +1,34 @@
+# version 0.4.0
+
+## Initial submission
+
+### Test environments
+* MacOS
+  * R 4.0.4 (2021-02-15) / x86_64-apple-darwin17.0 (64-bit)
+* Debian, R-devel (x86_64)
+* win-builder (win-builder.r-project.org)
+  * 3.6.3 (2020-02-29)
+  * R 4.0.4 (2021-02-15)
+* travis-ci
+  * R-devel (?)
+  * R-release (?)
+  * R-old (?)
+
+### R CMD check (--as-cran) results
+There were no ERRORs and WARNINGs.
+
+There was 1 NOTE:
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Ivo Ugrina <ivougrina@gmail.com>’
+
+New submission
+
+Package was archived on CRAN
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2019-01-24 as check issues were not
+    corrected in time.
+
 # version 0.3.1
 
 ## Resubmission #2

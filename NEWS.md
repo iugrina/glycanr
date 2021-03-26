@@ -1,3 +1,8 @@
+# glycanr 0.4.0
+
+* add plasma.hplc.derived.traits.2018 method
+* improve urls / documentation
+
 # glycanr 0.3.1
 
 * improve BioC dependencies handling

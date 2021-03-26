@@ -1,6 +1,6 @@
 <!-- 
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{Vignette title}
+%\VignetteIndexEntry{Plotting vignette}
 -->
 
 # Plotting glycans with glycanr package

@@ -1,6 +1,6 @@
 Package: glycanr
 Title: Tools for Analysing N-Glycan Data
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: c(
 	person("Ivo", "Ugrina", role=c("aut", "cre", "cph"),
 		email="ivougrina@gmail.com"),
@@ -27,10 +27,11 @@ License: MIT + file LICENSE
 LazyData: true
 Suggests:
     knitr,
+    markdown,
     preprocessCore,
     testthat
 VignetteBuilder: knitr
 URL: https://github.com/iugrina/glycanr
 BugReports: https://github.com/iugrina/glycanr/issues
 Encoding: UTF-8
-RoxygenNote: 6.0.1
+RoxygenNote: 7.1.1
