@@ -70,5 +70,5 @@ Some functions have a default scheme for column names representing glycans
 [3]: https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5b01463
 [4]: https://www.ncbi.nlm.nih.gov/pubmed/26200652
 [5]: https://www.ncbi.nlm.nih.gov/pubmed/24325898
-[6]: https://jasn.asnjournals.org/content/early/2015/07/15/ASN.2015010109.full
+[6]: https://jasn.asnjournals.org/content/27/3/933.full
 [7]: https://dx.doi.org/10.1074/mcp.M113.037465
