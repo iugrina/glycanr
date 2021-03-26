@@ -5,7 +5,10 @@
 ### Test environments
 * MacOS
   * R 4.0.4 (2021-02-15) / x86_64-apple-darwin17.0 (64-bit)
-* Debian, R-devel (x86_64)
+* rhub.io
+  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+  * Fedora Linux, R-devel, clang, gfortran
+  * Ubuntu Linux 20.04.1 LTS, R-release, GCC
 * win-builder (win-builder.r-project.org)
   * R-devel (unstable) (2021-03-25 r80117)
   * R 3.6.3 (2020-02-29)
