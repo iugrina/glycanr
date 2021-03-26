@@ -18,7 +18,7 @@ representing glycans.}
 Returns the data frame with derived traits
 }
 \description{
-Calcuates values of derived traits for Glycan peaks in IgG for LCMS
+Calculates values of derived traits for Glycan peaks in IgG for LCMS
 }
 \details{
 Calculates derived traits from basic glycan peaks. User can choose

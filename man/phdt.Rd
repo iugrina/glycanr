@@ -19,7 +19,7 @@ representing glycans.}
 Returns the data frame with derived traits
 }
 \description{
-Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
+Calculates values of derived traits for Glycan peaks in Plasma for HPLC
 }
 \details{
 Calculates derived traits from basic glycan peaks. User can choose

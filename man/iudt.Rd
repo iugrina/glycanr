@@ -19,7 +19,7 @@ representing glycans.}
 Returns the data frame with derived traits
 }
 \description{
-Calcuates values of derived traits for Glycan peaks in IgG for UPLC
+Calculates values of derived traits for Glycan peaks in IgG for UPLC
 }
 \details{
 Calculates derived traits from basic glycan peaks. User can choose

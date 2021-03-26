@@ -29,7 +29,7 @@ data from papers like
 
 The package helps in calculating different quantities like derived traits
 and preparing the data for analysts doing different statistical
-or computational modelling of the N-glycan data like in
+or computational modeling of the N-glycan data like in
 [Vučković et al.][4], [Krištić et al][5] or
 [Barrios et al.][6].
 
@@ -43,7 +43,7 @@ functions to quickly explore the data. See the "plots" vignette
 for more information.
 
 Functions ***ildt***, ***iudt*** and ***phdt*** return derived traits
-obtained from basic glycans. They have a standardised input
+obtained from basic glycans. They have a standardized input
 depending on the definition of derived traits (e.g. derived
 traits as defined in [Huffman et al.][7]). Names of the
 columns representing glycans for a specific definition

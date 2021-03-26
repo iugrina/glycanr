@@ -8,6 +8,7 @@ Authors@R: c(
 	person("Alyce", "Russell", role="aut"),
 	person("Frano", "Vuckovic", role="aut"))
 Maintainer: Ivo Ugrina <ivougrina@gmail.com>
+Language: en-US
 Description: Useful utilities in N-glycan data analysis. This package tries
     to fill the gap in N-glycan data analysis by providing easy
     to use functions for basic operations on data

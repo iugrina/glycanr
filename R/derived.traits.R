@@ -1,6 +1,6 @@
 #' Derived traits for Glycan peaks in IgG for UPLC
 #'
-#' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
+#' Calculates values of derived traits for Glycan peaks in IgG for UPLC
 #'
 #' @author Ivo Ugrina, Frano Vučković
 #' @export iudt
@@ -37,7 +37,7 @@ iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 
 #' Derived traits for Glycan peaks in PLASMA for HPLC
 #'
-#' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
+#' Calculates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export phdt
@@ -86,7 +86,7 @@ phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
 
 #' Derived traits for Glycan peaks in IgG for LCMS
 #'
-#' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
+#' Calculates values of derived traits for Glycan peaks in IgG for LCMS
 #'
 #' @author Ivo Ugrina
 #' @export ildt
