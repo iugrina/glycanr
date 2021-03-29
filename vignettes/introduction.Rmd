@@ -68,7 +68,7 @@ Some functions have a default scheme for column names representing glycans
 [1]: https://www.sciencedirect.com/science/article/pii/S1874391911005549
 [2]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3205872/
 [3]: https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5b01463
-[4]: https://www.ncbi.nlm.nih.gov/pubmed/26200652
-[5]: https://www.ncbi.nlm.nih.gov/pubmed/24325898
+[4]: https://pubmed.ncbi.nlm.nih.gov/26200652/
+[5]: https://pubmed.ncbi.nlm.nih.gov/24325898/
 [6]: https://jasn.asnjournals.org/content/27/3/933.full
 [7]: https://dx.doi.org/10.1074/mcp.M113.037465

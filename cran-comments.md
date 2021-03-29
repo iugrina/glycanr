@@ -2,6 +2,12 @@
 
 ## Initial submission
 
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* improved URLs in the introduction vignette as requested by CRAN reviewers.
+
 ### Test environments
 * MacOS
   * R 4.0.4 (2021-02-15) / x86_64-apple-darwin17.0 (64-bit)
