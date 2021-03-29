@@ -19,7 +19,7 @@ representing glycans.}
 Returns the data frame with derived traits
 }
 \description{
-Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
+Calculates values of derived traits for Glycan peaks in Plasma for HPLC
 }
 \details{
 Calculates derived traits from basic glycan peaks. User can choose
@@ -30,7 +30,10 @@ which definition of the derived traits he will use
 Lu et al. (2011)
 "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-\url{http://dx.doi.org/10.1021/pr2004067}
+\doi{10.1021/pr2004067}
+Irena Trbojevic-Akmacic et al.
+"Plasma N-glycome composition associates with chronic low back pain"
+\doi{10.1016/j.bbagen.2018.07.003}
 }
 \author{
 Ivo Ugrina, Lucija Klarić

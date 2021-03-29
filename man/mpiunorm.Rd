@@ -4,7 +4,9 @@
 \name{mpiunorm}
 \alias{mpiunorm}
 \title{Normalized mpiu data}
-\format{An object of class \code{data.frame} with 68400 rows and 5 columns.}
+\format{
+An object of class \code{data.frame} with 68400 rows and 5 columns.
+}
 \usage{
 mpiunorm
 }

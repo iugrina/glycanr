@@ -175,7 +175,7 @@ mediannorm_groups = function(d) {
 #' Probabilistic Quotient Normalization as Robust Method to Account for
 #' Diluition of Complex Biological Mixtures. Application in 1H NMR Metabolomics. \cr
 #' Anal Chem 2006;78:4281-90. \cr
-#' \url{http://dx.doi.org/10.1021/ac051632c}
+#' \doi{10.1021/ac051632c}
 #' @examples
 #' data(mpiu)
 #' mpiun <- medianquotientnorm(mpiu)
@@ -234,7 +234,7 @@ medianquotientnorm_groups <- function(d){
 #' A Comparison of Normalization Methods for High Density Oligonucleotide
 #' Array Data Based on Bias and Variance.\cr
 #' Bioinformatics 19(2), p. 185-193, 2003. \cr
-#' \url{http://dx.doi.org/10.1093/bioinformatics/19.2.185}
+#' \doi{10.1093/bioinformatics/19.2.185}
 #' @examples
 #' data(mpiu)
 #' if(requireNamespace("preprocessCore", quietly=TRUE)){

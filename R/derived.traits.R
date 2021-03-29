@@ -1,6 +1,6 @@
 #' Derived traits for Glycan peaks in IgG for UPLC
 #'
-#' Calcuates values of derived traits for Glycan peaks in IgG for UPLC
+#' Calculates values of derived traits for Glycan peaks in IgG for UPLC
 #'
 #' @author Ivo Ugrina, Frano Vučković
 #' @export iudt
@@ -18,7 +18,7 @@
 #' @references
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+#' \doi{10.1074/mcp.M113.037465}
 iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
     x <- NULL
 
@@ -37,7 +37,7 @@ iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 
 #' Derived traits for Glycan peaks in PLASMA for HPLC
 #'
-#' Calcuates values of derived traits for Glycan peaks in Plasma for HPLC
+#' Calculates values of derived traits for Glycan peaks in Plasma for HPLC
 #'
 #' @author Ivo Ugrina, Lucija Klarić
 #' @export phdt
@@ -56,7 +56,10 @@ iudt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 #' Lu et al. (2011)
 #' "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
 #'  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-#' \url{http://dx.doi.org/10.1021/pr2004067}
+#' \doi{10.1021/pr2004067}
+#' Irena Trbojevic-Akmacic et al.
+#' "Plasma N-glycome composition associates with chronic low back pain"
+#' \doi{10.1016/j.bbagen.2018.07.003}
 phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
     x <- NULL
 
@@ -68,6 +71,14 @@ phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
         }
         x <- plasma.hplc.derived.traits.2011(data, print.exp.names)
     }
+    if(method == "2018"){
+        if(!print.exp.names & !is.data.frame(data)){
+            warning("Either use print.exp.names=TRUE or
+                    set the paramater data to be a data frame")
+            return(x)
+        }
+        x <- plasma.hplc.derived.traits.2018(data, print.exp.names)
+    }
 
     x
 }
@@ -75,7 +86,7 @@ phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
 
 #' Derived traits for Glycan peaks in IgG for LCMS
 #'
-#' Calcuates values of derived traits for Glycan peaks in IgG for LCMS
+#' Calculates values of derived traits for Glycan peaks in IgG for LCMS
 #'
 #' @author Ivo Ugrina
 #' @export ildt
@@ -92,7 +103,7 @@ phdt <- function(data=NULL, method="2011", print.exp.names=FALSE) {
 #' @references
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+#' \doi{10.1074/mcp.M113.037465}
 ildt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
     x <- NULL
  
@@ -130,7 +141,7 @@ ildt <- function(data=NULL, method="2014", print.exp.names=FALSE) {
 #' @references
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+#' \doi{10.1074/mcp.M113.037465}
 ildt.translate <- function(orignames, to="inverse", method="2014") {
     x <- NULL
   
@@ -163,7 +174,7 @@ ildt.translate <- function(orignames, to="inverse", method="2014") {
 #' @references
 #' Jennifer E. Huffman et al. (2014)
 #' "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-#' \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+#' \doi{10.1074/mcp.M113.037465}
 iudt.translate <- function(orignames, to="inverse", method="2014") {
     x <- NULL
   

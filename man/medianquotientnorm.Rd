@@ -35,7 +35,7 @@ Dieterle F,Ross A, Schlotterbeck G, Senn H.: \cr
 Probabilistic Quotient Normalization as Robust Method to Account for
 Diluition of Complex Biological Mixtures. Application in 1H NMR Metabolomics. \cr
 Anal Chem 2006;78:4281-90. \cr
-\url{http://dx.doi.org/10.1021/ac051632c}
+\doi{10.1021/ac051632c}
 }
 \author{
 Ivo Ugrina, Lucija Klarić

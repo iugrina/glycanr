@@ -4,7 +4,9 @@
 \name{mpiu}
 \alias{mpiu}
 \title{Multiple plates IgG UPLC data example}
-\format{An object of class \code{data.frame} with 13680 rows and 4 columns.}
+\format{
+An object of class \code{data.frame} with 13680 rows and 4 columns.
+}
 \usage{
 mpiu
 }

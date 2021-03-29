@@ -4,9 +4,17 @@
 \alias{glyco.plot}
 \title{Plot data representing Glycans in boxplot or violin mode using ggplot2}
 \usage{
-glyco.plot(data, collapse = TRUE, violin = FALSE, group = NULL,
-  all = TRUE, p.adjust.method = "holm", print.p.values = TRUE,
-  log.transform = FALSE, glyco.names = NULL)
+glyco.plot(
+  data,
+  collapse = TRUE,
+  violin = FALSE,
+  group = NULL,
+  all = TRUE,
+  p.adjust.method = "holm",
+  print.p.values = TRUE,
+  log.transform = FALSE,
+  glyco.names = NULL
+)
 }
 \arguments{
 \item{data}{data frame which holds columns representing Glycans.

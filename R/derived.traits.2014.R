@@ -4,7 +4,7 @@
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# \doi{10.1074/mcp.M113.037465}
 igg.uplc.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
     if(print.exp.names){
         return(paste0("GP", 1:24))
@@ -81,7 +81,7 @@ igg.uplc.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# \doi{10.1074/mcp.M113.037465}
 igg.lcms.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
     if(print.exp.names){
         return(c("IgG1_G0F","IgG1_G1F","IgG1_G2F","IgG1_G0FN","IgG1_G1FN",
@@ -308,7 +308,7 @@ igg.lcms.derived.traits.2014 <- function(data, print.exp.names=FALSE) {
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# \doi{10.1074/mcp.M113.037465}
 ildt.translate.2014 <- function(orignames, to="inverse") {
 
     allnames <- "computer	human
@@ -560,7 +560,7 @@ LC_IGP205	IgG4G2n"
 # @references
 # Jennifer E. Huffman et al. 
 # "Comparative Performance of Four Methods for High-throughput Glycosylation Analysis of Immunoglobulin G in Genetic and Epidemiological Research*"
-# \url{http://dx.doi.org/10.1074/mcp.M113.037465}
+# \doi{10.1074/mcp.M113.037465}
 iudt.translate.2014 <- function(orignames, to="inverse") {
 
     allnames <- "computer	human

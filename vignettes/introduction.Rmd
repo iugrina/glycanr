@@ -1,6 +1,6 @@
 <!-- 
 %\VignetteEngine{knitr::knitr}
-%\VignetteIndexEntry{Vignette title}
+%\VignetteIndexEntry{Introduction vignette}
 -->
 
 # Introduction
@@ -29,7 +29,7 @@ data from papers like
 
 The package helps in calculating different quantities like derived traits
 and preparing the data for analysts doing different statistical
-or computational modelling of the N-glycan data like in
+or computational modeling of the N-glycan data like in
 [Vučković et al.][4], [Krištić et al][5] or
 [Barrios et al.][6].
 
@@ -43,7 +43,7 @@ functions to quickly explore the data. See the "plots" vignette
 for more information.
 
 Functions ***ildt***, ***iudt*** and ***phdt*** return derived traits
-obtained from basic glycans. They have a standardised input
+obtained from basic glycans. They have a standardized input
 depending on the definition of derived traits (e.g. derived
 traits as defined in [Huffman et al.][7]). Names of the
 columns representing glycans for a specific definition
@@ -65,10 +65,10 @@ Some functions have a default scheme for column names representing glycans
 *glyco.names* to change the default.
 
 
-[1]: http://www.sciencedirect.com/science/article/pii/S1874391911005549
-[2]: http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3205872/
-[3]: http://pubs.acs.org/doi/abs/10.1021/acs.analchem.5b01463
-[4]: http://www.ncbi.nlm.nih.gov/pubmed/26200652
-[5]: http://www.ncbi.nlm.nih.gov/pubmed/24325898
-[6]: http://jasn.asnjournals.org/content/early/2015/07/15/ASN.2015010109.full
-[7]: http://dx.doi.org/10.1074/mcp.M113.037465
+[1]: https://www.sciencedirect.com/science/article/pii/S1874391911005549
+[2]: https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3205872/
+[3]: https://pubs.acs.org/doi/abs/10.1021/acs.analchem.5b01463
+[4]: https://pubmed.ncbi.nlm.nih.gov/26200652/
+[5]: https://pubmed.ncbi.nlm.nih.gov/24325898/
+[6]: https://jasn.asnjournals.org/content/27/3/933.full
+[7]: https://dx.doi.org/10.1074/mcp.M113.037465

@@ -1,3 +1,44 @@
+# version 0.4.0
+
+## Initial submission
+
+## Resubmission
+
+This is a resubmission. In this version I have:
+
+* improved URLs in the introduction vignette as requested by CRAN reviewers.
+
+### Test environments
+* MacOS
+  * R 4.0.4 (2021-02-15) / x86_64-apple-darwin17.0 (64-bit)
+* rhub.io
+  * Windows Server 2008 R2 SP1, R-devel, 32/64 bit
+  * Fedora Linux, R-devel, clang, gfortran
+  * Ubuntu Linux 20.04.1 LTS, R-release, GCC
+* win-builder (win-builder.r-project.org)
+  * R-devel (unstable) (2021-03-25 r80117)
+  * R 3.6.3 (2020-02-29)
+  * R 4.0.4 (2021-02-15)
+* travis-ci
+  * R-devel (unstable) (2021-03-25 r80120) / x86_64-pc-linux-gnu (64-bit)
+  * R version 4.0.2 (2020-06-22) / x86_64-pc-linux-gnu (64-bit)
+  * R version 3.6.3 (2020-02-29) / x86_64-pc-linux-gnu (64-bit)
+
+### R CMD check (--as-cran) results
+There were no ERRORs and WARNINGs.
+
+There was 1 NOTE:
+* checking CRAN incoming feasibility ... NOTE
+Maintainer: ‘Ivo Ugrina <ivougrina@gmail.com>’
+
+New submission
+
+Package was archived on CRAN
+
+CRAN repository db overrides:
+  X-CRAN-Comment: Archived on 2019-01-24 as check issues were not
+    corrected in time.
+
 # version 0.3.1
 
 ## Resubmission #2

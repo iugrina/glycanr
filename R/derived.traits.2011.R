@@ -5,7 +5,7 @@
 # Lu et al. 
 # "Screening Novel Biomarkers for Metabolic Syndrome by Profiling 
 #  Human Plasma N-Glycans in Chinese Han and Croatian Populations"
-# \url{http://dx.doi.org/10.1021/pr2004067}
+# \doi{10.1021/pr2004067}
 plasma.hplc.derived.traits.2011 <- function(d, print.exp.names=FALSE) {
     if(print.exp.names){
         return("")
